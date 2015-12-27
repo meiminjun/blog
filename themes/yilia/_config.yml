@@ -2,6 +2,7 @@
 menu:
   主页: /
   所有文章: /archives
+  技术: /categories/technology/
   # 随笔: /tags/随笔
 
 # SubNav
