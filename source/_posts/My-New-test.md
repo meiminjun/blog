@@ -30,7 +30,19 @@ Hexo 是一个快速、简洁且高效的博客框架。Hexo 使用 Markdown（�
 * [Git](http://git-scm.com/downloads)
 
 # 开始我们的安装之旅：
-## 第一步(安装hexo)
+## 第一步-建立一个自己域名的仓库
+
+在github上，建立与你用户名对应的仓库，仓库名必须为【your_user_name.github.io】
+按以下步骤：
+![](/img/blogImg/github1.png)
+![](/img/blogImg/github2.png)
+![](/img/blogImg/github3.png)
+![](/img/blogImg/github4.png)
+![](/img/blogImg/github5.png)
+![](/img/blogImg/github6.png)
+
+### 参考地址：http://blog.csdn.net/renfufei/article/details/37725057/
+## 第二步(安装hexo)
 
 ``` bash
 npm install hexo-cli -g 
@@ -39,12 +51,62 @@ cd blog
 npm install
 hexo server //开启服务器，然后访问http://localhost:4000/
 ```
+
 然后访问http://localhost:4000/
 ![](http://blog.fens.me/wp-content/uploads/2014/05/hexo-web.png)
-## 第二步(待续)
+## 第三步-安装git插件
+安装hexo 的 git 插件
+``` bash
+npm install hexo-deployer-git --save
+```
+## 第四步-配置
+在跟目录下,找到配置文件_config.yml
+``` bash
+deploy:
+  type: git
+  repo: https://github.com/meiminjun/meiminjun.github.io.git
+  branch: master
+```
+Tips:
+* `配置的时候“：”后面空一格，否则无法提交到github`(**重点**)
+* 网上很多都是用ssh进行的，其实搞起来还是挺麻烦的，自己有兴趣的可以玩玩！
+
+提供一下以ssh配置的方式安装的参考：
+
+http://jingyan.baidu.com/article/d8072ac47aca0fec95cefd2d.html
+
+http://jingyan.baidu.com/article/a65957f4e91ccf24e77f9b11.html
+
+如果要配置主题和插件的话:
+Plugins: http://hexo.io/plugins/
+Themes: http://hexo.io/themes/
 
 
-## 有问题反馈1
+## 第五步-命令行(重点来了)
+
+``` bash
+hexo new "My New Post"	// 创建文章(在./source/_posts/)
+hexo new post wexinSdk // 新建一个布局为post(在scaffolds中)的名字为“wexinSdk”的文章
+hexo new page pageTest // 新建一个pageTest的目录
+hexo publish [layout] <title>   // 新建一个草稿
+hexo generate // 生成文章
+hexo server // 开启服务器 
+hexo deploy  // 发布到github
+```
+Tips:hexo支持简单命令格式
+hexo g == hexo generate
+hexo d == hexo deploy
+hexo s == hexo server
+hexo n == hexo new
+
+参考：
+
+http://blog.fens.me/hexo-blog-github/
+
+http://hexo.io
+
+
+## 有问题？
 在使用中有任何问题，欢迎反馈给我，可以用以下联系方式跟我交流
 * 邮件(251222845@qq.com, 把#换成@)
 * QQ: 251222845
