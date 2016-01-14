@@ -2,7 +2,6 @@
 
 http://segmentfault.com/a/1190000000342636?from=androidqq
 http://blog.csdn.net/zhbhun/article/details/47208885(挺详细的)    
-javascript:
 
 ``` bash
 > 参考： http://webpack.github.io/docs/optimization.html
