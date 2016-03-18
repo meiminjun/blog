@@ -1,9 +1,30 @@
 title: javascript之常用DOM操作
 date: 2016-01-05 15:57:13
+categories:
+  - 技术
 tags:
 	- javascript
 ---
 
+javascript 操作HTML DOM元素:简单地说：就是对HTML中的DOM元素的节点操作。
+
+DOM元素中包含以下三种常见节点：元素节点，文本节点，属性节点：
+
+元素节点：如：`<body>，<p>，<div>`等。
+
+文本节点：`<p>....</p>`中的DOM文本内容。
+
+属性节点：元素的属性， 如`<a href="meiminjun.github.io">我喜欢编码</a>` 中的 "href" 属性。
+
+对DOM元素进行操作，须先得该元素对象。可以通过 ID 获取元素的对象。
+
+var obj=document.getElementById("id");
+
+得到元素对象之后，即可对DOM元素进行操作了，可以通过：
+
+> 对象.style.property=value;
+
+<!-- more -->
 ## 一、document.getElementById()    根据Id获取元素节点
 
 ``` bash
@@ -85,7 +106,7 @@ tags:
     </div>
 </body>
 </html>
- 
+
 ```
 
 ## 四、document.getElementsByClassName()    根据class获取元素节点
@@ -123,7 +144,7 @@ tags:
         <title></title>
         <script type="text/javascript">
           window.onload = function () {
-            var node = document.querySelector("#div1 > p");    
+            var node = document.querySelector("#div1 > p");
             alert(node.innerHTML);                //输出  我是第一个P
 
             var node1 = document.querySelector(".class2");
@@ -150,7 +171,7 @@ tags:
 
 * 作为节点数的文档
 
-1. parentNode    获取该节点的父节点    
+1. parentNode    获取该节点的父节点
 2. childNodes    获取该节点的子节点数组
 3. firstChild    获取该节点的第一个子节点
 4. lastChild    获取该节点的最后一个子节点
@@ -211,13 +232,13 @@ tags:
 ```
 
 * 作为元素树的文档
-    
+
 1. firstElementChild        第一个子元素节点
 2. lastElementChild        最后一个子元素节点
 3. nextElementSibling        下一个兄弟元素节点
 4. previousElementSibling    前一个兄弟元素节点
 5. childElementCount        子元素节点个数量
-    
+
 > **注意，此5个方法文本节点不算进去**
 
 ``` bash
@@ -348,11 +369,11 @@ attributes属性  非Element对象返回null，Element一半返回Attr对象。A
     </div>
 </body>
 </html>
-  
+
 ```
 
 ## 八、元素的内容
-    
+
 ### 1、innerText、textContent
 innerText与textContent的区别，当文本为空时，innerText是""，而textContent是undefined
 ### 2、innerHTML
@@ -404,7 +425,7 @@ innerText与textContent的区别，当文本为空时，innerText是""，而text
 </body>
 </html>
 
-  <!-- 执行完成后HTML代码变为： 
+  <!-- 执行完成后HTML代码变为：
   <div id="div1">
       <p id="p1">我是第一个P</p>
       <p id="p2">我是第二个P</p>
@@ -436,7 +457,7 @@ innerText与textContent的区别，当文本为空时，innerText是""，而text
 </body>
 </html>
 
-  <!-- 执行完成后HTML代码变为： 
+  <!-- 执行完成后HTML代码变为：
   <div id="div1">
       <p id="p1">我是第一个P</p>
       <p id="p2">我是第二个P</p>
@@ -472,7 +493,7 @@ innerText与textContent的区别，当文本为空时，innerText是""，而text
  </body>
  </html>
 
-   <!-- 执行完成后HTML代码变为： 
+   <!-- 执行完成后HTML代码变为：
    <div id="div1">
         <p>insertBefore插入的节点</p>
         <p id="p1">我是第一个P</p>
@@ -503,7 +524,7 @@ innerText与textContent的区别，当文本为空时，innerText是""，而text
 </body>
 </html>
 
-  <!-- 执行完成后HTML代码变为： 
+  <!-- 执行完成后HTML代码变为：
   <div id="div1">
       <p id="p1">我是第一个P</p>    //注意到第二个P元素已经被移除了
   </div>
@@ -534,7 +555,7 @@ innerText与textContent的区别，当文本为空时，innerText是""，而text
 </body>
 </html>
 
-  <!-- 执行完成后HTML代码变为： 
+  <!-- 执行完成后HTML代码变为：
   <div id="div1">
       <p id="p1">我是第一个P</p>
       <span>我是一个新建的span</span>    //留意到p2节点已经被替换为span1节点了

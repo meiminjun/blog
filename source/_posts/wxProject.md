@@ -61,10 +61,10 @@ wx.config({
                 imgUrl: 'http://sandbox.runjs.cn/uploads/rs/438/v2eacmoa/2.png', // 分享图标
                 type: 'link', // 分享类型,music、video或link，不填默认为link
                 dataUrl: '', // 如果type是music或video，则要提供数据链接，默认为空
-                success: function () { 
+                success: function () {
                     alert("分享成功！");
                 },
-                cancel: function () { 
+                cancel: function () {
                     // 用户取消分享后执行的回调函数
                 }
             });
