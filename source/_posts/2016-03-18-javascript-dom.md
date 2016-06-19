@@ -1,11 +1,14 @@
 title: javascript之常用DOM操作
 date: 2016-01-05 15:57:13
 categories:
-  - 技术
+  - 前端
 tags:
 	- javascript
 ---
 
+这里主要讲一下开发中经常用到的一些javascript 原生操作dom的方法
+
+<!-- more -->
 
 ``` bash
 <html>
@@ -357,9 +360,9 @@ attributes属性  非Element对象返回null，Element一半返回Attr对象。A
 
 ## 元素的内容
 
-### 1、innerText、textContent
+### innerText、textContent
 innerText与textContent的区别，当文本为空时，innerText是""，而textContent是undefined
-### 2、innerHTML
+### innerHTML
 
 ``` bash
 <html>
@@ -450,7 +453,7 @@ innerText与textContent的区别，当文本为空时，innerText是""，而text
 
 ```
 
-### 3、插入节点
+### 插入节点
  appendChild()    //将一个节点插入到调用节点的最后面
  insertBefore()    //接受两个参数，第一个为待插入的节点，第二个指明在哪个节点前面，如果不传入第二个参数，则跟appendChild一样，放在最后。
 

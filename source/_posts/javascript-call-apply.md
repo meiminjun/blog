@@ -6,15 +6,16 @@ tags:
     - javascript
 ---
 
-# call与apply的用法
-
 ## call与apply的区别
+---
+
+call 与 apply 的用法是基本一致,只是调用是不一样:
 call的第二个参数为"字符串"
 apply 的第二个参数为"数组"
 
-<!--more-->
-
 ## 方法调用
+---
+
 ``` bash
 <!DOCTYPE html>
 <html lang="en">
@@ -51,6 +52,8 @@ apply 的第二个参数为"数组"
 > call 的意思是把 animal 的方法放到cat上执行，原来cat是没有showName() 方法，现在是把animal 的showName()方法放到 cat上来执行，所以this.name 应该是 Cat
 
 ## 实现继承
+
+---
 
 ``` bash
 <!DOCTYPE html>

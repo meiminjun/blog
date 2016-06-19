@@ -5,7 +5,7 @@ tags:
 	- 博客
 ---
 作为第一篇博客，我就写一些这个博客是怎么制作的吧！
-![这个是个图片](/img/blogImg/hexo-github.png)
+![这个是个图片](/images/blogImg/hexo-github.png)
 ## [Hexo](https://hexo.io/)是什么?
 Hexo 是一个快速、简洁且高效的博客框架。Hexo 使用 Markdown（或其他渲染引擎）解析文章，在几秒内，即可利用靓丽的主题生成静态网页。
 >向这个团队表示一下感谢！感谢！感谢！    ————重要的事吼三遍
@@ -25,6 +25,8 @@ Hexo 是一个快速、简洁且高效的博客框架。Hexo 使用 Markdown（�
 	> **Hexo 拥有强大的插件系统，安装插件可以让 Hexo 支持 Jade, CoffeeScript。**
 ---
 
+<!-- more -->
+
 ## 安装前提
 * [Node.js](https://nodejs.org/)
 * [Git](http://git-scm.com/downloads)
@@ -34,12 +36,12 @@ Hexo 是一个快速、简洁且高效的博客框架。Hexo 使用 Markdown（�
 
 在github上，建立与你用户名对应的仓库，仓库名必须为【your_user_name.github.io】
 按以下步骤：
-![](/img/blogImg/github1.png)
-![](/img/blogImg/github2.png)
-![](/img/blogImg/github3.png)
-![](/img/blogImg/github4.png)
-![](/img/blogImg/github5.png)
-![](/img/blogImg/github6.png)
+![](/images/blogImg/github1.png)
+![](/images/blogImg/github2.png)
+![](/images/blogImg/github3.png)
+![](/images/blogImg/github4.png)
+![](/images/blogImg/github5.png)
+![](/images/blogImg/github6.png)
 
 ### 参考地址：http://blog.csdn.net/renfufei/article/details/37725057/
 ## 第二步(安装hexo)

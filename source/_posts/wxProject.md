@@ -8,9 +8,11 @@ tags:
 ---
 
 先看个效果图：
-![微信分享](/img/blogImg/weixin1227_1.jpg)
+![微信分享](/images/blogImg/weixin1227_1.jpg)
 
 目前来说，对于前端开发者来说想要自定义来让分享出去的文章有图标和标题有两种方式，一种是通过微信提供的sdk进行开发，另外一种是通过一些小方法来达到同样目的，下面就向大家介绍一下：
+
+<!-- more -->
 
 # 不通过微信sdk的方式巧妙解决方式:
 以图片中第一个分享为例，标题为“微信标题测试”,代码如下：
@@ -37,9 +39,9 @@ tags:
 ## 第一步：微信公众号中设置绑定域名，只有绑定的域名下的网页才可以调用微信官方的js，否则会报错，目前域名可以绑定3个（绑定步骤如下）
 
 1. ** 进入公众号，点击左边主菜单栏“设置”→“公众号设置” **
-![微信分享](/img/blogImg/weixin1227_2.jpg)
+![微信分享](/images/blogImg/weixin1227_2.jpg)
 1. ** 然后点击上方的“功能设置” **
-![微信分享](/img/blogImg/weixin1227_3.jpg)
+![微信分享](/images/blogImg/weixin1227_3.jpg)
 
 ## 第二步：在自己的网页中引入微信官方js：http://res.wx.qq.com/open/js/jweixin-1.0.0.js
 > 如果你的页面启用了https，务必引入 https://res.wx.qq.com/open/js/jweixin-1.0.0.js ，否则将无法在iOS9.0以上系统中成功使用JSSDK
@@ -108,7 +110,7 @@ wx.config({
 微信官方推出了 JS 接口签名校验工具 [地址](http://mp.weixin.qq.com/debug/cgi-bin/sandbox?t=jsapisign)
 
 到这为止微信分享就完成了，上述只是分享给好友，分享到朋友圈和这个类似，结合SDK官方文档照着写就可以了，分享效果出来了，看下图
-![微信分享](/img/blogImg/weixin1227_4.png)
+![微信分享](/images/blogImg/weixin1227_4.png)
 
 ---
 微信JS-SDK文档：http://mp.weixin.qq.com/wiki/7/aaa137b55fb2e0456bf8dd9148dd613f.html
