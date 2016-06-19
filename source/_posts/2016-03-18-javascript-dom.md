@@ -1,10 +1,11 @@
 title: javascript之常用DOM操作
 date: 2016-01-05 15:57:13
+categories:
+  - 技术
 tags:
 	- javascript
 ---
 
-##  document.getElementById()    根据Id获取元素节点
 
 ``` bash
 <html>
@@ -54,6 +55,7 @@ tags:
 
 ```
 
+
 ##  document.getElementsByTagName()    根据HTML标签名获取元素节点，注意getElements***的选择器返回的是一个NodeList对象，能根据索引号选择其中1个，可以遍历输出。
 
 ``` bash
@@ -84,8 +86,8 @@ tags:
            我是第二个P</p>
     </div>
 </body>
-</html>
- 
+</html> 
+
 ```
 
 ##  document.getElementsByClassName()    根据class获取元素节点
@@ -123,7 +125,7 @@ tags:
         <title></title>
         <script type="text/javascript">
           window.onload = function () {
-            var node = document.querySelector("#div1 > p");    
+            var node = document.querySelector("#div1 > p");
             alert(node.innerHTML);                //输出  我是第一个P
 
             var node1 = document.querySelector(".class2");
@@ -150,7 +152,7 @@ tags:
 
 * 作为节点数的文档
 
-1. parentNode    获取该节点的父节点    
+1. parentNode    获取该节点的父节点
 2. childNodes    获取该节点的子节点数组
 3. firstChild    获取该节点的第一个子节点
 4. lastChild    获取该节点的最后一个子节点
@@ -210,14 +212,15 @@ tags:
 
 ```
 
-* 作为元素树的文档
-    
+* 作为元素树的文档    
+
 1. firstElementChild        第一个子元素节点
 2. lastElementChild        最后一个子元素节点
 3. nextElementSibling        下一个兄弟元素节点
 4. previousElementSibling    前一个兄弟元素节点
 5. childElementCount        子元素节点个数量
-    
+
+
 > **注意，此5个方法文本节点不算进去**
 
 ``` bash
@@ -325,6 +328,7 @@ setAttribute();
 
 ```
 
+
 ### Attr节点的属性
 attributes属性  非Element对象返回null，Element一半返回Attr对象。Attr对象是一个特殊的Node,通过name与value获取属性名称与值。
 如:document.getElementById("img1")[0];
@@ -348,11 +352,11 @@ attributes属性  非Element对象返回null，Element一半返回Attr对象。A
     </div>
 </body>
 </html>
-  
+
 ```
 
 ## 元素的内容
-    
+
 ### 1、innerText、textContent
 innerText与textContent的区别，当文本为空时，innerText是""，而textContent是undefined
 ### 2、innerHTML
@@ -404,7 +408,7 @@ innerText与textContent的区别，当文本为空时，innerText是""，而text
 </body>
 </html>
 
-  <!-- 执行完成后HTML代码变为： 
+  <!-- 执行完成后HTML代码变为：
   <div id="div1">
       <p id="p1">我是第一个P</p>
       <p id="p2">我是第二个P</p>
@@ -436,7 +440,7 @@ innerText与textContent的区别，当文本为空时，innerText是""，而text
 </body>
 </html>
 
-  <!-- 执行完成后HTML代码变为： 
+  <!-- 执行完成后HTML代码变为：
   <div id="div1">
       <p id="p1">我是第一个P</p>
       <p id="p2">我是第二个P</p>
@@ -472,7 +476,7 @@ innerText与textContent的区别，当文本为空时，innerText是""，而text
  </body>
  </html>
 
-   <!-- 执行完成后HTML代码变为： 
+   <!-- 执行完成后HTML代码变为：
    <div id="div1">
         <p>insertBefore插入的节点</p>
         <p id="p1">我是第一个P</p>
@@ -482,6 +486,7 @@ innerText与textContent的区别，当文本为空时，innerText是""，而text
  ```
 
 ## 删除和替换节点。
+
 
 ### removeChild();    由父元素调用，删除一个子节点。注意是直接父元素调用，删除直接子元素才有效，删除孙子元素就没有效果了。
 ``` bash
@@ -503,7 +508,8 @@ innerText与textContent的区别，当文本为空时，innerText是""，而text
 </body>
 </html>
 
-  <!-- 执行完成后HTML代码变为： 
+
+  <!-- 执行完成后HTML代码变为：
   <div id="div1">
       <p id="p1">我是第一个P</p>    //注意到第二个P元素已经被移除了
   </div>
@@ -534,7 +540,7 @@ innerText与textContent的区别，当文本为空时，innerText是""，而text
 </body>
 </html>
 
-  <!-- 执行完成后HTML代码变为： 
+  <!-- 执行完成后HTML代码变为：
   <div id="div1">
       <p id="p1">我是第一个P</p>
       <span>我是一个新建的span</span>    //留意到p2节点已经被替换为span1节点了
