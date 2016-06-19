@@ -4,7 +4,7 @@ tags:
 	- javascript
 ---
 
-## 一、document.getElementById()    根据Id获取元素节点
+##  document.getElementById()    根据Id获取元素节点
 
 ``` bash
 <html>
@@ -27,7 +27,7 @@ tags:
 
 ```
 
-## 二、document.getElementsByName()    根据name获取元素节点
+##  document.getElementsByName()    根据name获取元素节点
 
 ``` bash
 <html>
@@ -54,7 +54,7 @@ tags:
 
 ```
 
-## 三、document.getElementsByTagName()    根据HTML标签名获取元素节点，注意getElements***的选择器返回的是一个NodeList对象，能根据索引号选择其中1个，可以遍历输出。
+##  document.getElementsByTagName()    根据HTML标签名获取元素节点，注意getElements***的选择器返回的是一个NodeList对象，能根据索引号选择其中1个，可以遍历输出。
 
 ``` bash
 <html>
@@ -88,7 +88,7 @@ tags:
  
 ```
 
-## 四、document.getElementsByClassName()    根据class获取元素节点
+##  document.getElementsByClassName()    根据class获取元素节点
 
 ``` bash
 <html>
@@ -113,7 +113,7 @@ tags:
 
 ```
 
-## 五、javascript中的CSS选择器
+## javascript中的CSS选择器
 ``` bash
     document.querySelector()    //根据CSS选择器的规则，返回第一个匹配到的元素
     document.querySelectorAll()    //根据CSS选择器的规则，返回所有匹配到的元素
@@ -146,7 +146,7 @@ tags:
 
 ```
 
-## 六、文档结构和遍历
+##  文档结构和遍历
 
 * 作为节点数的文档
 
@@ -250,9 +250,9 @@ tags:
 
 ```
 
-## 七、javascript操作HTML属性
+## javascript操作HTML属性
 
-### 1、属性的读取，此处要注意的是，某些HTML属性名称在javascript之中是保留字，因此会有些许不同，如class,lable中的for在javascript中变为htmlFor,className。
+### 属性的读取，此处要注意的是，某些HTML属性名称在javascript之中是保留字，因此会有些许不同，如class,lable中的for在javascript中变为htmlFor,className。
 
 ``` bash
 <html>
@@ -280,7 +280,7 @@ tags:
 
 ```
 
-### 2、属性的设置，此处同样要注意的是保留字
+### 属性的设置，此处同样要注意的是保留字
 
 ``` bash
 <html>
@@ -301,7 +301,7 @@ tags:
 
 ```
 
-### 3、非标准HTML属性
+### 非标准HTML属性
 getAttribute();    // 注意这两个方法是不必理会javascript保留字的，HTML属性是什么就怎么写。
 setAttribute();
 
@@ -325,7 +325,7 @@ setAttribute();
 
 ```
 
-### 4、Attr节点的属性
+### Attr节点的属性
 attributes属性  非Element对象返回null，Element一半返回Attr对象。Attr对象是一个特殊的Node,通过name与value获取属性名称与值。
 如:document.getElementById("img1")[0];
    document.getElementById("img1").src;
@@ -351,7 +351,7 @@ attributes属性  非Element对象返回null，Element一半返回Attr对象。A
   
 ```
 
-## 八、元素的内容
+## 元素的内容
     
 ### 1、innerText、textContent
 innerText与textContent的区别，当文本为空时，innerText是""，而textContent是undefined
@@ -381,9 +381,9 @@ innerText与textContent的区别，当文本为空时，innerText是""，而text
 
 ```
 
-## 九、创建，插入，删除节点
+## 创建，插入，删除节点
 
-### 1、document.createTextNode()    创建一个文本节点
+### document.createTextNode()    创建一个文本节点
 
 ``` bash
 <html>
@@ -414,7 +414,7 @@ innerText与textContent的区别，当文本为空时，innerText是""，而text
 
 ```
 
-### 2、document.createElement()    创建一个元素节点
+### document.createElement()    创建一个元素节点
 
 ``` bash
 <html>
@@ -481,9 +481,9 @@ innerText与textContent的区别，当文本为空时，innerText是""，而text
    -->
  ```
 
-## 十、删除和替换节点。
+## 删除和替换节点。
 
-### 1、removeChild();    由父元素调用，删除一个子节点。注意是直接父元素调用，删除直接子元素才有效，删除孙子元素就没有效果了。
+### removeChild();    由父元素调用，删除一个子节点。注意是直接父元素调用，删除直接子元素才有效，删除孙子元素就没有效果了。
 ``` bash
 <html>
 <head>
@@ -511,7 +511,7 @@ innerText与textContent的区别，当文本为空时，innerText是""，而text
 
 ```
 
-### 2、replaceChild()    //删除一个子节点，并用一个新节点代替它，第一个参数为新建的节点，第二个节点为被替换的节点
+### replaceChild()    //删除一个子节点，并用一个新节点代替它，第一个参数为新建的节点，第二个节点为被替换的节点
 
 ``` bash
 <html>
@@ -542,7 +542,7 @@ innerText与textContent的区别，当文本为空时，innerText是""，而text
   -->
 ```
 
-## 十一、javascript操作元素CSS
+## javascript操作元素CSS
 通过元素的style属性可以随意读取和设置元素的CSS样式，例子：
 ``` bash
 <html>
