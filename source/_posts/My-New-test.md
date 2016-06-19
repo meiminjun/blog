@@ -95,14 +95,16 @@ hexo generate // 生成文章
 hexo server // 开启服务器 
 hexo deploy  // 发布到github
 ```
-Tips:hexo支持简单命令格式
-hexo g == hexo generate
-hexo d == hexo deploy
-hexo s == hexo server
-hexo n == hexo new
+
+hexo支持简单命令格式,每次发布前的三个步骤：
+> hexo g    // 生成文章
+> hexo s    // 发布到github
+
+Tip:
+1. 如果不行进入到.gitignore文件夹中去手动提交github
+2. 后面添加 -- debug 可看报错信息
 
 参考：
-
 http://blog.fens.me/hexo-blog-github/
 
 http://hexo.io

@@ -3,13 +3,13 @@
 ## Source: https://github.com/hexojs/hexo/
 
 # Site
-title: 梅敏君的博客
+title: Mr.Jason'Blog
 subtitle: 热爱游戏、生活、学习的文艺屌丝青年
 description: 江西科技学院09级,现就职于平安口袋银行。擅长各项前端技能，目前深入研究移动端html5跨平台开发。
 author: 梅敏君
 language: zh-Hans
 timezone:
-email: litten225@qq.com
+email: 251222845@qq.com
 keywords: "前端,js,jquery,javascript,html5,cordova,phonegap,react,reactjs,开发者,程序猿,极客,编程,代码,开源,IT网站,Developer,Programmer,Coder,Geek,html,css,css3,用户体验"
 
 # URL
@@ -73,3 +73,6 @@ deploy:
   type: git
   repo: https://github.com/meiminjun/meiminjun.github.io.git
   branch: master
+  name: meiminjun
+  email: 251222845@qq.com
+  message: 更新
