@@ -97,8 +97,10 @@ hexo deploy  // 发布到github
 ```
 
 hexo支持简单命令格式,每次发布前的三个步骤：
-> hexo g    // 生成文章
-> hexo s    // 发布到github
+
+>  * hexo g    // 生成文章
+>  * hexo s    // 开启本地服务器预览(可选，方便本地预览)
+>  * hexo d    // 发布到github,然后在进入到.gitignore文件夹中去手动提交到自己名字的github
 
 Tip:
 1. 如果不行进入到.gitignore文件夹中去手动提交github
