@@ -17,6 +17,8 @@ tags:
 
 3. ** [史上最强Sublime 笔记系列---我的常用配置](/2016/06/22/SublimeText-我的常用配置/)(持续更新中。。。)  **
 
+**各位小伙伴们，还有没有`高效率`的配置呢？有的请留言哦！谢谢。。O(∩_∩)O**
+
 <!-- more -->
 
 ***
@@ -32,14 +34,23 @@ tags:
 
 ### 1. Flatland（推荐）
 
-> "color_scheme": "Packages/Theme - Flatland/Flatland Monokai.tmTheme",
-> "theme": "Flatland Dark.sublime-theme",
+``` bash
+"color_scheme": "Packages/Theme - Flatland/Flatland Monokai.tmTheme",
+"theme": "Flatland Dark.sublime-theme",
+```
 
 ### 2. Material
 
-> "theme": "Material-Theme.sublime-theme",
-> "color_scheme": "Packages/Material Theme/schemes/Material-Theme.tmTheme",
+``` bash
+"theme": "Material-Theme.sublime-theme",
+"color_scheme": "Packages/Material Theme/schemes/Material-Theme.tmTheme",
+```
 
+### 3. Seti
+
+``` bash
+"theme": "Seti.sublime-theme"
+```
 
 ## 我的配置详情(最美纯净版)
 

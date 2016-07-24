@@ -1,0 +1,480 @@
+<!DOCTYPE html>
+<!-- saved from url=(0030)http://www.zcfy.cc/article/609 -->
+<html lang="zh-cn"><!--<![endif]--><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+<link rel="icon" href="http://www.zcfy.cc/static/img/16-16.png?v=78a1a.png">
+<link rel="alternate" type="application/rss+xml" title="RSS 2.0" href="http://www.zcfy.cc/rss.html">
+<meta name="description" content="众成翻译（zcfy.cc），中国最好的技术翻译社区，最懂译者的翻译平台，奇虎360最大前端团队“奇舞团”出品。Zhongcheng Tanslation(zcfy.cc), the best technical translation community and the most translator-friendly translation platform in China. Developed by 75team, the largest front-end team at Qihoo 360 tech co.,ltd.">
+<meta content="yes" name="apple-mobile-web-app-capable">
+<meta content="black-translucent" name="apple-mobile-web-app-status-bar-style">
+<meta content="telephone=no,email=no,address=no" name="format-detection">
+<title>
+ Google Developers：移动Web优化指南（by 楚狂） - 
+
+
+
+
+
+
+众成翻译</title>
+<meta property="wb:webmaster" content="42b11fe4411bc2d1">
+<meta property="qc:admins" content="005234677762361633">
+
+
+<!--[if (lt IE 8.0)]><link rel="stylesheet" href="/static/css/reset.css?v=801e6.css"><![endif]--><!--[if (!IE)|(gte IE 8.0)]><!--><link rel="stylesheet" href="./Google Developers：移动Web优化指南（by 楚狂） - 众成翻译_files/reset_datauri.css"><!--<![endif]-->
+<!--[if (lt IE 8.0)]><link rel="stylesheet" href="/static/css/grid.css?v=4d650.css"><![endif]--><!--[if (!IE)|(gte IE 8.0)]><!--><link rel="stylesheet" href="./Google Developers：移动Web优化指南（by 楚狂） - 众成翻译_files/grid_datauri.css"><!--<![endif]-->
+<!--[if (lt IE 8.0)]><link rel="stylesheet" href="/static/css/module.css?v=38a23.css"><![endif]--><!--[if (!IE)|(gte IE 8.0)]><!--><link rel="stylesheet" href="./Google Developers：移动Web优化指南（by 楚狂） - 众成翻译_files/module_datauri.css"><!--<![endif]-->
+<!--[if (lt IE 8.0)]><link rel="stylesheet" href="/static/css/header.css?v=e097c.css"><![endif]--><!--[if (!IE)|(gte IE 8.0)]><!--><link rel="stylesheet" href="./Google Developers：移动Web优化指南（by 楚狂） - 众成翻译_files/header_datauri.css"><!--<![endif]-->
+<!--[if (lt IE 8.0)]><link rel="stylesheet" href="/static/css/footer.css?v=06715.css"><![endif]--><!--[if (!IE)|(gte IE 8.0)]><!--><link rel="stylesheet" href="./Google Developers：移动Web优化指南（by 楚狂） - 众成翻译_files/footer_datauri.css"><!--<![endif]-->
+<!--[if (lt IE 8.0)]><link rel="stylesheet" href="/static/css/skin.css?v=e2199.css"><![endif]--><!--[if (!IE)|(gte IE 8.0)]><!--><link rel="stylesheet" href="./Google Developers：移动Web优化指南（by 楚狂） - 众成翻译_files/skin_datauri.css"><!--<![endif]-->
+<!--[if (lt IE 8.0)]><link id="layer-src" rel="stylesheet" href="/static/module/layer/skin/layer.css?v=bbe1f.css"><![endif]--><!--[if (!IE)|(gte IE 8.0)]><!--><link id="layer-src" rel="stylesheet" href="./Google Developers：移动Web优化指南（by 楚狂） - 众成翻译_files/layer_datauri.css"><!--<![endif]-->
+
+<!--[if (lt IE 8.0)]><link rel="stylesheet" href="/static/module/editor.md/css/editormd.css?v=dc357.css"><![endif]--><!--[if (!IE)|(gte IE 8.0)]><!--><link rel="stylesheet" href="./Google Developers：移动Web优化指南（by 楚狂） - 众成翻译_files/editormd_datauri.css"><!--<![endif]-->
+<!--[if (lt IE 8.0)]><link rel="stylesheet" href="/static/css/article.css?v=f0f3b.css"><![endif]--><!--[if (!IE)|(gte IE 8.0)]><!--><link rel="stylesheet" href="./Google Developers：移动Web优化指南（by 楚狂） - 众成翻译_files/article_datauri.css"><!--<![endif]-->
+
+
+<script type="text/javascript" async="" src="./Google Developers：移动Web优化指南（by 楚狂） - 众成翻译_files/embed.js" charset="UTF-8"></script><link type="text/css" rel="stylesheet" href="./Google Developers：移动Web优化指南（by 楚狂） - 众成翻译_files/embed.default.css"></head>
+<body><!-- <img src="http://p0.qhimg.com/t010d0d7b1ddd2a072b.png" style="position:absolute;left:-2000px;"/> -->
+
+<img src="./Google Developers：移动Web优化指南（by 楚狂） - 众成翻译_files/t018ee92da9ebe037f6.png" style="position:absolute;left:-2000px;">
+<div id="doc-hd">
+<h1 class="logo"><a href="http://www.zcfy.cc/">众成翻译</a></h1>
+  
+<a href="http://www.zcfy.cc/user/loginpage" class="ui-btn ui-btn-default btn-login">登录<span>或注册</span></a>
+
+
+  
+
+  <!-- 搜索框 开始 -->
+  
+<div class="search">
+<form action="http://www.zcfy.cc/s">
+
+			<input type="text" required="required" placeholder="众成翻译" name="q" value=""><button type="submit"></button>
+</form>
+</div>
+<!-- 搜索框 结束 --><!-- 主导航 开始 -->
+
+
+
+<div class="ui-tab ui-tab-main">
+<ul>
+<li>
+
+<a href="http://www.zcfy.cc/original#begin">翻译</a>
+
+</li>
+<li>
+
+<a href="http://www.zcfy.cc/article#begin">阅读</a>
+
+</li>
+<li class="item-search">
+<a href="http://www.zcfy.cc/s">搜索</a>
+</li>
+<li class="item-recommend">
+<a href="http://www.zcfy.cc/recommend">推荐</a>
+</li>
+<li class="item-video">
+<a href="http://www.zcfy.cc/video">视频</a>
+</li>
+<li class="item-feedback"><!-- <a href="/feedback">反馈</a> -->
+
+<a href="http://www.zcfy.cc/article/archive">归档</a>
+</li>
+<li class="item-more">
+<a href="http://www.zcfy.cc/article/609#" class="js-more-menu-btn">•<br>•<br>•</a>
+</li>
+</ul>
+</div><!-- 主导航 开始 --><!-- 主导航在手机下的更多菜单 开始 -->
+
+
+
+<div class="more-menu">
+<ul>
+<li><a href="http://www.zcfy.cc/video">视频</a></li>
+<li><a href="http://www.zcfy.cc/article/archive">归档</a></li>
+</ul>
+</div><!-- 主导航在手机下的更多菜单 结束 -->
+
+</div>
+
+
+
+
+
+
+
+
+
+
+<div id="doc-bd" style="position:relative;">
+         
+    
+    <div class="headline">
+        <ul class="post-meta2">
+            
+            <li>
+                <a href="http://www.zcfy.cc/@chukuang" title="楚狂"><img src="./Google Developers：移动Web优化指南（by 楚狂） - 众成翻译_files/t010ebf79524016b19f.png" class="avatar"></a>
+                <p class="date">翻译<span>于 2016年06月30日01:27:15</span></p>
+            </li>
+            <li>
+                <a href="http://www.zcfy.cc/@bingguo" title="郭培"><img src="./Google Developers：移动Web优化指南（by 楚狂） - 众成翻译_files/100" class="avatar"></a>
+                <p class="date">推荐<span>于 2016年06月15日09:41:47</span></p>
+            </li>
+             
+            <div id="shareqrcode" class="addition-item">
+            <img width="160" src="./Google Developers：移动Web优化指南（by 楚狂） - 众成翻译_files/api.php">
+            <p>手机扫一扫，马上分享</p>
+            </div>
+        </ul>
+        <h2 class="title m-b-10">
+            
+            Google Developers：移动Web优化指南
+            
+        </h2>
+
+        <p class="url">原文链接：<a target="_blank" href="https://developers.google.com/speed/docs/insights/mobile#adapting-to-high-latency-mobile-networks">
+                
+                https://developers.google.com/speed/docs/insights/mobile#adapting-to-high-latency-mobile-n……
+                
+        </a></p>
+        <p style="margin-top:1em;">
+            <button class="ui-btn-primary toggle-bilingual-reading normal-spacing">打开双语对照阅读</button>
+            <button class="ui-btn-primary toggle-unilingual-reading normal-spacing">切换到英文阅读</button>
+                    
+        </p>
+    </div>
+    
+
+    <div class="editormd-preview-container">
+        <div class="markdown-format">
+        
+            <div class="translation"><div><h1 id="google-developers-web-">Google Developers：移动Web优化指南</h1>
+<h3 id="-pagespeed-">（原标题：用PageSpeed进行移动页面性能分析）</h3>
+<p>注：由于这篇文章单独拿出来看与PageSpeed几乎无关，故改为更合适的题目</p>
+<p>PageSpeed Insights可以用于分析一个页面是否遵循了我们的建议——“在移动网络下一秒之内渲染完毕”。研究已经显示，超过一秒的渲染时间会打断用户的思绪流，造成糟糕的用户体验。我们的目标是，保持用户停留在页面上，并且提供最佳的体验，不管用户使用什么设备，或是在何种网络下浏览页面。</p>
+<p>满足一秒渲染完毕的标准是很难的。但是幸运的是，我们没有必要让整个页面都满足这个条件，换句话说，<strong>我们要首屏（above the fold，ATF）满足一秒渲染的条件，这样可以让用户尽可能快的与页面进行交互</strong>。然后，当用户在阅读第一页的内容时，剩下的页面可在后台逐渐的加载。</p>
+<h3 id="-">适应高延时的移动网络</h3>
+<p>在移动设备上满足“一秒首屏渲染标准”（ATF）相对于在其他设备上是一个独特的挑战。用户可能会在2G、3G或4G的不同网络下访问你的网站。与有线网络相比，无线网络延迟可能会非常高，并且消耗掉1秒（1000ms）渲染首屏时间中的相当一部分：</p>
+<ul>
+<li>3G网络会有 200-300ms 的延迟</li>
+<li>4G网络会有 50-100ms 的延迟</li>
+</ul>
+<p>目前3G网络在世界范围内占有统治性地位，虽然4G网络正在全世界部署，但是你仍然应该考虑到大部分的用户会在3G网络下浏览你的页面。所以，我们不得不假设每个请求平均平均会花费200ms。</p>
+<p>考虑到这个因素，让我们反向的思考一下。如果我们看看一个浏览器与服务器之间通信的典型序列（sequence），我们会发现1000ms中的600ms已经被基本的网络开销占用了：DNS服务器查找域名（例如google.com）对应的IP地址的时间、用于完成TCP握手的网络延迟、还有最后发送一整条HTTP请求的网络延迟。我们只剩下了400ms！</p>
+<p><img src="./Google Developers：移动Web优化指南（by 楚狂） - 众成翻译_files/1stimeline.png" alt=""></p>
+<h3 id="-">实现半秒的渲染体验</h3>
+<p>在减去网络延迟之后，我们的预算时间只剩下400ms，然而我们仍然有太多的事情要去做：服务器必须要去产生响应，客户端应用的代码必须要去执行，并且浏览器必须要去布局（layout）和渲染（render）内容。再考虑到这些，下面的一些标准将帮助我们在预算时间内完成任务：</p>
+<dl>
+
+<dt>(1) 服务器响应时间小于 200 ms </dt>
+<dd>服务器响应时间是服务器向浏览器返回一个最初的HTML页面的时间，包括网络传输的用时。由于我们的时间预算非常紧张，这部分时间应该压缩到最小值——理想情况下是小于200ms，越小越好！</dd>
+
+<dt>(2) 减少重定向的数量</dt>
+
+<dd>额外的HTTP重定向会增加一到两个网络往返（如果需要额外的DNS查找的话就是两个），在3G网络下导致数百毫秒的延迟。因此，我们强烈建议站长减少，甚至理论上完全弃用重定向——这对于HTML文档来说尤其重要（尽可能避免“m.xxx.com”的这种重定向）</dd>
+
+<dt>(3)尽可能减少首屏渲染所需要的请求数</dt>
+
+<dd>
+由于TCP的慢启动算法(参考<a href="http://en.wikipedia.org/wiki/Slow-start">TCP Slow Start</a>)，一个新的TCP连接不能立即使用客户端与服务器之间全部可用的带宽。因此，服务器在一个新连接的第一次数据往返时，最多可以发送10个TCP包（不超过14KB），接着服务器必须在它增加阻塞窗口和继续发送更多数据之前等待客户端确认（ACK）这些数据。
+
+由于TCP 的这种行为，为了传输必要的数据来渲染首屏优化你的页面内容，减少需要的请求数是很重要的。理想情况下，首屏内容应该小于14KB——这允许了浏览器在第一次数据往返（roundtrip）之后就开始渲染页面。另外，我们也要注意所谓的“第一次数据往返最多10个TCP包”的限制是TCP标准的一次最近的更新：为了利用这个更新，你应该确保你的服务器升级到了最新版本。否则的话，可能受此数据往返的TCP包限制数量只有3-4个！
+</dd>
+
+<dt>(4)避免在首屏部分中引入外部的阻塞的JavaScript和CSS</dt>
+
+<dd>
+
+在浏览器渲染并展示一个页面给用户之前，它首先要解析这个页面。如果浏览器在解析过程中遇到了一个非异步的（同步的）或者是阻塞的外部脚本，它就不得不停止解析转而去加载这个资源。每次都遇到这种情况，都会增加一次网络往返时间，这会导致页面首次渲染的延迟。
+
+所以说，首屏渲染所需的JavaScript和CSS需要写成行内（inline）形式，其他的JavaScript和CSS文件应该在首屏内容已经展现给用户之后再加载。
+
+</dd>
+
+<dt>(5) 为浏览器的布局（layout）和渲染保留 200 ms 的时间</dt>
+
+<dd>解析HTML、CSS和执行JavaScript的过程会耗费时间和客户端资源！取决于移动设备的速度和页面的复杂程度，这个过程可能会花费几百毫秒。我们的建议是为浏览器保留200ms的时间。</dd>
+
+<dt>(6) 优化JavaScript的执行过程和渲染时间</dt>
+
+<dd>
+复杂的脚本和低效的代码会花费几十甚至几百秒去执行——可以用内置的开发者工具去分析和优化你的代码。为了更好的入门开发者工具，看看我们的<a href="http://discover-devtools.codeschool.com/">interactive course for Chrome Developer Tools.</a>吧！</dd>
+
+</dl>
+
+<aside>
+
+
+<strong>注: </strong>以上并不是所有的优化手段——这只是一个实现移动端半秒渲染的最高级别标准——你也应该继续使用所有其他的优化技巧<a href="https://developers.google.com/speed/docs/insights/rules">web performance best practices</a>。来<a href="https://developers.google.com/speed/pagespeed/insights">PageSpeed Insights</a>去发现更进一步的优化建议吧。
+
+
+为了更深层次的了解以上的移动端优化标准，你也可以阅读：
+
+<em> <a href="https://developers.google.com/web/fundamentals/documentation/performance/critical-rendering-path/index">Web Fundamentals: Critical Rendering Path</a>.
+
+</em> 优化关键渲染路径，打造极速移动站点 (<a href="http://bit.ly/mobilecrp">slides</a>, <a href="http://www.youtube.com/watch?v=YV1nKLWoARQ">video</a>).
+
+* 极速移动站点: 技巧和最佳实践 (<a href="http://storage.googleapis.com/io-2013/presentations/239-%20Instant%20Mobile%20Websites-%20Techniques%20and%20Best%20Practices.pdf">slides</a>, <a href="https://www.youtube.com/watch?v=Bzw8-ZLpwtw">video</a>)
+
+</aside>
+
+
+<h3 id="-faq-">常见问题（FAQ）</h3>
+<dl>
+
+<dt>4G网络会如何影响以上的移动优化标准?</dt>
+
+<dd>4G网络主要的进步之一就是更低的网络延迟。这降低了总的网络开销时间，对我们有巨大的帮助，要知道，在3G网络中，网络延迟几乎占我们“1秒钟”时间预算的一半。然而，3G目前仍然是全世界范围内主要的网络类型，并且这种情况仍然会持续几年时间——你必须用心去为3G用户优化你的页面。</dd>
+
+<dt>我使用JavaScript库，比如JQuery，对此有什么建议吗？</dt>
+
+<dd>许多JS库，例如JQuery，都被用来为页面添加附加的交互、动画和特效。但是，大部分的这些行为本可以在首屏内容渲染完毕之后再加入页面。可以考虑把这些JavaScript的执行和加载放在页面加载完毕之后。</dd>
+
+<dt>我用JavaScript框架去构建页面，对此有什么建议吗？</dt>
+
+<dd>如果页面的内容是由客户端JavaScript构建的，你应该考虑直接在页面中插入（inlining）相关的JavaScript模块，以避免额外的网络往返。类似的，使用服务端渲染可以显著提高首页（first page）的加载表现：在服务端渲染JS模板，在HTML中插入结果，然后当应用一加载完毕，就在客户端渲染模板。</dd>
+
+<dt>SPDY和HTTP 2.0 会对此有什么帮助吗?</dt>
+
+<dd>SPDY 和 HTTP 2.0 都旨在通过更有效的利用底层的TCP通信（多路复用、报头压缩、优先级请求）来降低页面加载的延迟时间。而且，服务端推送可以通过消除额外的网络延迟，大大地改善页面的表现。我们鼓励你考虑在你的服务器上增加对SPDY的支持，并且等标准一定稿，就切换到HTTP 2.0协议。
+（译者注：谷歌目前已经宣布Chrome将不会继续支持SPDY协议，但是会加强支持HTTP/2。实际上，HTTP/2的内容受到SPDY极大的影响。）</dd>
+
+<dt>我应该如何去找到那些关键的CSS代码?</dt>
+
+<dd>
+在Chrome开发者工具中，打开“Audits”面板，运行“Web页面表现报告”（Web Page Performance report），在生成的报告中，找到“移除无效CSS规则”（Remove unused CSS rules）。或者使用任何其他的第三方工具或者脚本，去确定每个页面上应用了哪些CSS选择器。</dd>
+
+<dt>这些最佳实践可以实现自动化吗?</dt>
+
+<dd>
+当然可以。有许多商业的或是开源的Web性能优化产品能帮助你实现以上部分或是全部的优化标准。想找到开源的解决方案，不妨看看<a href="https://developers.google.com/speed/pagespeed/optimization">PageSpeed optimization tools</a>。</dd>
+
+<dt>我该如何调整我的服务器去适应这些优化标准呢？</dt>
+
+<dd>
+首先，确保你的服务器运行了最新版的操作系统。为了从TCP协议的最初拥塞窗口数量的增加中获益，你需要Linux kernel 2.6.39+。对于其他的操作系统，请查阅文档。
+为了优化服务器响应时间，审查（instrument）你的代码，或是使用一个应用监测方案去确定你的瓶颈——比如，脚本运行时、数据库调用、RPC请求、渲染等等。我们的目标是在200ms内渲染出HTML响应。</dd>
+
+<dt>内容安全策略（Content Security Policy）怎么样？</dt>
+
+<dd>
+如果你使用CSP，那么你需要更新你的默认策略。
+首先，应该尽可能的在任何地方禁止行内的在HTML元素上的CSS特性（例如“&lt; p style=...&gt;”），因为这可能会导致不必要的代码重复，并且会被CSP默认屏蔽（通过"style-src"中的"unsafe inline"选项取消）。如果CSP是有效的，他将会默认屏蔽任何的行内脚本标签。如果你有行内脚本，那么你需要更新CSP策略，用<a href="http://www.w3.org/TR/CSP11/#script-src">script hashes or nonces</a>或者是用"unsafe-inline"去使你所有的行内脚本可以执行。如果你有行内样式，那么你需要用<a href="http://www.w3.org/TR/CSP11/#style-src">style hashes or nonces</a>或者还是用"unsafe-inline"去使你的行内样式可以使用。</dd>
+
+</dl>
+
+<p>有更多的问题？ 请自由的向我们的讨论群组提问 <a href="http://groups.google.com/group/pagespeed-insights-discuss">pagespeed-insights-discuss</a>.</p>
+</div></div>
+            <div class="original"><div><p># 
+Mobile Analysis in PageSpeed Insights</p>
+<p>PageSpeed Insights analyzes a page to see if it follows our recommendations for making a page render in under a second on a mobile network. Research has shown that any delay longer than a second will cause the user to interrupt their flow of thought, creating a poor experience. Our goal is to keep the user engaged with the page and deliver the optimal experience, regardless of device or type of network.</p>
+<p>It is not easy to meet the one second time budget. Luckily for us, the whole page doesn’t have to render within this budget, instead, <strong>we must deliver and render the above the fold (ATF) content in under one second, which allows the user to begin interacting with the page as soon as possible</strong>. Then, while the user is interpreting the first page of content, the rest of the page can be delivered progressively in the background.</p>
+<h3 id="adapting-to-high-latency-mobile-networks">Adapting to high latency mobile networks</h3>
+<p>Meeting the one second ATF criteria on mobile devices poses unique challenges which are not present on other networks. Users may be accessing your site through a variety of different 2G, 3G, and 4G networks. Network latencies are significantly higher than a wired connection, and consume a significant portion of our 1000 ms budget to render the ATF content:</p>
+<ul>
+<li>200-300 ms roundtrip times for 3G networks</li>
+<li>50-100 ms roundtrip times for 4G networks</li>
+</ul>
+<p>3G is the dominant network type around the world, and while 4G deployments are in progress around the world, you should still expect that the majority of users will be accessing your page on a 3G network. For this reason, we have to assume that each network request will take, on average, 200 milliseconds.</p>
+<p>With that in mind, let’s now work backwards. If we look at a typical sequence of communication between a browser and a server, 600 ms of that time has already been used up by network overhead: a DNS lookup to resolve the hostname (e.g. google.com) to an IP address, a network roundtrip to perform the TCP handshake, and finally a full network roundtrip to send the HTTP request. This leaves us with just 400 ms!</p>
+<p><img src="./Google Developers：移动Web优化指南（by 楚狂） - 众成翻译_files/1stimeline.png" alt=""></p>
+<h3 id="delivering-the-sub-one-second-rendering-experience">Delivering the sub one second rendering experience</h3>
+<p>After subtracting the network latency, we are left with just 400 milliseconds in our budget, and there is still a lot of work to do: server must render the response, client-side application code must execute, and the browser must layout and render the content. With that in mind, the following criteria should help us stay within the budget:</p>
+<dl>
+
+<dt>(1) Server must render the response (&lt; 200 ms)</dt>
+
+<dd>Server response time is the time it takes for a server to return the initial HTML, factoring out the network transport time. Because we only have so little time, this time should be kept at a minimum - ideally within 200 milliseconds, and preferably even less!</dd>
+
+<dt>(2) Number of redirects should be minimized</dt>
+
+<dd>Additional HTTP redirects can add one or two extra network roundtrips (two if an extra DNS lookup is required), incurring hundreds of milliseconds of extra latency on 3G networks. For this reason, we strongly encourage webmasters to minimize the number, and ideally eliminate redirects entirely - this is especially important for the HTML document (avoid “m dot” redirects when possible).</dd>
+
+<dt>(3) Number of roundtrips to first render should be minimized</dt>
+
+<dd>
+
+Due to how TCP estimates the capacity of a connection (i.e. <a href="http://en.wikipedia.org/wiki/Slow-start">TCP Slow Start</a>), a new TCP connection cannot immediately use the full available bandwidth between the client and the server. Because of this, the server can send up to 10 TCP packets on a new connection (~14KB) in first roundtrip, and then it must wait for client to acknowledge this data before it can grow its congestion window and proceed to deliver more data.
+
+Due to this TCP behavior, it is important to optimize your content to minimize the number of roundtrips required to deliver the necessary data to perform the first render of the page. Ideally, the ATF content should fit under 14KB - this allows the browser to paint the page after just one roundtrip. Also, it is important to note that the 10 packet (<a href="http://tools.ietf.org/html/draft-hkchu-tcpm-initcwnd-01">IW10</a>) limit is a recent update to the TCP standard: you should ensure that your server is upgraded to latest version to take advantage of this change. Otherwise, the limit will likely be 3-4 packets!
+
+</dd>
+
+<dt>(4) Avoid external blocking JavaScript and CSS in above-the-fold content</dt>
+
+<dd>
+
+Before a browser can render a page to the user, it has to parse the page. If it encounters a non-async or blocking external script during parsing, it has to stop and download that resource. Each time it does that, it is adding a network round trip, which will delay the time to first render of the page.
+
+As a result, the JavaScript and CSS needed to render the above the fold region should be inlined, and JavaScript or CSS needed to add additional functionality to the page should be loaded after the ATF content has been delivered.
+
+</dd>
+
+<dt>(5) Reserve time for browser layout and rendering (200 ms)</dt>
+
+<dd>The process of parsing the HTML, CSS, and executing JavaScript takes time and client resources! Depending on the speed of the mobile device, and the complexity of the page, this process can take hundreds of milliseconds. Our recommendation is to reserve 200 milliseconds for browser overhead.</dd>
+
+<dt>(6) Optimize JavaScript execution and rendering time</dt>
+
+<dd>Complicated scripts and inefficient code can take tens and hundreds of milliseconds to execute - use built-in developer tools in the browser to profile and optimize your code. For a great introduction, take a look at our<a href="http://discover-devtools.codeschool.com/">interactive course for Chrome Developer Tools.</a></dd>
+
+</dl>
+
+<aside><strong>Note: </strong>The above is also not the complete list of all possible optimizations - it is a list of top mobile criteria to deliver a sub one second rendering time - and all other <a href="https://developers.google.com/speed/docs/insights/rules">web performance best practices</a> should be applied. Check out <a href="https://developers.google.com/speed/pagespeed/insights">PageSpeed Insights</a>for further advice and recommendations. 
+For a deep-dive on the above mobile criteria, also check out
+
+<em>   <a href="https://developers.google.com/web/fundamentals/documentation/performance/critical-rendering-path/index">Web Fundamentals: Critical Rendering Path</a>
+</em>   Optimizing the Critical Rendering Path for Instant Mobile Websites (<a href="http://bit.ly/mobilecrp">slides</a>, <a href="http://www.youtube.com/watch?v=YV1nKLWoARQ">video</a>).
+*   Instant Mobile Websites: Techniques and Best Practices (<a href="http://storage.googleapis.com/io-2013/presentations/239-%20Instant%20Mobile%20Websites-%20Techniques%20and%20Best%20Practices.pdf">slides</a>, <a href="https://www.youtube.com/watch?v=Bzw8-ZLpwtw">video</a>)
+
+</aside>
+
+<h3 id="faq">FAQ</h3>
+<dl>
+
+<dt>How do 4G networks impact above mobile criteria?</dt>
+
+<dd>Lower roundtrip latencies are one of the key improvements in 4G networks. This will help enormously, by reducing the total network overhead time, which is currently over 50% of our one second budget on 3G networks. However, 3G is the dominant network type around the world, and will be for years to come - you have to optimize pages with 3G users in mind.</dd>
+
+<dt>I am using a JavaScript library, such as JQuery, any advice?</dt>
+
+<dd>Many JavaScript libraries, such as JQuery, are used to enhance the page to add additional interactivity, animations, and other effects. However, many of these behaviors can be safely added after the ATF content is rendered. Investigate moving the execution and loading of such JavaScript until after the page is loaded.</dd>
+
+<dt>I am using a JavaScript framework, to construct the page, any advice?</dt>
+
+<dd>If the content of the page is constructed by client-side JavaScript, then you should investigate inlining the relevant JavaScript modules to avoid extra network roundtrips. Similarly, leveraging server-side rendering can significantly improve first page load performance: render JS templates on the server, inline the results into HTML, and then use client-side templating once the application is loaded.</dd>
+
+<dt>How will SPDY and HTTP 2.0 help?</dt>
+
+<dd>SPDY and HTTP 2.0 both aim to reduce latency of page loads by making more efficient use of the underlying TCP connection (multiplexing, header compression, prioritization). Further, server push can further help improve performance by eliminating extra network latency. We encourage you to investigate adding SPDY support on your servers, and switching to HTTP 2.0 once the standard is ready.</dd>
+
+<dt>How do I identify critical CSS on my page?</dt>
+
+<dd>In Chrome Developer Tools, open the Audits panel, and run a Web Page Performance report, in the generated report, look for Remove unused CSS rules. Or use any other third party tool, or script, to identify which CSS selectors are applied on each page.</dd>
+
+<dt>Can these best practices be automated?</dt>
+
+<dd>Absolutely. There are many commercial and open-source web performance optimization (WPO) products which can help you meet some or all of the criteria above. For open-source solutions, take a look at the <a href="https://developers.google.com/speed/pagespeed/optimization">PageSpeed optimization tools</a>.</dd>
+
+<dt>How do I tune my server to meet these criteria?</dt>
+
+<dd>First, ensure that your server is running an up-to-date version of the operating system. In order to benefit from the increased initial TCP congestion window size (IW10), you will need Linux kernel 2.6.39+. For other operating systems, consult the documentation. 
+To optimize server response time, instrument your code, or use an application monitoring solution to identify your bottleneck - e.g., scripting runtime, database calls, RPC requests, rendering, etc. The goal is to render the HTML response within 200 milliseconds.</dd>
+
+<dt>What about Content Security Policy?</dt>
+
+<dd>If you are using CSP, then you may need to update your default policy. 
+First, inline CSS attributes on HTML elements(e.g., <code>&lt; p style=...&gt;</code>) should be avoided where possible, as they often lead to unnecessary code duplication, and are blocked by default with CSP (disabled via “unsafe inline” on “style-src”). If CSP is enabled, it will block all inline script tags by default. If you have inline JavaScript, then you will need to update the CSP policy to either use <a href="http://www.w3.org/TR/CSP11/#script-src">script hashes or nonces</a> or use “unsafe-inline” to enable all inline scripts to execute. If you have inline styles, then you will need to update the CSP policy to either use <a href="http://www.w3.org/TR/CSP11/#style-src">style hashes or nonces</a> or use "unsafe-inline" to enable all inline style blocks to be processed.</dd>
+
+</dl>
+
+<p>Have more questions? Please feel free to ask and provide feedback in our discussion group at <a href="http://groups.google.com/group/pagespeed-insights-discuss">pagespeed-insights-discuss</a>.</p>
+</div></div>
+            
+            <span class="clearfix"></span>
+            <div id="copyright">
+                <h2 class="title">版权声明</h2>
+                <div class="content">本译文仅用于学习、研究和交流目的，欢迎非商业转载。转载请注明出处、译者和众成翻译的完整链接。要获取包含以上信息的本文Markdown源文本，请<a class="get-markdown" href="http://www.zcfy.cc/api/getarticlemarkdown?id=609" target="_blank">点击这里</a>。</div>
+            </div>            
+        
+        
+        </div>
+    </div>
+    
+    <div class="payeeQRCode">
+        <div style="width:100px;height:100px;font-size:48px;line-height:100px;border-radius:50%;color:#fff;background:#fd4f56;margin:0 auto;position:relative;">赏</div>
+        <p style="color:#aaa;margin-top:1em;">
+        译者<a style="color:#aaa;text-decoration:underline;" href="http://www.zcfy.cc/@chukuang" target="_blank">楚狂</a>尚未开通打赏功能
+        </p>
+        
+    </div>
+    
+    <div class="claim-tag">
+        <!-- <h3>标签</h3> -->
+        <div class="ui-tag">
+        	
+    		      <a title="查看“Web”类的全部文章" href="http://www.zcfy.cc/article/tag/0">
+                        Web 
+                  </a>
+    		
+    		      <a title="查看“前端开发”类的全部文章" href="http://www.zcfy.cc/article/tag/6">
+                        前端开发 
+                  </a>
+    		
+        </div>
+              
+    </div>
+
+    
+    <div class="claim-meta">
+        <div class="cell-1">
+            <a href="http://www.zcfy.cc/article/609#" class="vote" data-article-id="609" data-article-owner="378"><i class="ui-icon ui-icon-up-b"></i><b class="txt-up">赞</b></a>
+            
+            <div class="avatar-cell">
+                
+                    
+                    
+                    <a class="avatar" href="http://www.zcfy.cc/@cuining" title="cuining" target="_blank">
+                        <img src="./Google Developers：移动Web优化指南（by 楚狂） - 众成翻译_files/t012ab3929100ce7047.jpg">
+                    </a> 
+                     <span class="txt">觉得这篇文章很赞</span>
+                
+            </div>   
+            
+        </div>
+        
+    </div>
+    
+
+</div>
+<div class="comment">
+    <div class="comment-inner">
+    <!-- 多说评论框 start -->
+    <a name="comment"></a>
+    
+    <div class="ds-thread" data-thread-key="zcfy-article-609" data-title="Google Developers：移动Web优化指南" data-url="http://www.zcfy.cc/article/609" id="ds-thread"><div id="ds-reset"><div class="ds-meta"><a href="javascript:void(0)" class="ds-like-thread-button ds-rounded"><span class="ds-icon ds-icon-heart"></span> <span class="ds-thread-like-text">喜欢</span><span class="ds-thread-cancel-like">取消喜欢</span></a><span class="ds-like-panel"></span></div><div class="ds-comments-info"><div class="ds-sort"><a class="ds-order-desc">最新</a><a class="ds-order-asc ds-current">最早</a><a class="ds-order-hot">最热</a></div><ul class="ds-comments-tabs"><li class="ds-tab"><a class="ds-comments-tab-duoshuo ds-current" href="javascript:void(0);">0条评论</a></li>  </ul></div><ul class="ds-comments"><li class="ds-post ds-post-placeholder">还没有评论，沙发等你来抢</li></ul><div class="ds-paginator" style="display: none;"><div class="ds-border"></div><a data-page="1" href="javascript:void(0);" class="ds-current">1</a></div><a name="respond"></a><div class="ds-toolbar"><div class="ds-account-control"><span class="ds-icon ds-icon-settings"></span> <span>帐号管理</span><ul><li><a class="ds-bind-more" href="javascript:void(0);" style="border-top: none">绑定更多</a></li><li><a target="_blank" href="http://duoshuo.com/settings/">设置</a></li><li><a rel="nofollow" href="http://zcfy.duoshuo.com/logout/" style="border-bottom: none">登出</a></li></ul></div><div class="ds-visitor"><a class="ds-visitor-name" href="http://t.qq.com/meiminjun" target="_blank">哦也</a><a class="ds-unread-comments-count" href="javascript:void(0);" title="你没有新回复" style="display: none;">0</a></div></div><div class="ds-replybox"><a class="ds-avatar" href="http://duoshuo.com/settings/avatar/" target="_blank" title="设置头像"><img src="./Google Developers：移动Web优化指南（by 楚狂） - 众成翻译_files/50" alt="哦也"></a><form method="post" lpformnum="1"><input type="hidden" name="thread_id" value="6301668473072255745">
+<input type="hidden" name="parent_id" value="">
+<input type="hidden" name="nonce" value="575ede1e31394"><div class="ds-textarea-wrapper ds-rounded-top"><textarea name="message" title="Ctrl+Enter快捷提交" placeholder="说点什么吧…"></textarea><pre class="ds-hidden-text"></pre></div><div class="ds-post-toolbar"><div class="ds-post-options ds-gradient-bg"><span class="ds-sync"><input id="ds-sync-checkbox" type="checkbox" name="repost" value=""> <label for="ds-sync-checkbox">分享到:</label><a href="javascript:void(0)" class="ds-service-icon-grey ds-qqt" data-service="qqt" title="腾讯微博"></a><a href="javascript:void(0)" class="ds-service-icon-grey ds-qzone" data-service="qzone" title="QQ空间"></a></span></div><button class="ds-post-button" type="submit">发布</button><div class="ds-toolbar-buttons"><a class="ds-toolbar-button ds-add-emote" title="插入表情"></a></div></div></form></div><p class="ds-powered-by"><a href="http://duoshuo.com/" target="_blank" rel="nofollow">众成翻译正在使用多说</a></p></div></div>
+    <!-- 多说评论框 end --><!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+
+
+<script type="text/javascript">var duoshuoQuery = {short_name:"zcfy"};
+    (function() {
+        var ds = document.createElement('script');
+        ds.type = 'text/javascript';ds.async = true;
+        ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+        ds.charset = 'UTF-8';
+        (document.getElementsByTagName('head')[0] 
+        || document.getElementsByTagName('body')[0]).appendChild(ds);
+    })();</script><!-- 多说公共JS代码 end -->
+
+
+    </div>
+</div>
+
+<div id="doc-ft">
+<div class="inner">
+<div>
+众成翻译 © 2014 - 2016 (<a href="http://www.miitbeian.gov.cn/">京ICP备14049726号-2</a>) 
+
+			Powered by <a target="_blank" href="http://thinkjs.org/">ThinkJS 2.0</a>
+
+<script type="text/javascript">var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");document.write(unescape("%3Cspan id='cnzz_stat_icon_1256992926'%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s11.cnzz.com/z_stat.php%3Fid%3D1256992926%26show%3Dpic' type='text/javascript'%3E%3C/script%3E"));</script><span id="cnzz_stat_icon_1256992926"></span><script src="http://s11.cnzz.com/z_stat.php?id=1256992926&amp;show=pic" type="text/javascript"></script>
+
+</div>
+</div>
+</div>
+<script src="./Google Developers：移动Web优化指南（by 楚狂） - 众成翻译_files/1102.js"></script>
+<script src="./Google Developers：移动Web优化指南（by 楚狂） - 众成翻译_files/layer.js"></script>
+
+
+<script src="./Google Developers：移动Web优化指南（by 楚狂） - 众成翻译_files/jweixin-1.0.0.js"></script>
+<script src="./Google Developers：移动Web优化指南（by 楚狂） - 众成翻译_files/prettify.min.js"></script>
+<script src="./Google Developers：移动Web优化指南（by 楚狂） - 众成翻译_files/article_detail.js"></script><a href="http://www.zcfy.cc/article/609#" class="elevator" title="返回顶部" style="display: none;"></a><i class="red" style="display:none;position:absolute;font-weight:bold;">+1</i>
+
+
+
+<audio controls="controls" style="display: none;"></audio><script aria-hidden="true" type="application/x-lastpass" id="hiddenlpsubmitdiv" style="display: none;"></script><div id="ds-notify" style="top: 24px; right: 24px; display: none;"><div id="ds-reset"><a class="ds-logo" href="http://duoshuo.com/" target="_blank" title="多说"></a><ul class="ds-notify-unread"><li style="display:none;"><a data-type="unread-comments" href="javascript:void(0);">你有undefined条新回复</a></li><li style="display:none;"><a data-type="unread-notifications" href="javascript:void(0);">你有undefined条系统消息</a></li></ul></div></div><script>try{(function() { for(var lastpass_iter=0; lastpass_iter < document.forms.length; lastpass_iter++){ var lastpass_f = document.forms[lastpass_iter]; if(typeof(lastpass_f.lpsubmitorig2)=="undefined"){ lastpass_f.lpsubmitorig2 = lastpass_f.submit; if (typeof(lastpass_f.lpsubmitorig2)=='object'){ continue;}lastpass_f.submit = function(){ var form=this; var customEvent = document.createEvent("Event"); customEvent.initEvent("lpCustomEvent", true, true); var d = document.getElementById("hiddenlpsubmitdiv"); if (d) {for(var i = 0; i < document.forms.length; i++){ if(document.forms[i]==form){ if (typeof(d.innerText) != 'undefined') { d.innerText=i.toString(); } else { d.textContent=i.toString(); } } } d.dispatchEvent(customEvent); }form.lpsubmitorig2(); } } }})()}catch(e){}</script></body><style type="text/css">#yddContainer{display:block;font-family:Microsoft YaHei;position:relative;width:100%;height:100%;top:-4px;left:-4px;font-size:12px;border:1px solid}#yddTop{display:block;height:22px}#yddTopBorderlr{display:block;position:static;height:17px;padding:2px 28px;line-height:17px;font-size:12px;color:#5079bb;font-weight:bold;border-style:none solid;border-width:1px}#yddTopBorderlr .ydd-sp{position:absolute;top:2px;height:0;overflow:hidden}.ydd-icon{left:5px;width:17px;padding:0px 0px 0px 0px;padding-top:17px;background-position:-16px -44px}.ydd-close{right:5px;width:16px;padding-top:16px;background-position:left -44px}#yddKeyTitle{float:left;text-decoration:none}#yddMiddle{display:block;margin-bottom:10px}.ydd-tabs{display:block;margin:5px 0;padding:0 5px;height:18px;border-bottom:1px solid}.ydd-tab{display:block;float:left;height:18px;margin:0 5px -1px 0;padding:0 4px;line-height:18px;border:1px solid;border-bottom:none}.ydd-trans-container{display:block;line-height:160%}.ydd-trans-container a{text-decoration:none;}#yddBottom{position:absolute;bottom:0;left:0;width:100%;height:22px;line-height:22px;overflow:hidden;background-position:left -22px}.ydd-padding010{padding:0 10px}#yddWrapper{color:#252525;z-index:10001;background:url(chrome-extension://eopjamdnofihpioajgfdikhhbobonhbb/ab20.png);}#yddContainer{background:#fff;border-color:#4b7598}#yddTopBorderlr{border-color:#f0f8fc}#yddWrapper .ydd-sp{background-image:url(chrome-extension://eopjamdnofihpioajgfdikhhbobonhbb/ydd-sprite.png)}#yddWrapper a,#yddWrapper a:hover,#yddWrapper a:visited{color:#50799b}#yddWrapper .ydd-tabs{color:#959595}.ydd-tabs,.ydd-tab{background:#fff;border-color:#d5e7f3}#yddBottom{color:#363636}#yddWrapper{min-width:250px;max-width:400px;}</style><div></div></html>

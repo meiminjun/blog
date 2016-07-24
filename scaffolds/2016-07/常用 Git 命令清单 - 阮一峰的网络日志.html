@@ -1,0 +1,2095 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!-- saved from url=(0059)http://www.ruanyifeng.com/blog/2015/12/git-cheat-sheet.html -->
+<html xmlns="http://www.w3.org/1999/xhtml" id="sixapart-standard"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+<meta name="generator" content="Movable Type  5.2.2">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="./常用 Git 命令清单 - 阮一峰的网络日志_files/styles.css" type="text/css">
+<link rel="start" href="http://www.ruanyifeng.com/blog/" title="Home">
+<link rel="alternate" type="application/atom+xml" title="Recent Entries" href="http://feeds.feedburner.com/ruanyifeng">
+<script async="" src="http://www.google-analytics.com/analytics.js"></script><script type="text/javascript" src="./常用 Git 命令清单 - 阮一峰的网络日志_files/mt.js"></script>
+<!--
+<rdf:RDF xmlns="http://web.resource.org/cc/"
+         xmlns:dc="http://purl.org/dc/elements/1.1/"
+         xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+<Work rdf:about="http://www.ruanyifeng.com/blog/2006/07/geoffrey_chaucer.html">
+<dc:title>乔叟《坎特伯雷故事集》（Geoffrey Chaucer）</dc:title>
+<dc:description> 从公元7世纪开始算起，到文艺复兴前夕，英语已经存在700年了。但是直到那时，它依然是民间的一种俗语，而且很不规范。乔叟（Geoffrey Chaucer）是历史上第一个用英语进行文学创作的人，他对英语的形成和发展起到了巨大的贡献，被公认为第一个英语文学家、英语文学的开创者。...</dc:description>
+<dc:creator>阮一峰</dc:creator>
+<dc:date>2006-07-13T08:08:41+08:00</dc:date>
+<license rdf:resource="http://creativecommons.org/licenses/by-nc-nd/3.0/" />
+</Work>
+<License rdf:about="http://creativecommons.org/licenses/by-nc-nd/3.0/">
+</License>
+</rdf:RDF>
+-->
+
+
+    
+    <link rel="prev" href="http://www.ruanyifeng.com/blog/2015/12/a-mocha-tutorial-of-examples.html" title="测试框架 Mocha 实例教程">
+    <link rel="next" href="http://www.ruanyifeng.com/blog/2015/12/safe-job.html" title="有没有安全的工作？">
+    
+    <title>常用 Git 命令清单 - 阮一峰的网络日志</title>
+<script src="./常用 Git 命令清单 - 阮一峰的网络日志_files/bsStatic.js" type="text/javascript" charset="utf-8"></script><script src="./常用 Git 命令清单 - 阮一峰的网络日志_files/fingerprint2.min.js" type="text/javascript" charset="utf-8"></script><script src="./常用 Git 命令清单 - 阮一峰的网络日志_files/bs-engine.js" type="text/javascript" charset="utf-8"></script><style type="text/css">a.bshareDiv,#bsPanel,#bsMorePanel,#bshareF{border:none;background:none;padding:0;margin:0;font:12px Helvetica,Calibri,Tahoma,Arial,宋体,sans-serif;line-height:14px;}#bsPanel div,#bsMorePanel div,#bshareF div{display:block;}.bsRlogo .bsPopupAwd,.bsRlogoSel .bsPopupAwd,.bsLogo .bsPopupAwd,.bsLogoSel .bsPopupAwd{line-height:16px !important;}a.bshareDiv div,#bsFloatTab div{*display:inline;zoom:1;display:inline-block;}a.bshareDiv img,a.bshareDiv div,a.bshareDiv span,a.bshareDiv a,#bshareF table,#bshareF tr,#bshareF td{text-decoration:none;background:none;margin:0;padding:0;border:none;line-height:1.2}a.bshareDiv span{display:inline;float:none;}div.buzzButton{cursor:pointer;font-weight:bold;}.buzzButton .shareCount a{color:#333}.bsStyle1 .shareCount a{color:#fff}span.bshareText{white-space:nowrap;}span.bshareText:hover{text-decoration:underline;}a.bshareDiv .bsPromo,div.bshare-custom .bsPromo{display:none;position:absolute;z-index:100;}a.bshareDiv .bsPromo.bsPromo1,div.bshare-custom .bsPromo.bsPromo1{width:51px;height:18px;top:-18px;left:0;line-height:16px;font-size:12px !important;font-weight:normal !important;color:#fff;text-align:center;background:url(http://static.bshare.cn/frame/images/bshare_box_sprite2.gif) no-repeat 0 -606px;}div.bshare-custom .bsPromo.bsPromo2{background:url(http://static.bshare.cn/frame/images/bshare_promo_sprite.gif) no-repeat;cursor:pointer;}</style><style type="text/css">.bsBox{display:none;z-index:100000001;font-size:12px;background:url(http://static.bshare.cn/frame/images//background-opaque-dark.gif) !important;padding:6px !important;-moz-border-radius:5px;-webkit-border-radius:5px;border-radius:5px;}.bsClose{_overflow:hidden;cursor:pointer;position:absolute;z-index:10000000;color:#666;font-weight:bold;font-family:Helvetica,Arial;font-size:14px;line-height:20px;}.bsTop{color:#666;background:#f2f2f2;height:24px;line-height:24px;border-bottom:1px solid #e8e8e8;}.bsTop span{float:left;}.bsFrameDiv,#bsMorePanel{border:none;background:#fff;}.bsReturn{float:right;*margin-right:20px;margin-right:36px;text-align:right;cursor:pointer;line-height:24px;color:#666;opacity:0.5;}#bsReturn:hover{text-decoration:underline;opacity:1;}</style><script src="./常用 Git 命令清单 - 阮一峰的网络日志_files/bsMore.js" type="text/javascript" charset="utf-8"></script><script src="./常用 Git 命令清单 - 阮一峰的网络日志_files/bshareS1.js" type="text/javascript" charset="utf-8"></script><style type="text/css">div.bsClear{clear:both;height:0;line-height:0;overflow:hidden;font-size:0;}.bsSearchDiv{padding:5px 15px;background-color:#fafafa;}.bFind-wrapper-top{background:#fff;border-color:#ccc #aaa #aaa #ccc;border-style:solid;border-width:1px;height:16px;padding:4px;margin:0;}.bFind-wrapper-top input{padding:0 !important;border:none !important;box-shadow:none !important;line-height:16px !important;}.bFind-placeholder{background:url("http://static.bshare.cn/css/images/search-icon.gif") no-repeat;display:block;float:left;height:16px;width:16px;}.bFind{background:none;border:none;float:left;font-size:11px !important;height:16px !important;margin-left:3px;outline:none;padding:0;width:400px;}.bsPlatDiv{height:322px;background:#fff;overflow:auto;padding:0 15px;}#bsLogoList{display:block;list-style:none;overflow:hidden;margin:0;padding:0;}#bsLogoList li{float:left;display:inline-block;width:71px;text-align:center;font-size:12px;height:80px;margin:0 !important;}#bsLogoList .bsPlatIcon{cursor:pointer;display:block !important;text-align:center;}#bsLogoList .bsPlatImg{width:32px;height:32px;border:none !important;display:inline-block;}#bsLogoList .bsPlatImg:hover{-moz-border-radius:7px;-webkit-border-radius:7px;border-radius:7px;box-shadow:0 0 15px #a7a8ac;}#bsLogoList .bsPlatName{white-space:nowrap;text-overflow:ellipsis;overflow:hidden;text-align:center;color:#333 !important;margin-top:2px;line-height:140%;*width:70px;}#bsLogoList .bsPromoM{text-align:center;}.bsFooterDiv{height:24px;line-height:24px;padding:0 15px;border-top:1px solid #e8e8e8;background:#f2f2f2;text-align:right;}a.bsLogoLink{color:#666;}.bsLogoLink:hover{text-decoration:underline;}.bsPromoM{background:url(http://static.bshare.cn/frame/images//bshare_box_sprite2.gif) no-repeat top left;}.bsNew,.bsHot,.bsRec,.bsAwd{background-position:0 -552px;width:19px;margin:5px auto 1px;line-height:16px;height:18px;font-size:12px;color:#fff;overflow:hidden;}.bsNew{background-position:0 -570px;}.bsRec{width:30px;background-position:0 -588px;}.bsAwd{background:url(http://static.bshare.cn/frame/images//promot/promote.gif) no-repeat;}</style><script src="http://bshare.optimix.asia/bshare_view?Callback=bShare.viewcb&amp;url=http%3A%2F%2Fwww.ruanyifeng.com%2Fblog%2F2015%2F12%2Fgit-cheat-sheet.html&amp;h=&amp;uuid=15e016b4-0028-44f1-a40d-a3c9d9c13c28&amp;l=17&amp;lite=1&amp;ref=http%3A%2F%2Fwww.ruanyifeng.com%2Fblog%2Fdeveloper%2F&amp;ot=%E5%B8%B8%E7%94%A8%20Git%20%E5%91%BD%E4%BB%A4%E6%B8%85%E5%8D%95%20-%20%E9%98%AE%E4%B8%80%E5%B3%B0%E7%9A%84%E7%BD%91%E7%BB%9C%E6%97%A5%E5%BF%97&amp;cs=UTF-8&amp;fp=3944463eb2f2bf1fb78c1816dc094f72&amp;b=bs2206d6" type="text/javascript" charset="utf-8"></script><script src="./常用 Git 命令清单 - 阮一峰的网络日志_files/bsPlatforms.js" type="text/javascript" charset="utf-8"></script><style type="text/css">a.bsSiteLink{text-decoration:none;color:#666;}a.bsSiteLink:hover{text-decoration:underline;}a.bshareDiv{overflow:hidden;height:16px;line-height:18px;font-size:14px;color:#333;padding-left:0;}a.bshareDiv:hover{text-decoration:none;}div.bsTitle{padding:0 8px;border-bottom:1px solid #e8e8e8;color:#666;background:#f2f2f2;text-align:left;}div.buzzButton{cursor:pointer;}div.bsRlogo,div.bsRlogoSel{width:68px;float:left;margin:0;padding:2px 0;}div.bsRlogo a,div.bsRlogoSel a{float:left;}div.bsLogo,div.bsLogoSel{float:left;width:111px;text-align:left;height:auto;padding:2px 4px;margin:2px 0;white-space:nowrap;overflow:hidden;}div.bsLogoSel,div.bsRlogoSel{border:1px solid #ddd;background:#f1f1f1;}div.bsLogo,div.bsRlogo{border:1px solid #fff;background:#fff;}div.bsLogo a,div.bsLogoSel a{display:block;height:16px;line-height:16px;padding:0 0 0 24px;text-decoration:none;float:left;overflow:hidden;}div.bsLogoSel a,div.bsRlogoSel a{color:#000;border:none;}div.bsLogo a,div.bsRlogo a{color:#666;border:none;}div.bsLogoLink{width:121px;overflow:hidden;background:#FFF;float:left;margin:3px 0;}#bsLogin{float:right;text-align:right;overflow:hidden;height:100%;}#bsPanel{position:absolute;z-index:100000000;font-size:12px;width:258px;background:url(http://static.bshare.cn/frame/images/background-opaque-dark.png) !important;padding:6px !important;-moz-border-radius:5px;-webkit-border-radius:5px;border-radius:5px;}div.bsClear{clear:both;height:0;line-height:0;font-size:0;overflow:hidden;}div.bsPopupAwd{background:url(http://static.bshare.cn/frame/images//bshare_box_sprite2.gif) no-repeat top left;background-position:0 -624px;width:18px;padding-left:3px;text-align:center;float:left;margin-left: 2px;height:15px;font-size:12px;color:#fff;overflow:hidden;}div.bsRlogo .bsPopupAwd,div.bsRlogoSel .bsPopupAwd{float:left;margin:5px 0 0 -14px;}</style></head>
+<body id="scrapbook" class="mt-entry-archive one-column">
+<script>
+if (/mobile/i.test(navigator.userAgent) || /android/i.test(navigator.userAgent)) document.body.classList.add('mobile');
+</script>
+    <div id="container">
+        <div id="container-inner">
+
+            <div id="header">
+    <div id="header-inner">
+        <div id="header-content">
+
+
+            <div id="header-name">阮一峰的网络日志 <span id="site_location"> » <a href="http://www.ruanyifeng.com/blog/" accesskey="1">首页</a></span><span id="site_archive"> » <a href="http://www.ruanyifeng.com/blog/archives.html">档案</a></span>
+</div>
+
+<div id="google_search">
+<!-- SiteSearch Google -->
+<form action="http://www.ruanyifeng.com/blog/search.html" id="cse-search-box">
+      <div>
+        <input type="hidden" name="cx" value="016304377626642577906:b_e9skaywzq">
+    <input type="hidden" name="cof" value="FORID:11">
+    <input type="hidden" name="ie" value="UTF-8">
+        <input type="text" name="q" size="20" class="searchbox" id="sbi" value="">
+        <input type="image" src="./常用 Git 命令清单 - 阮一峰的网络日志_files/top_search_submit.gif" class="searchbox_submit" value="" alt="搜索" name="sa">
+      </div>
+    </form>
+<!-- SiteSearch Google -->
+</div>
+<div id="feed_icon">
+<a href="http://www.ruanyifeng.com/feed.html" title="订阅Feed">
+<img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAABGdBTUEAAK/INwWK6QAAABl0RVh0U29mdHdhcmUAQWRvYmUgSW1hZ2VSZWFkeXHJZTwAAAUzSURBVHjavFdbbFRVFF3nPjoz7dTWTittaW0jUDRAUqaNojyqREnEQKgfUj9MqqAmhqRt/OCD4CuY+Kckoh+aiGKC+gMJbdHoRysJ8dkhhmJLNdDKtJU+6GMK87j3Hs85d2Z6HzNtMYWb3Dn3NWftvfba+5xNYDl+e6Fkj6yqb/oDRbWq14vlPBLRKCITkxf0ROLt+hNjp1PPSRK4kA3vF1dXNRcWlyA2OQU9eos9opAkAiKxD+XkKO6t15aRWO7J/MgmAZU8MEgexgZHMX518Dh72sYMmVKShnxWuWHdHtxKIDIYTgMuDzgfmSOIQkYMpdUF8OY92Hytt4/jvkg47czzU16iQovM3QFwmNck+Yyduu7D6NA0Z6JR4THntFs9V4tWQg6Ui3s6MwKDncsFTnXKLJhDSeUK3AgPtyhccDzmVs999buRt/1Vm4i0od+hX7+MRG87jPGB/w1u8FPj9xEw7McVrnYuOCvtpjTth3J/nTg99c8LRhKhr6D3dTB5R24bXFwbMXBsyZzeoXaycEpJ95TB09AGX/NpqLVNtw8urnVzLvHjFNxiFqRy2OOHuqUVnue+ACkoWzo4O6lGzTmuHq6nPvY2m9rVqjrIK2rMEKxqyG5NPAKt+wjo0LklgfNxJkZMA3KJvqRUk3z5UFY3QH14P0h+WUY79HPvgv7VuSg4ZRGY1YgZgqXmORccF17sy2ehnf9AeO085K2HQFbtXBScj0LcpgF2cN+WV+DZ/LJQu6gD4R7oV7pBJwbSgtMvfiPoVp56DySwxm7EtkMs1WdAB7qzggsDJKQYsHucSkOudrkiCPWR/fA2nYCn8SNIK4NptSMyAu3sAdDRkIsJdfth0LzSrODUoPNZ4KI9SxJI5UHk7D4GdQfz2us31c7CoHMjRkKuDPHseCMrONVhNcDJwMJpKFVvg9L4OaTiNWm1x789KCqkrXhVBiEz0WYCT2nAzQAD1/vaETv1GrRfP4Vx5cfMNcDPwvP0h0DhanPym7OIf/+O67vcJ1/PCJ4KgdzaUP6Wz+dU+5yIL6fV+PsHGAOdwlPpvvUOyeeAVGyCdqkDNB6DPjsBSrnndfOGevOh3RhGItxvA+fX1CtbGFhgYUFkFMZPR6F1HnClHq8HyubWtJexX06CRmdt33hrd7nA7SFY4qoGpnYuOKcRykPPgDCBcsHx9Iv+fNL2PueBehCWUfYQIIMGLOCcOmXDXsh1+yCt35tUPfvzGFuSvzvoinXOxqa02qOhM6733nVP2MAdaej2XN11DPKjLZCD+yBvahGCo7JfTKAN9UD7s8Oe9zUNIhz8fWI8DG2k38WCFdxugANcXrvTVd1IEbuv3Jour7Hzn7jLMBNfKs7R3i67gRVrbeCOEDhinmWhAatsqdquM2XzHZINhK2cqTjHr/XZdVJUbgN3MWAVXKbSyg9jesRW2xP9di+lwrL5ojM3m2H/kG9hwcIA37c71W6wJdW2J2S5nrjYbq/t1AHAhJsKQeyfPvf6IMJgghPJhFZ4x0KlfLFvt22du45Au/A1SOlGc0P672XXwhLtOcM0kTTEMMd0qkVmMNXxMd/tsedUjInr4SQDgOfeXMSiN0FCL5WHah4L1qqYXPJOJlttd+a5M+YpcG5poLYKQ5f+6JJ4r8bbJYP47hq4r7QAs9PjYNhHJd4o8l5taiwuOpa7AS4XKqI/5NjJbTnaWK92nLdLuhQAJayRNMiygXPBeQN+Qbvu0zDc3y+aUzhbkGR73sI7ljvUnndx2q3t+X8CDAD66FtrIL864AAAAABJRU5ErkJggg==" alt="" style="border: 0pt none;">
+</a></div>
+
+        </div>
+    </div>
+</div>
+
+
+
+            <div id="content">
+                <div id="content-inner">
+
+
+                    <div id="alpha">
+                        <div id="alpha-inner">
+
+
+                            <div id="entry-1861" class="entry-asset asset hentry">
+                                <div class="asset-header">
+<div class="asset-nav entry-nav">
+
+<div class="entry-location">
+<ul>
+<li>上一篇：<a href="http://www.ruanyifeng.com/blog/2015/12/a-mocha-tutorial-of-examples.html" title="测试框架 Mocha 实例教程">测试框架&nbsp;Mocha&nbsp;</a></li>
+<li>下一篇：<a href="http://www.ruanyifeng.com/blog/2015/12/safe-job.html" title="有没有安全的工作？">有没有安全的工作？&nbsp;&nbsp;</a></li>
+</ul>
+</div>
+
+
+    
+                                    <div class="entry-categories">
+                                        <p>分类<span class="delimiter">：</span></p>
+                                        <ul>
+                                            <li><a href="http://www.ruanyifeng.com/blog/developer/" rel="tag">开发者手册</a></li>
+                                        </ul>
+                                    </div>
+    
+
+
+                                            
+</div>
+                                </div>
+<article class="hentry">
+                                    <h1 id="page-title" class="asset-name entry-title">常用 Git 命令清单</h1>
+                                            <div id="share_button" style="float:right;padding-right:2em;padding-top:1em;">
+<a class="bshareDiv" href="http://www.bshare.cn/share" style="display: block; text-decoration: none; padding: 0px; margin: 0px; font-size: 12px; height: 21px; width: 51px;"><div class="bsPromo bsPromo1"></div><div class="buzzButton bsStyle10" style="height:21px;color:#333;;background:transparent url(http://static.bshare.cn/frame/images/button_custom10-zh-Orange.gif) no-repeat;text-align:center;width:51px;"></div><div style="clear:both;"></div></a>
+
+
+
+<script type="text/javascript" charset="utf-8" src="./常用 Git 命令清单 - 阮一峰的网络日志_files/buttonLite.js"></script>
+<script type="text/javascript" charset="utf-8">
+bShare.addEntry({
+    title: document.getElementById("page-title").innerHTML,
+url:window.location.href
+});
+</script>
+</div>
+                                    <div class="asset-meta">
+                                        
+
+                                            <p class="vcard author">作者： <a class="fn url" href="http://www.ruanyifeng.com/">阮一峰</a></p>
+                                    <p>日期： <a href="http://www.ruanyifeng.com/blog/2015/12/"><abbr class="published" title="2015-12-09T09:54:31+08:00">2015年12月 9日</abbr></a></p>
+
+
+                                    </div>
+                                
+                                <div class="asset-content entry-content" id="main-content">
+
+                                    <!-- div class="asset-body" -->
+                                        <p>我每天使用 Git ，但是很多命令记不住。</p>
+
+                                    <!-- /div -->
+
+
+                                    <!-- div id="more" class="asset-more" -->
+                                        <p>一般来说，日常使用只要记住下图6个命令，就可以了。但是熟练使用，恐怕要记住60～100个命令。</p>
+
+<p><img src="./常用 Git 命令清单 - 阮一峰的网络日志_files/bg2015120901.png" style="width:800px;"></p>
+
+<p>下面是我整理的常用 Git 命令清单。几个专用名词的译名如下。</p>
+
+<blockquote>
+  <ul>
+<li>Workspace：工作区</li>
+<li>Index / Stage：暂存区</li>
+<li>Repository：仓库区（或本地仓库）</li>
+<li>Remote：远程仓库</li>
+</ul>
+</blockquote>
+
+<h2>一、新建代码库</h2>
+
+<blockquote><pre class=" language-bash"><code class=" language-bash">
+<span class="token comment" spellcheck="true"># 在当前目录新建一个Git代码库
+</span>$ git init
+
+<span class="token comment" spellcheck="true"># 新建一个目录，将其初始化为Git代码库
+</span>$ git init <span class="token punctuation">[</span>project<span class="token operator">-</span>name<span class="token punctuation">]</span>
+
+<span class="token comment" spellcheck="true"># 下载一个项目和它的整个代码历史
+</span>$ git clone <span class="token punctuation">[</span>url<span class="token punctuation">]</span>
+</code></pre></blockquote>
+
+<h2>二、配置</h2>
+
+<p>Git的设置文件为<code>.gitconfig</code>，它可以在用户主目录下（全局配置），也可以在项目目录下（项目配置）。</p>
+
+<blockquote><pre class=" language-bash"><code class=" language-bash">
+<span class="token comment" spellcheck="true"># 显示当前的Git配置
+</span>$ git config <span class="token operator">--</span>list
+
+<span class="token comment" spellcheck="true"># 编辑Git配置文件
+</span>$ git config <span class="token operator">-</span>e <span class="token punctuation">[</span><span class="token operator">--</span>global<span class="token punctuation">]</span>
+
+<span class="token comment" spellcheck="true"># 设置提交代码时的用户信息
+</span>$ git config <span class="token punctuation">[</span><span class="token operator">--</span>global<span class="token punctuation">]</span> user<span class="token punctuation">.</span>name <span class="token string">"[name]"</span>
+$ git config <span class="token punctuation">[</span><span class="token operator">--</span>global<span class="token punctuation">]</span> user<span class="token punctuation">.</span>email <span class="token string">"[email address]"</span>
+</code></pre></blockquote>
+
+<h2>三、增加/删除文件</h2>
+
+<blockquote><pre class=" language-bash"><code class=" language-bash">
+<span class="token comment" spellcheck="true"># 添加指定文件到暂存区
+</span>$ git add <span class="token punctuation">[</span>file1<span class="token punctuation">]</span> <span class="token punctuation">[</span>file2<span class="token punctuation">]</span> <span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span>
+
+<span class="token comment" spellcheck="true"># 添加指定目录到暂存区，包括子目录
+</span>$ git add <span class="token punctuation">[</span>dir<span class="token punctuation">]</span>
+
+<span class="token comment" spellcheck="true"># 添加当前目录的所有文件到暂存区
+</span>$ git add <span class="token punctuation">.</span>
+
+<span class="token comment" spellcheck="true"># 添加每个变化前，都会要求确认
+</span><span class="token comment" spellcheck="true"># 对于同一个文件的多处变化，可以实现分次提交
+</span>$ git add <span class="token operator">-</span>p
+
+<span class="token comment" spellcheck="true"># 删除工作区文件，并且将这次删除放入暂存区
+</span>$ git rm <span class="token punctuation">[</span>file1<span class="token punctuation">]</span> <span class="token punctuation">[</span>file2<span class="token punctuation">]</span> <span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span>
+
+<span class="token comment" spellcheck="true"># 停止追踪指定文件，但该文件会保留在工作区
+</span>$ git rm <span class="token operator">--</span>cached <span class="token punctuation">[</span>file<span class="token punctuation">]</span>
+
+<span class="token comment" spellcheck="true"># 改名文件，并且将这个改名放入暂存区
+</span>$ git mv <span class="token punctuation">[</span>file<span class="token operator">-</span>original<span class="token punctuation">]</span> <span class="token punctuation">[</span>file<span class="token operator">-</span>renamed<span class="token punctuation">]</span>
+</code></pre></blockquote>
+
+<h2>四、代码提交</h2>
+
+<blockquote><pre class=" language-bash"><code class=" language-bash">
+<span class="token comment" spellcheck="true"># 提交暂存区到仓库区
+</span>$ git commit <span class="token operator">-</span>m <span class="token punctuation">[</span>message<span class="token punctuation">]</span>
+
+<span class="token comment" spellcheck="true"># 提交暂存区的指定文件到仓库区
+</span>$ git commit <span class="token punctuation">[</span>file1<span class="token punctuation">]</span> <span class="token punctuation">[</span>file2<span class="token punctuation">]</span> <span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span> <span class="token operator">-</span>m <span class="token punctuation">[</span>message<span class="token punctuation">]</span>
+
+<span class="token comment" spellcheck="true"># 提交工作区自上次commit之后的变化，直接到仓库区
+</span>$ git commit <span class="token operator">-</span>a
+
+<span class="token comment" spellcheck="true"># 提交时显示所有diff信息
+</span>$ git commit <span class="token operator">-</span>v
+
+<span class="token comment" spellcheck="true"># 使用一次新的commit，替代上一次提交
+</span><span class="token comment" spellcheck="true"># 如果代码没有任何新变化，则用来改写上一次commit的提交信息
+</span>$ git commit <span class="token operator">--</span>amend <span class="token operator">-</span>m <span class="token punctuation">[</span>message<span class="token punctuation">]</span>
+
+<span class="token comment" spellcheck="true"># 重做上一次commit，并包括指定文件的新变化
+</span>$ git commit <span class="token operator">--</span>amend <span class="token punctuation">[</span>file1<span class="token punctuation">]</span> <span class="token punctuation">[</span>file2<span class="token punctuation">]</span> <span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span>
+</code></pre></blockquote>
+
+<h2>五、分支</h2>
+
+<blockquote><pre class=" language-bash"><code class=" language-bash">
+<span class="token comment" spellcheck="true"># 列出所有本地分支
+</span>$ git branch
+
+<span class="token comment" spellcheck="true"># 列出所有远程分支
+</span>$ git branch <span class="token operator">-</span>r
+
+<span class="token comment" spellcheck="true"># 列出所有本地分支和远程分支
+</span>$ git branch <span class="token operator">-</span>a
+
+<span class="token comment" spellcheck="true"># 新建一个分支，但依然停留在当前分支
+</span>$ git branch <span class="token punctuation">[</span>branch<span class="token operator">-</span>name<span class="token punctuation">]</span>
+
+<span class="token comment" spellcheck="true"># 新建一个分支，并切换到该分支
+</span>$ git checkout <span class="token operator">-</span>b <span class="token punctuation">[</span>branch<span class="token punctuation">]</span>
+
+<span class="token comment" spellcheck="true"># 新建一个分支，指向指定commit
+</span>$ git branch <span class="token punctuation">[</span>branch<span class="token punctuation">]</span> <span class="token punctuation">[</span>commit<span class="token punctuation">]</span>
+
+<span class="token comment" spellcheck="true"># 新建一个分支，与指定的远程分支建立追踪关系
+</span>$ git branch <span class="token operator">--</span>track <span class="token punctuation">[</span>branch<span class="token punctuation">]</span> <span class="token punctuation">[</span>remote<span class="token operator">-</span>branch<span class="token punctuation">]</span>
+
+<span class="token comment" spellcheck="true"># 切换到指定分支，并更新工作区
+</span>$ git checkout <span class="token punctuation">[</span>branch<span class="token operator">-</span>name<span class="token punctuation">]</span>
+
+<span class="token comment" spellcheck="true"># 切换到上一个分支
+</span>$ git checkout <span class="token operator">-</span>
+
+<span class="token comment" spellcheck="true"># 建立追踪关系，在现有分支与指定的远程分支之间
+</span>$ git branch <span class="token operator">--</span><span class="token keyword">set</span><span class="token operator">-</span>upstream <span class="token punctuation">[</span>branch<span class="token punctuation">]</span> <span class="token punctuation">[</span>remote<span class="token operator">-</span>branch<span class="token punctuation">]</span>
+
+<span class="token comment" spellcheck="true"># 合并指定分支到当前分支
+</span>$ git merge <span class="token punctuation">[</span>branch<span class="token punctuation">]</span>
+
+<span class="token comment" spellcheck="true"># 选择一个commit，合并进当前分支
+</span>$ git cherry<span class="token operator">-</span>pick <span class="token punctuation">[</span>commit<span class="token punctuation">]</span>
+
+<span class="token comment" spellcheck="true"># 删除分支
+</span>$ git branch <span class="token operator">-</span>d <span class="token punctuation">[</span>branch<span class="token operator">-</span>name<span class="token punctuation">]</span>
+
+<span class="token comment" spellcheck="true"># 删除远程分支
+</span>$ git push origin <span class="token operator">--</span>delete <span class="token punctuation">[</span>branch<span class="token operator">-</span>name<span class="token punctuation">]</span>
+$ git branch <span class="token operator">-</span>dr <span class="token punctuation">[</span>remote<span class="token operator">/</span>branch<span class="token punctuation">]</span>
+</code></pre></blockquote>
+
+<h2>六、标签</h2>
+
+<blockquote><pre class=" language-bash"><code class=" language-bash">
+<span class="token comment" spellcheck="true"># 列出所有tag
+</span>$ git tag
+
+<span class="token comment" spellcheck="true"># 新建一个tag在当前commit
+</span>$ git tag <span class="token punctuation">[</span>tag<span class="token punctuation">]</span>
+
+<span class="token comment" spellcheck="true"># 新建一个tag在指定commit
+</span>$ git tag <span class="token punctuation">[</span>tag<span class="token punctuation">]</span> <span class="token punctuation">[</span>commit<span class="token punctuation">]</span>
+
+<span class="token comment" spellcheck="true"># 删除本地tag
+</span>$ git tag <span class="token operator">-</span>d <span class="token punctuation">[</span>tag<span class="token punctuation">]</span>
+
+<span class="token comment" spellcheck="true"># 删除远程tag
+</span>$ git push origin <span class="token punctuation">:</span>refs<span class="token operator">/</span>tags<span class="token operator">/</span><span class="token punctuation">[</span>tagName<span class="token punctuation">]</span>
+
+<span class="token comment" spellcheck="true"># 查看tag信息
+</span>$ git show <span class="token punctuation">[</span>tag<span class="token punctuation">]</span>
+
+<span class="token comment" spellcheck="true"># 提交指定tag
+</span>$ git push <span class="token punctuation">[</span>remote<span class="token punctuation">]</span> <span class="token punctuation">[</span>tag<span class="token punctuation">]</span>
+
+<span class="token comment" spellcheck="true"># 提交所有tag
+</span>$ git push <span class="token punctuation">[</span>remote<span class="token punctuation">]</span> <span class="token operator">--</span>tags
+
+<span class="token comment" spellcheck="true"># 新建一个分支，指向某个tag
+</span>$ git checkout <span class="token operator">-</span>b <span class="token punctuation">[</span>branch<span class="token punctuation">]</span> <span class="token punctuation">[</span>tag<span class="token punctuation">]</span>
+</code></pre></blockquote>
+
+<h2>七、查看信息</h2>
+
+<blockquote><pre class=" language-bash"><code class=" language-bash">
+<span class="token comment" spellcheck="true"># 显示有变更的文件
+</span>$ git status
+
+<span class="token comment" spellcheck="true"># 显示当前分支的版本历史
+</span>$ git log
+
+<span class="token comment" spellcheck="true"># 显示commit历史，以及每次commit发生变更的文件
+</span>$ git log <span class="token operator">--</span>stat
+
+<span class="token comment" spellcheck="true"># 搜索提交历史，根据关键词
+</span>$ git log <span class="token operator">-</span>S <span class="token punctuation">[</span>keyword<span class="token punctuation">]</span>
+
+<span class="token comment" spellcheck="true"># 显示某个commit之后的所有变动，每个commit占据一行
+</span>$ git log <span class="token punctuation">[</span>tag<span class="token punctuation">]</span> HEAD <span class="token operator">--</span>pretty<span class="token operator">=</span>format<span class="token punctuation">:</span><span class="token operator">%</span>s
+
+<span class="token comment" spellcheck="true"># 显示某个commit之后的所有变动，其"提交说明"必须符合搜索条件
+</span>$ git log <span class="token punctuation">[</span>tag<span class="token punctuation">]</span> HEAD <span class="token operator">--</span>grep feature
+
+<span class="token comment" spellcheck="true"># 显示某个文件的版本历史，包括文件改名
+</span>$ git log <span class="token operator">--</span>follow <span class="token punctuation">[</span>file<span class="token punctuation">]</span>
+$ git whatchanged <span class="token punctuation">[</span>file<span class="token punctuation">]</span>
+
+<span class="token comment" spellcheck="true"># 显示指定文件相关的每一次diff
+</span>$ git log <span class="token operator">-</span>p <span class="token punctuation">[</span>file<span class="token punctuation">]</span>
+
+<span class="token comment" spellcheck="true"># 显示过去5次提交
+</span>$ git log <span class="token operator">-</span><span class="token number">5</span> <span class="token operator">--</span>pretty <span class="token operator">--</span>oneline
+
+<span class="token comment" spellcheck="true"># 显示所有提交过的用户，按提交次数排序
+</span>$ git shortlog <span class="token operator">-</span>sn
+
+<span class="token comment" spellcheck="true"># 显示指定文件是什么人在什么时间修改过
+</span>$ git blame <span class="token punctuation">[</span>file<span class="token punctuation">]</span>
+
+<span class="token comment" spellcheck="true"># 显示暂存区和工作区的差异
+</span>$ git diff
+
+<span class="token comment" spellcheck="true"># 显示暂存区和上一个commit的差异
+</span>$ git diff <span class="token operator">--</span>cached <span class="token punctuation">[</span>file<span class="token punctuation">]</span>
+
+<span class="token comment" spellcheck="true"># 显示工作区与当前分支最新commit之间的差异
+</span>$ git diff HEAD
+
+<span class="token comment" spellcheck="true"># 显示两次提交之间的差异
+</span>$ git diff <span class="token punctuation">[</span>first<span class="token operator">-</span>branch<span class="token punctuation">]</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">[</span>second<span class="token operator">-</span>branch<span class="token punctuation">]</span>
+
+<span class="token comment" spellcheck="true"># 显示今天你写了多少行代码
+</span>$ git diff <span class="token operator">--</span>shortstat <span class="token string">"@{0 day ago}"</span>
+
+<span class="token comment" spellcheck="true"># 显示某次提交的元数据和内容变化
+</span>$ git show <span class="token punctuation">[</span>commit<span class="token punctuation">]</span>
+
+<span class="token comment" spellcheck="true"># 显示某次提交发生变化的文件
+</span>$ git show <span class="token operator">--</span>name<span class="token operator">-</span>only <span class="token punctuation">[</span>commit<span class="token punctuation">]</span>
+
+<span class="token comment" spellcheck="true"># 显示某次提交时，某个文件的内容
+</span>$ git show <span class="token punctuation">[</span>commit<span class="token punctuation">]</span><span class="token punctuation">:</span><span class="token punctuation">[</span>filename<span class="token punctuation">]</span>
+
+<span class="token comment" spellcheck="true"># 显示当前分支的最近几次提交
+</span>$ git reflog
+</code></pre></blockquote>
+
+<h2>八、远程同步</h2>
+
+<blockquote><pre class=" language-bash"><code class=" language-bash">
+<span class="token comment" spellcheck="true"># 下载远程仓库的所有变动
+</span>$ git fetch <span class="token punctuation">[</span>remote<span class="token punctuation">]</span>
+
+<span class="token comment" spellcheck="true"># 显示所有远程仓库
+</span>$ git remote <span class="token operator">-</span>v
+
+<span class="token comment" spellcheck="true"># 显示某个远程仓库的信息
+</span>$ git remote show <span class="token punctuation">[</span>remote<span class="token punctuation">]</span>
+
+<span class="token comment" spellcheck="true"># 增加一个新的远程仓库，并命名
+</span>$ git remote add <span class="token punctuation">[</span>shortname<span class="token punctuation">]</span> <span class="token punctuation">[</span>url<span class="token punctuation">]</span>
+
+<span class="token comment" spellcheck="true"># 取回远程仓库的变化，并与本地分支合并
+</span>$ git pull <span class="token punctuation">[</span>remote<span class="token punctuation">]</span> <span class="token punctuation">[</span>branch<span class="token punctuation">]</span>
+
+<span class="token comment" spellcheck="true"># 上传本地指定分支到远程仓库
+</span>$ git push <span class="token punctuation">[</span>remote<span class="token punctuation">]</span> <span class="token punctuation">[</span>branch<span class="token punctuation">]</span>
+
+<span class="token comment" spellcheck="true"># 强行推送当前分支到远程仓库，即使有冲突
+</span>$ git push <span class="token punctuation">[</span>remote<span class="token punctuation">]</span> <span class="token operator">--</span>force
+
+<span class="token comment" spellcheck="true"># 推送所有分支到远程仓库
+</span>$ git push <span class="token punctuation">[</span>remote<span class="token punctuation">]</span> <span class="token operator">--</span>all
+</code></pre></blockquote>
+
+<h2>九、撤销</h2>
+
+<blockquote><pre class=" language-bash"><code class=" language-bash">
+<span class="token comment" spellcheck="true"># 恢复暂存区的指定文件到工作区
+</span>$ git checkout <span class="token punctuation">[</span>file<span class="token punctuation">]</span>
+
+<span class="token comment" spellcheck="true"># 恢复某个commit的指定文件到暂存区和工作区
+</span>$ git checkout <span class="token punctuation">[</span>commit<span class="token punctuation">]</span> <span class="token punctuation">[</span>file<span class="token punctuation">]</span>
+
+<span class="token comment" spellcheck="true"># 恢复暂存区的所有文件到工作区
+</span>$ git checkout <span class="token punctuation">.</span>
+
+<span class="token comment" spellcheck="true"># 重置暂存区的指定文件，与上一次commit保持一致，但工作区不变
+</span>$ git reset <span class="token punctuation">[</span>file<span class="token punctuation">]</span>
+
+<span class="token comment" spellcheck="true"># 重置暂存区与工作区，与上一次commit保持一致
+</span>$ git reset <span class="token operator">--</span>hard
+
+<span class="token comment" spellcheck="true"># 重置当前分支的指针为指定commit，同时重置暂存区，但工作区不变
+</span>$ git reset <span class="token punctuation">[</span>commit<span class="token punctuation">]</span>
+
+<span class="token comment" spellcheck="true"># 重置当前分支的HEAD为指定commit，同时重置暂存区和工作区，与指定commit一致
+</span>$ git reset <span class="token operator">--</span>hard <span class="token punctuation">[</span>commit<span class="token punctuation">]</span>
+
+<span class="token comment" spellcheck="true"># 重置当前HEAD为指定commit，但保持暂存区和工作区不变
+</span>$ git reset <span class="token operator">--</span>keep <span class="token punctuation">[</span>commit<span class="token punctuation">]</span>
+
+<span class="token comment" spellcheck="true"># 新建一个commit，用来撤销指定commit
+</span><span class="token comment" spellcheck="true"># 后者的所有变化都将被前者抵消，并且应用到当前分支
+</span>$ git revert <span class="token punctuation">[</span>commit<span class="token punctuation">]</span>
+
+<span class="token comment" spellcheck="true"># 暂时将未提交的变化移除，稍后再移入
+</span>$ git stash
+$ git stash pop
+</code></pre></blockquote>
+
+<h2>十、其他</h2>
+
+<blockquote><pre class=" language-bash"><code class=" language-bash">
+<span class="token comment" spellcheck="true"># 生成一个可供发布的压缩包
+</span>$ git archive
+</code></pre></blockquote>
+
+<p>（完）</p>
+
+                                    <!-- /div -->
+
+                                </div>
+    <script type="text/javascript" src="./常用 Git 命令清单 - 阮一峰的网络日志_files/newwindow.js"></script>
+                                <div class="asset-footer">
+
+<h3>文档信息</h3>
+<ul>
+<li>版权声明：自由转载-非商用-非衍生-保持署名（<a href="http://creativecommons.org/licenses/by-nc-nd/3.0/deed.zh">创意共享3.0许可证</a>）</li>
+<li>发表日期： <abbr class="published" title="2015-12-09T09:54:31+08:00">2015年12月 9日</abbr></li>
+<li>更多内容： <a href="http://www.ruanyifeng.com/blog/archives.html" target="_blank"> 档案</a>  » 
+<a href="http://www.ruanyifeng.com/blog/developer/"> 开发者手册</a> 
+</li>
+<li>购买文集：<a href="http://www.ruanyifeng.com/blog/2014/12/my-blog-book.html" target="_blank"><img src="data:image/png;base64,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" style="border:0;"> 《如何变得有思想》</a></li>
+<li>社交媒体：<a href="https://twitter.com/ruanyf" target="_blank"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAk1JREFUeNqsVc9rE0EU/mZ3dhPNJl2bVIk/Km09aFBE8GLvnrwJXvwLxIsgCP4Fnit6E8Gb0IMHwUsL9SSNgiAoooJIpE1Joo1h82uT7IxvxmRN3Q32kAdvdrI773vfe+/bDTu9WioDcDAda3Ja8piepQ1avCkCeny0Y+R9KenKwOmHHLvPaKn7AtVOoO8dOWDCMpg+41gMQv5FNEJACgoE8MsPNLDBhgfoutMOsJDmWLmU037C4TApciljwQ/kHoohQxV06+wMXNvE7WINuaSpvdYVKLgWnl3O4zAxU3Z1IYVGT+B5qYWV9z2kbQaT/cOwTsxOUUYF+mB5Dkmi8HG3h2q9hxsFNwRTdvQgxxnXRrMvIdkEhllis/qtiWuLDm4WZnBlPoWnXz28LHdw0uGR7m9Wu3j0qYGEubfn4UlBfXO4gTZltRNMg9w9f0i7kNFxllsBlS0x75gYfxyWTBUjT2W5CSMSPBrQuG21+hiMDS8CeCzF8eSLp13uQ3Ab1IqMFZN8tFHPmgOBF99bYP8Be1Xp6t7OJszJgKpPSiZvaj7uf2hguz2IBQuozDvFH6RDBjuK9wdQDvt0nMpW+8efGyh5UcAeZb2+UcHbnz5Jx4wdlp4yJYU3kLiQtfBwOYeLc8nIwfXtNu69q2Oz4mMxbemYOOOjKarhvq51KUjg3GwiFPIuvcNF6pnSnWK0lOEabNLgQh1aJFAhlGB9rG110B2+oyRNPc0sZbRNFltmLKDKqj4Qrm1ojzOxDz2pyPQ0P7CK4c40/wJ+CzAAGYrXsvfFXR4AAAAASUVORK5CYII=" style="border:0;"> twitter</a>，<a href="http://weibo.com/ruanyf" target="_blank"><img src="data:image/png;base64,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" style="border:0;"> weibo</a></li>
+<li>Feed订阅： <a href="http://www.ruanyifeng.com/feed.html" target="_blank"><img src="data:image/gif;base64,R0lGODlhFAAUANU2APV1GfmrePZ8IeR5VPq2ieNkLf7p3NpFJveCJ/NoFfibVPR1IexiJfvdzuZrNfXGuOhUEueTevaFOfzIpNxDGeZZJNU6IOubifiVTfOnid1aLuZpLOFSJf/28vJtIvGcefaLSd5kNu9iFv/z6//48//t4uFfLfNkCeJNGuGNc/rCof/+/PVxEeldI/V5KeKMbu9nIvB2OvzQtNxMKfOPXP///wAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACH5BAEAADYALAAAAAAUABQAAAb/QJstEjKZCsjCZsl0pIS2QWXaYsA8noVWIEAgFoNhhWNyMESi7Jbr/aZCFdRnZJAFJCwAt+vlOkwtEBk1hDUkExJ6bQJaGyYMLTQTDSOFHQF8jAseSFYiJwkuAQ2FE1xaHjBIMDAgARguJwABJIQTLJswDEgeIgSEJQQILAqVNQEiui1HHgkBhTUGCiwYtR0xLS0VJhtaEgoEBoQkGCfPNSoQY9xaCwAsCBPALgmkJA4cZN0CAAgY/PJqEIDwgVAECjM0bOAnwcAKGQJclKhRgoGDDjUeUDigkN8vQiBOfByAglSDAxw3IBCgYEU0FyJoEPpA4UGNDjMsaHDQR8EdPVYOMmQYQGHAhQgHLIRIsWAlgASsGMRBMWMGBQtYZ7yIsoBRKkhjOMxAiXJGGCEpHGxIYsSIhrcaQmy1EQQAOw==" style="border:0;"></a></li>
+
+</ul>
+                                </div>
+</article>
+                            </div>
+
+   <div id="gegz1">
+   <p style="text-align:center;"><a href="http://www.zhufengpeixun.cn/jscourse/new/js/index.html?ref=ruanyifeng.com" target="_blank"><img alt="珠峰培训" src="http://www.ruanyifeng.com/blog/images/sup_zhufeng_page.png" width="600" height="160" style="border: none; display: none !important;"></a></p>
+   <p style="text-align:center;"><a href="https://h5.jianxun.io/20160321-qianlima?utm_source=event&amp;utm_medium=blog_ad&amp;utm_campaign=qianlima&amp;utm_content=ruanyifeng&amp;utm_term=wangzhan" target="_blank"><img alt="简寻" src="https://www.jianxun.io/ad/20151101/ruanyifeng-bottombanner.png" width="600" height="160" style="border: none; display: none !important;"></a></p>
+   </div>
+
+<div id="related_entries">
+<h2>相关文章</h2>
+<ul>
+
+<li><strong>2016.07.04: <a href="http://www.ruanyifeng.com/blog/2016/07/yaml.html">YAML 语言教程</a></strong>
+
+                           <div class="entry-body">
+                              编程免不了要写配置文件，怎么写配置也是一门学问。
+
+                           </div>
+
+</li>
+
+ 
+<li><strong>2016.07.02: <a href="http://www.ruanyifeng.com/blog/2016/07/google-monolithic-source-repository.html">谷歌的代码管理</a></strong>
+
+                           <div class="entry-body">
+                              谷歌和 Facebook 都只有一个代码仓库，全公司的代码都放在这个库里。
+
+                           </div>
+
+</li>
+
+ 
+<li><strong>2016.06.10: <a href="http://www.ruanyifeng.com/blog/2016/06/css_modules.html">CSS Modules 用法教程</a></strong>
+
+                           <div class="entry-body">
+                              学过网页开发就会知道，CSS 不能算编程语言，只是网页样式的一种描述方法。
+
+                           </div>
+
+</li>
+
+ 
+<li><strong>2016.03.08: <a href="http://www.ruanyifeng.com/blog/2016/03/systemd-tutorial-part-two.html">Systemd 入门教程：实战篇</a></strong>
+
+                           <div class="entry-body">
+                              上一篇文章，我介绍了 Systemd 的主要命令，今天介绍如何使用它完成一些基本的任务。
+
+                           </div>
+
+</li>
+
+ 
+</ul>
+</div>
+
+
+<div id="gd1">
+<h2>广告<a href="http://www.ruanyifeng.com/support.html">（购买广告位）</a></h2>
+<div id="gd1-inner">
+<div id="gd1-left">
+<a href="http://web.wuxianedu.com/yideng/?utm_source=ruanyifeng.com" title="一灯学堂" target="_blank"><img alt="一灯学堂" src="http://www.ruanyifeng.com/blog/images/sup_yideng_new.png" style="border: none; display: none !important;"></a>
+<br>
+<a href="http://www.zhinengshe.com/?utm_source=ruanyifeng.com" title="智能社" target="_blank"><img alt="智能社" src="http://www.ruanyifeng.com/blog/images/sup_zhinengshe.jpg" style="border: none; display: none !important;"></a>
+</div>
+<div id="gd1-right">
+
+<a href="http://100offer.com/join/ruanyifeng?utm_source=ruanyifeng&amp;utm_medium=dis&amp;utm_campaign=ruanyifeng" target="_blank"><img src="http://www.ruanyifeng.com/blog/images/sup_1000ffer_2.jpg" style="border: none; display: none !important;"></a><br>
+<a href="https://v2ex.com/t/290883" title="IvyMobi" target="_blank"><img alt="IvyMobi" src="http://www.ruanyifeng.com/blog/images/sup_ivymobi.png" style="width: 300px; height: 250px; border: none; display: none !important;"></a>
+
+</div>
+</div>
+</div>
+                    
+
+                    <div id="comments" class="comments">
+
+
+    
+    
+        
+    <h2 class="comments-header">留言（41条）</h2>
+
+    <div id="comments-content" class="comments-content" style="clear: left;">
+        
+        <div id="comment-353175" class="comment">
+    <div class="inner">
+        <div class="comment-header">
+            <div class="asset-meta">
+<p>
+                <span class="byline">
+                    
+
+                    <span class="vcard author"><a title="http://www.pureage.info" href="http://www.pureage.info/" target="_blank" rel="nofollow">strider</a></span>
+
+ 说：
+                </span>
+</p>
+            </div>
+        </div>
+        <div class="comment-content" id="comment-quote-353175">
+            <p>常用的也是你提到的这几个，其他的每次都要现查。</p>
+        </div>
+<div class="comment-footer">
+<div class="comment-footer-inner">
+<p>
+                   <abbr class="published" title="December  9, 2015 10:08 AM">2015年12月 9日 10:08</abbr>
+ | <a href="http://www.ruanyifeng.com/blog/2015/12/git-cheat-sheet.html#comment-353175">#</a>
+ | <a href="http://www.ruanyifeng.com/blog/2015/12/git-cheat-sheet.html#comment-text" title="引用strider的这条留言" onclick="return CommentQuote(&#39;comment-quote-353175&#39;,&#39;strider&#39;);">引用</a>
+</p>
+</div>
+</div>
+    </div>
+</div>
+        
+    
+        
+        <div id="comment-353176" class="comment">
+    <div class="inner">
+        <div class="comment-header">
+            <div class="asset-meta">
+<p>
+                <span class="byline">
+                    
+
+                    <span class="vcard author"><a title="https://JustYY.com" href="https://justyy.com/" target="_blank" rel="nofollow">JustYY.com 小赖子的英国生活和资讯。</a></span>
+
+ 说：
+                </span>
+</p>
+            </div>
+        </div>
+        <div class="comment-content" id="comment-quote-353176">
+            <p>多谢  很实用</p>
+        </div>
+<div class="comment-footer">
+<div class="comment-footer-inner">
+<p>
+                   <abbr class="published" title="December  9, 2015 10:25 AM">2015年12月 9日 10:25</abbr>
+ | <a href="http://www.ruanyifeng.com/blog/2015/12/git-cheat-sheet.html#comment-353176">#</a>
+ | <a href="http://www.ruanyifeng.com/blog/2015/12/git-cheat-sheet.html#comment-text" title="引用JustYY.com 小赖子的英国生活和资讯。的这条留言" onclick="return CommentQuote(&#39;comment-quote-353176&#39;,&#39;JustYY.com 小赖子的英国生活和资讯。&#39;);">引用</a>
+</p>
+</div>
+</div>
+    </div>
+</div>
+        
+    
+        
+        <div id="comment-353178" class="comment">
+    <div class="inner">
+        <div class="comment-header">
+            <div class="asset-meta">
+<p>
+                <span class="byline">
+                    
+
+                    <span class="vcard author"><a title="http://yanhaijing.com" href="http://yanhaijing.com/" target="_blank" rel="nofollow">yanhaijing</a></span>
+
+ 说：
+                </span>
+</p>
+            </div>
+        </div>
+        <div class="comment-content" id="comment-quote-353178">
+            <p><a href="http://yanhaijing.com/git/2014/11/01/my-git-note" rel="nofollow">http://yanhaijing.com/git/2014/11/01/my-git-note</a> 类似文章，但没有阮老师写的清晰</p>
+        </div>
+<div class="comment-footer">
+<div class="comment-footer-inner">
+<p>
+                   <abbr class="published" title="December  9, 2015 10:28 AM">2015年12月 9日 10:28</abbr>
+ | <a href="http://www.ruanyifeng.com/blog/2015/12/git-cheat-sheet.html#comment-353178">#</a>
+ | <a href="http://www.ruanyifeng.com/blog/2015/12/git-cheat-sheet.html#comment-text" title="引用yanhaijing的这条留言" onclick="return CommentQuote(&#39;comment-quote-353178&#39;,&#39;yanhaijing&#39;);">引用</a>
+</p>
+</div>
+</div>
+    </div>
+</div>
+        
+    
+        
+        <div id="comment-353179" class="comment">
+    <div class="inner">
+        <div class="comment-header">
+            <div class="asset-meta">
+<p>
+                <span class="byline">
+                    
+
+                    <span class="vcard author">Tony</span>
+
+ 说：
+                </span>
+</p>
+            </div>
+        </div>
+        <div class="comment-content" id="comment-quote-353179">
+            <p>想不通那些说 git 超级简单的人, 是一种什么心理!</p>
+        </div>
+<div class="comment-footer">
+<div class="comment-footer-inner">
+<p>
+                   <abbr class="published" title="December  9, 2015 10:32 AM">2015年12月 9日 10:32</abbr>
+ | <a href="http://www.ruanyifeng.com/blog/2015/12/git-cheat-sheet.html#comment-353179">#</a>
+ | <a href="http://www.ruanyifeng.com/blog/2015/12/git-cheat-sheet.html#comment-text" title="引用Tony的这条留言" onclick="return CommentQuote(&#39;comment-quote-353179&#39;,&#39;Tony&#39;);">引用</a>
+</p>
+</div>
+</div>
+    </div>
+</div>
+        
+    
+        
+        <div id="comment-353180" class="comment">
+    <div class="inner">
+        <div class="comment-header">
+            <div class="asset-meta">
+<p>
+                <span class="byline">
+                    
+
+                    <span class="vcard author">hmy</span>
+
+ 说：
+                </span>
+</p>
+            </div>
+        </div>
+        <div class="comment-content" id="comment-quote-353180">
+            <p>git 的实现原理很简单，相对其他版本管理系统</p>
+        </div>
+<div class="comment-footer">
+<div class="comment-footer-inner">
+<p>
+                   <abbr class="published" title="December  9, 2015 10:33 AM">2015年12月 9日 10:33</abbr>
+ | <a href="http://www.ruanyifeng.com/blog/2015/12/git-cheat-sheet.html#comment-353180">#</a>
+ | <a href="http://www.ruanyifeng.com/blog/2015/12/git-cheat-sheet.html#comment-text" title="引用hmy的这条留言" onclick="return CommentQuote(&#39;comment-quote-353180&#39;,&#39;hmy&#39;);">引用</a>
+</p>
+</div>
+</div>
+    </div>
+</div>
+        
+    
+        
+        <div id="comment-353184" class="comment">
+    <div class="inner">
+        <div class="comment-header">
+            <div class="asset-meta">
+<p>
+                <span class="byline">
+                    
+
+                    <span class="vcard author"><a title="http://www.awesomes.cn" href="http://www.awesomes.cn/" target="_blank" rel="nofollow">笔墨</a></span>
+
+ 说：
+                </span>
+</p>
+            </div>
+        </div>
+        <div class="comment-content" id="comment-quote-353184">
+            <p>git --orphan gh-pages 也很重要，用于创建一个全新的分支，不包含原分支的提交历史，Gihthub项目主页分支用这个。</p>
+        </div>
+<div class="comment-footer">
+<div class="comment-footer-inner">
+<p>
+                   <abbr class="published" title="December  9, 2015 11:20 AM">2015年12月 9日 11:20</abbr>
+ | <a href="http://www.ruanyifeng.com/blog/2015/12/git-cheat-sheet.html#comment-353184">#</a>
+ | <a href="http://www.ruanyifeng.com/blog/2015/12/git-cheat-sheet.html#comment-text" title="引用笔墨的这条留言" onclick="return CommentQuote(&#39;comment-quote-353184&#39;,&#39;笔墨&#39;);">引用</a>
+</p>
+</div>
+</div>
+    </div>
+</div>
+        
+    
+        
+        <div id="comment-353188" class="comment">
+    <div class="inner">
+        <div class="comment-header">
+            <div class="asset-meta">
+<p>
+                <span class="byline">
+                    
+
+                    <span class="vcard author">SpicyCat</span>
+
+ 说：
+                </span>
+</p>
+            </div>
+        </div>
+        <div class="comment-content" id="comment-quote-353188">
+            <p>没有git bisec就算了，连git rebase也没有？git rebase算是比较常用的了。<br>
+看log建议用gitk，不用记那么多参数。<br>
+git alias 也比较有用。<br>
+但是常用的就那么几个，不常用的还是要现查手册。<br>
+感觉阮老师这一篇略水。</p>
+        </div>
+<div class="comment-footer">
+<div class="comment-footer-inner">
+<p>
+                   <abbr class="published" title="December  9, 2015 12:09 PM">2015年12月 9日 12:09</abbr>
+ | <a href="http://www.ruanyifeng.com/blog/2015/12/git-cheat-sheet.html#comment-353188">#</a>
+ | <a href="http://www.ruanyifeng.com/blog/2015/12/git-cheat-sheet.html#comment-text" title="引用SpicyCat的这条留言" onclick="return CommentQuote(&#39;comment-quote-353188&#39;,&#39;SpicyCat&#39;);">引用</a>
+</p>
+</div>
+</div>
+    </div>
+</div>
+        
+    
+        
+        <div id="comment-353189" class="comment">
+    <div class="inner">
+        <div class="comment-header">
+            <div class="asset-meta">
+<p>
+                <span class="byline">
+                    
+
+                    <span class="vcard author"><a title="http://www.awesomes.cn" href="http://www.awesomes.cn/" target="_blank" rel="nofollow">笔墨</a></span>
+
+ 说：
+                </span>
+</p>
+            </div>
+        </div>
+        <div class="comment-content" id="comment-quote-353189">
+            <blockquote>
+<pre>引用笔墨的发言：</pre>
+
+<p>git --orphan gh-pages 也很重要，用于创建一个全新的分支，不包含原分支的提交历史，Gihthub项目主页分支用这个。</p>
+
+</blockquote>
+
+<p>错了，是 git checkout --orphan gh-pages</p>
+        </div>
+<div class="comment-footer">
+<div class="comment-footer-inner">
+<p>
+                   <abbr class="published" title="December  9, 2015 12:24 PM">2015年12月 9日 12:24</abbr>
+ | <a href="http://www.ruanyifeng.com/blog/2015/12/git-cheat-sheet.html#comment-353189">#</a>
+ | <a href="http://www.ruanyifeng.com/blog/2015/12/git-cheat-sheet.html#comment-text" title="引用笔墨的这条留言" onclick="return CommentQuote(&#39;comment-quote-353189&#39;,&#39;笔墨&#39;);">引用</a>
+</p>
+</div>
+</div>
+    </div>
+</div>
+        
+    
+        
+        <div id="comment-353190" class="comment">
+    <div class="inner">
+        <div class="comment-header">
+            <div class="asset-meta">
+<p>
+                <span class="byline">
+                    
+
+                    <span class="vcard author">Eich</span>
+
+ 说：
+                </span>
+</p>
+            </div>
+        </div>
+        <div class="comment-content" id="comment-quote-353190">
+            <p>显示两次差异的中间不是两个点的吗？</p>
+        </div>
+<div class="comment-footer">
+<div class="comment-footer-inner">
+<p>
+                   <abbr class="published" title="December  9, 2015 12:51 PM">2015年12月 9日 12:51</abbr>
+ | <a href="http://www.ruanyifeng.com/blog/2015/12/git-cheat-sheet.html#comment-353190">#</a>
+ | <a href="http://www.ruanyifeng.com/blog/2015/12/git-cheat-sheet.html#comment-text" title="引用Eich的这条留言" onclick="return CommentQuote(&#39;comment-quote-353190&#39;,&#39;Eich&#39;);">引用</a>
+</p>
+</div>
+</div>
+    </div>
+</div>
+        
+    
+        
+        <div id="comment-353191" class="comment">
+    <div class="inner">
+        <div class="comment-header">
+            <div class="asset-meta">
+<p>
+                <span class="byline">
+                    
+
+                    <span class="vcard author">阮一峰</span>
+
+ 说：
+                </span>
+</p>
+            </div>
+        </div>
+        <div class="comment-content" id="comment-quote-353191">
+            <p>@Eich</p>
+
+<p>三个点比两个点包括更多的commit。</p>
+
+<p><a href="http://stackoverflow.com/questions/462974/what-are-the-differences-between-double-dot-and-triple-dot-in-git-com#answer-24186641" rel="nofollow">http://stackoverflow.com/questions/462974/what-are-the-differences-between-double-dot-and-triple-dot-in-git-com#answer-24186641</a></p>
+        </div>
+<div class="comment-footer">
+<div class="comment-footer-inner">
+<p>
+                   <abbr class="published" title="December  9, 2015  1:37 PM">2015年12月 9日 13:37</abbr>
+ | <a href="http://www.ruanyifeng.com/blog/2015/12/git-cheat-sheet.html#comment-353191">#</a>
+ | <a href="http://www.ruanyifeng.com/blog/2015/12/git-cheat-sheet.html#comment-text" title="引用阮一峰的这条留言" onclick="return CommentQuote(&#39;comment-quote-353191&#39;,&#39;阮一峰&#39;);">引用</a>
+</p>
+</div>
+</div>
+    </div>
+</div>
+        
+    
+        
+        <div id="comment-353192" class="comment">
+    <div class="inner">
+        <div class="comment-header">
+            <div class="asset-meta">
+<p>
+                <span class="byline">
+                    
+
+                    <span class="vcard author">Emily</span>
+
+ 说：
+                </span>
+</p>
+            </div>
+        </div>
+        <div class="comment-content" id="comment-quote-353192">
+            <p>噗，不太会用命令行，一直用 sourceTree</p>
+        </div>
+<div class="comment-footer">
+<div class="comment-footer-inner">
+<p>
+                   <abbr class="published" title="December  9, 2015  2:10 PM">2015年12月 9日 14:10</abbr>
+ | <a href="http://www.ruanyifeng.com/blog/2015/12/git-cheat-sheet.html#comment-353192">#</a>
+ | <a href="http://www.ruanyifeng.com/blog/2015/12/git-cheat-sheet.html#comment-text" title="引用Emily的这条留言" onclick="return CommentQuote(&#39;comment-quote-353192&#39;,&#39;Emily&#39;);">引用</a>
+</p>
+</div>
+</div>
+    </div>
+</div>
+        
+    
+        
+        <div id="comment-353195" class="comment">
+    <div class="inner">
+        <div class="comment-header">
+            <div class="asset-meta">
+<p>
+                <span class="byline">
+                    
+
+                    <span class="vcard author"><a title="http://www.catscarlet.com/" href="http://www.catscarlet.com/" target="_blank" rel="nofollow">石樱灯笼</a></span>
+
+ 说：
+                </span>
+</p>
+            </div>
+        </div>
+        <div class="comment-content" id="comment-quote-353195">
+            <p>求问开头那个图是用什么软件画的？</p>
+        </div>
+<div class="comment-footer">
+<div class="comment-footer-inner">
+<p>
+                   <abbr class="published" title="December  9, 2015  5:02 PM">2015年12月 9日 17:02</abbr>
+ | <a href="http://www.ruanyifeng.com/blog/2015/12/git-cheat-sheet.html#comment-353195">#</a>
+ | <a href="http://www.ruanyifeng.com/blog/2015/12/git-cheat-sheet.html#comment-text" title="引用石樱灯笼的这条留言" onclick="return CommentQuote(&#39;comment-quote-353195&#39;,&#39;石樱灯笼&#39;);">引用</a>
+</p>
+</div>
+</div>
+    </div>
+</div>
+        
+    
+        
+        <div id="comment-353198" class="comment">
+    <div class="inner">
+        <div class="comment-header">
+            <div class="asset-meta">
+<p>
+                <span class="byline">
+                    
+
+                    <span class="vcard author">az</span>
+
+ 说：
+                </span>
+</p>
+            </div>
+        </div>
+        <div class="comment-content" id="comment-quote-353198">
+            <p>git pull<br>
+git add .<br>
+git commit -m 'well'<br>
+git push origin <br>
+</p>
+        </div>
+<div class="comment-footer">
+<div class="comment-footer-inner">
+<p>
+                   <abbr class="published" title="December  9, 2015  9:08 PM">2015年12月 9日 21:08</abbr>
+ | <a href="http://www.ruanyifeng.com/blog/2015/12/git-cheat-sheet.html#comment-353198">#</a>
+ | <a href="http://www.ruanyifeng.com/blog/2015/12/git-cheat-sheet.html#comment-text" title="引用az的这条留言" onclick="return CommentQuote(&#39;comment-quote-353198&#39;,&#39;az&#39;);">引用</a>
+</p>
+</div>
+</div>
+    </div>
+</div>
+        
+    
+        
+        <div id="comment-353206" class="comment">
+    <div class="inner">
+        <div class="comment-header">
+            <div class="asset-meta">
+<p>
+                <span class="byline">
+                    
+
+                    <span class="vcard author">Mark</span>
+
+ 说：
+                </span>
+</p>
+            </div>
+        </div>
+        <div class="comment-content" id="comment-quote-353206">
+            <p>阮老師<br>
+我可以轉譯成繁中轉貼到我的blog嗎？</p>
+        </div>
+<div class="comment-footer">
+<div class="comment-footer-inner">
+<p>
+                   <abbr class="published" title="December 10, 2015  1:43 PM">2015年12月10日 13:43</abbr>
+ | <a href="http://www.ruanyifeng.com/blog/2015/12/git-cheat-sheet.html#comment-353206">#</a>
+ | <a href="http://www.ruanyifeng.com/blog/2015/12/git-cheat-sheet.html#comment-text" title="引用Mark的这条留言" onclick="return CommentQuote(&#39;comment-quote-353206&#39;,&#39;Mark&#39;);">引用</a>
+</p>
+</div>
+</div>
+    </div>
+</div>
+        
+    
+        
+        <div id="comment-353207" class="comment">
+    <div class="inner">
+        <div class="comment-header">
+            <div class="asset-meta">
+<p>
+                <span class="byline">
+                    
+
+                    <span class="vcard author">Ivan</span>
+
+ 说：
+                </span>
+</p>
+            </div>
+        </div>
+        <div class="comment-content" id="comment-quote-353207">
+            <p>最近阮兄一直在钻研技术，什么时候再写写人文社科类的文章</p>
+        </div>
+<div class="comment-footer">
+<div class="comment-footer-inner">
+<p>
+                   <abbr class="published" title="December 10, 2015  1:50 PM">2015年12月10日 13:50</abbr>
+ | <a href="http://www.ruanyifeng.com/blog/2015/12/git-cheat-sheet.html#comment-353207">#</a>
+ | <a href="http://www.ruanyifeng.com/blog/2015/12/git-cheat-sheet.html#comment-text" title="引用Ivan的这条留言" onclick="return CommentQuote(&#39;comment-quote-353207&#39;,&#39;Ivan&#39;);">引用</a>
+</p>
+</div>
+</div>
+    </div>
+</div>
+        
+    
+        
+        <div id="comment-353210" class="comment">
+    <div class="inner">
+        <div class="comment-header">
+            <div class="asset-meta">
+<p>
+                <span class="byline">
+                    
+
+                    <span class="vcard author">阮一峰</span>
+
+ 说：
+                </span>
+</p>
+            </div>
+        </div>
+        <div class="comment-content" id="comment-quote-353210">
+            <p>@Mark：非常欢迎啊。</p>
+
+<p>@Ivan：只要能抽出时间，就会写。</p>
+        </div>
+<div class="comment-footer">
+<div class="comment-footer-inner">
+<p>
+                   <abbr class="published" title="December 10, 2015  3:39 PM">2015年12月10日 15:39</abbr>
+ | <a href="http://www.ruanyifeng.com/blog/2015/12/git-cheat-sheet.html#comment-353210">#</a>
+ | <a href="http://www.ruanyifeng.com/blog/2015/12/git-cheat-sheet.html#comment-text" title="引用阮一峰的这条留言" onclick="return CommentQuote(&#39;comment-quote-353210&#39;,&#39;阮一峰&#39;);">引用</a>
+</p>
+</div>
+</div>
+    </div>
+</div>
+        
+    
+        
+        <div id="comment-353213" class="comment">
+    <div class="inner">
+        <div class="comment-header">
+            <div class="asset-meta">
+<p>
+                <span class="byline">
+                    
+
+                    <span class="vcard author"><a title="http://blog.sina.com.cn/mergine" href="http://blog.sina.com.cn/mergine" target="_blank" rel="nofollow">zhangbo9716</a></span>
+
+ 说：
+                </span>
+</p>
+            </div>
+        </div>
+        <div class="comment-content" id="comment-quote-353213">
+            <p>阮老师最近写的都是技术的文章啊。很少思想类的文章了。</p>
+        </div>
+<div class="comment-footer">
+<div class="comment-footer-inner">
+<p>
+                   <abbr class="published" title="December 10, 2015  7:04 PM">2015年12月10日 19:04</abbr>
+ | <a href="http://www.ruanyifeng.com/blog/2015/12/git-cheat-sheet.html#comment-353213">#</a>
+ | <a href="http://www.ruanyifeng.com/blog/2015/12/git-cheat-sheet.html#comment-text" title="引用zhangbo9716的这条留言" onclick="return CommentQuote(&#39;comment-quote-353213&#39;,&#39;zhangbo9716&#39;);">引用</a>
+</p>
+</div>
+</div>
+    </div>
+</div>
+        
+    
+        
+        <div id="comment-353216" class="comment">
+    <div class="inner">
+        <div class="comment-header">
+            <div class="asset-meta">
+<p>
+                <span class="byline">
+                    
+
+                    <span class="vcard author">ky</span>
+
+ 说：
+                </span>
+</p>
+            </div>
+        </div>
+        <div class="comment-content" id="comment-quote-353216">
+            <p>不知道阮老师可否出个typescript相关的教程，网上找不到好的啊。。</p>
+        </div>
+<div class="comment-footer">
+<div class="comment-footer-inner">
+<p>
+                   <abbr class="published" title="December 11, 2015  3:23 AM">2015年12月11日 03:23</abbr>
+ | <a href="http://www.ruanyifeng.com/blog/2015/12/git-cheat-sheet.html#comment-353216">#</a>
+ | <a href="http://www.ruanyifeng.com/blog/2015/12/git-cheat-sheet.html#comment-text" title="引用ky的这条留言" onclick="return CommentQuote(&#39;comment-quote-353216&#39;,&#39;ky&#39;);">引用</a>
+</p>
+</div>
+</div>
+    </div>
+</div>
+        
+    
+        
+        <div id="comment-353221" class="comment">
+    <div class="inner">
+        <div class="comment-header">
+            <div class="asset-meta">
+<p>
+                <span class="byline">
+                    
+
+                    <span class="vcard author"><a title="http://phping.sinaapp.com/" href="http://phping.sinaapp.com/" target="_blank" rel="nofollow">phping</a></span>
+
+ 说：
+                </span>
+</p>
+            </div>
+        </div>
+        <div class="comment-content" id="comment-quote-353221">
+            <blockquote>
+<pre>引用Emily的发言：</pre>
+
+<p>噗，不太会用命令行，一直用 sourceTree</p>
+
+</blockquote>
+
+<p>我也是，先前是使用的命令行操作，现在在用sourcetree.</p>
+        </div>
+<div class="comment-footer">
+<div class="comment-footer-inner">
+<p>
+                   <abbr class="published" title="December 11, 2015  2:29 PM">2015年12月11日 14:29</abbr>
+ | <a href="http://www.ruanyifeng.com/blog/2015/12/git-cheat-sheet.html#comment-353221">#</a>
+ | <a href="http://www.ruanyifeng.com/blog/2015/12/git-cheat-sheet.html#comment-text" title="引用phping的这条留言" onclick="return CommentQuote(&#39;comment-quote-353221&#39;,&#39;phping&#39;);">引用</a>
+</p>
+</div>
+</div>
+    </div>
+</div>
+        
+    
+        
+        <div id="comment-353266" class="comment">
+    <div class="inner">
+        <div class="comment-header">
+            <div class="asset-meta">
+<p>
+                <span class="byline">
+                    
+
+                    <span class="vcard author">doingnothing</span>
+
+ 说：
+                </span>
+</p>
+            </div>
+        </div>
+        <div class="comment-content" id="comment-quote-353266">
+            <blockquote>
+<pre>引用Tony的发言：</pre>
+
+<p>想不通那些说 git 超级简单的人, 是一种什么心理!</p>
+
+</blockquote>
+
+<blockquote>
+<pre>引用Tony的发言：</pre>
+
+<p>想不通那些说 git 超级简单的人, 是一种什么心理!</p>
+
+</blockquote>
+
+<p>感觉就是一种推销的说辞罢了。这种说辞，让一些人觉得随便学下就好了，导致实际上经常踩到坑。</p>
+        </div>
+<div class="comment-footer">
+<div class="comment-footer-inner">
+<p>
+                   <abbr class="published" title="December 13, 2015 12:11 AM">2015年12月13日 00:11</abbr>
+ | <a href="http://www.ruanyifeng.com/blog/2015/12/git-cheat-sheet.html#comment-353266">#</a>
+ | <a href="http://www.ruanyifeng.com/blog/2015/12/git-cheat-sheet.html#comment-text" title="引用doingnothing的这条留言" onclick="return CommentQuote(&#39;comment-quote-353266&#39;,&#39;doingnothing&#39;);">引用</a>
+</p>
+</div>
+</div>
+    </div>
+</div>
+        
+    
+        
+        <div id="comment-353276" class="comment">
+    <div class="inner">
+        <div class="comment-header">
+            <div class="asset-meta">
+<p>
+                <span class="byline">
+                    
+
+                    <span class="vcard author">coder</span>
+
+ 说：
+                </span>
+</p>
+            </div>
+        </div>
+        <div class="comment-content" id="comment-quote-353276">
+            <p>关注很长时间了，留个名</p>
+        </div>
+<div class="comment-footer">
+<div class="comment-footer-inner">
+<p>
+                   <abbr class="published" title="December 14, 2015  3:47 PM">2015年12月14日 15:47</abbr>
+ | <a href="http://www.ruanyifeng.com/blog/2015/12/git-cheat-sheet.html#comment-353276">#</a>
+ | <a href="http://www.ruanyifeng.com/blog/2015/12/git-cheat-sheet.html#comment-text" title="引用coder的这条留言" onclick="return CommentQuote(&#39;comment-quote-353276&#39;,&#39;coder&#39;);">引用</a>
+</p>
+</div>
+</div>
+    </div>
+</div>
+        
+    
+        
+        <div id="comment-353278" class="comment">
+    <div class="inner">
+        <div class="comment-header">
+            <div class="asset-meta">
+<p>
+                <span class="byline">
+                    
+
+                    <span class="vcard author">gostar</span>
+
+ 说：
+                </span>
+</p>
+            </div>
+        </div>
+        <div class="comment-content" id="comment-quote-353278">
+            <p>基本都用到过。   讲的蛮好的`</p>
+        </div>
+<div class="comment-footer">
+<div class="comment-footer-inner">
+<p>
+                   <abbr class="published" title="December 14, 2015  6:04 PM">2015年12月14日 18:04</abbr>
+ | <a href="http://www.ruanyifeng.com/blog/2015/12/git-cheat-sheet.html#comment-353278">#</a>
+ | <a href="http://www.ruanyifeng.com/blog/2015/12/git-cheat-sheet.html#comment-text" title="引用gostar的这条留言" onclick="return CommentQuote(&#39;comment-quote-353278&#39;,&#39;gostar&#39;);">引用</a>
+</p>
+</div>
+</div>
+    </div>
+</div>
+        
+    
+        
+        <div id="comment-353282" class="comment">
+    <div class="inner">
+        <div class="comment-header">
+            <div class="asset-meta">
+<p>
+                <span class="byline">
+                    
+
+                    <span class="vcard author">x</span>
+
+ 说：
+                </span>
+</p>
+            </div>
+        </div>
+        <div class="comment-content" id="comment-quote-353282">
+            <p>我们学校的老师呀，虽然没教过我。（本人计算机专业，当时 闻其名未见其人），话说现在还在计算机行业，也在写着 前端JavaScript 。搜索 tail call optimization 的时搜索到的。呵呵。自己水平还是比较菜 </p>
+        </div>
+<div class="comment-footer">
+<div class="comment-footer-inner">
+<p>
+                   <abbr class="published" title="December 15, 2015  9:47 AM">2015年12月15日 09:47</abbr>
+ | <a href="http://www.ruanyifeng.com/blog/2015/12/git-cheat-sheet.html#comment-353282">#</a>
+ | <a href="http://www.ruanyifeng.com/blog/2015/12/git-cheat-sheet.html#comment-text" title="引用x的这条留言" onclick="return CommentQuote(&#39;comment-quote-353282&#39;,&#39;x&#39;);">引用</a>
+</p>
+</div>
+</div>
+    </div>
+</div>
+        
+    
+        
+        <div id="comment-353348" class="comment">
+    <div class="inner">
+        <div class="comment-header">
+            <div class="asset-meta">
+<p>
+                <span class="byline">
+                    
+
+                    <span class="vcard author">MMY</span>
+
+ 说：
+                </span>
+</p>
+            </div>
+        </div>
+        <div class="comment-content" id="comment-quote-353348">
+            <p>阮老师，怎么在github里面加入代码演示呢？</p>
+        </div>
+<div class="comment-footer">
+<div class="comment-footer-inner">
+<p>
+                   <abbr class="published" title="December 16, 2015  3:14 PM">2015年12月16日 15:14</abbr>
+ | <a href="http://www.ruanyifeng.com/blog/2015/12/git-cheat-sheet.html#comment-353348">#</a>
+ | <a href="http://www.ruanyifeng.com/blog/2015/12/git-cheat-sheet.html#comment-text" title="引用MMY的这条留言" onclick="return CommentQuote(&#39;comment-quote-353348&#39;,&#39;MMY&#39;);">引用</a>
+</p>
+</div>
+</div>
+    </div>
+</div>
+        
+    
+        
+        <div id="comment-353358" class="comment">
+    <div class="inner">
+        <div class="comment-header">
+            <div class="asset-meta">
+<p>
+                <span class="byline">
+                    
+
+                    <span class="vcard author"><a title="http://www.runjf.com" href="http://www.runjf.com/" target="_blank" rel="nofollow">ruanjf</a></span>
+
+ 说：
+                </span>
+</p>
+            </div>
+        </div>
+        <div class="comment-content" id="comment-quote-353358">
+            <blockquote>
+<pre>引用SpicyCat的发言：</pre>
+
+<p>没有git bisec就算了，连git rebase也没有？git rebase算是比较常用的了。<br>
+看log建议用gitk，不用记那么多参数。<br>
+git alias 也比较有用。<br>
+但是常用的就那么几个，不常用的还是要现查手册。<br>
+感觉阮老师这一篇略水。</p>
+
+</blockquote>
+fetch + rebase用得最多了
+
+        </div>
+<div class="comment-footer">
+<div class="comment-footer-inner">
+<p>
+                   <abbr class="published" title="December 17, 2015 10:15 AM">2015年12月17日 10:15</abbr>
+ | <a href="http://www.ruanyifeng.com/blog/2015/12/git-cheat-sheet.html#comment-353358">#</a>
+ | <a href="http://www.ruanyifeng.com/blog/2015/12/git-cheat-sheet.html#comment-text" title="引用ruanjf的这条留言" onclick="return CommentQuote(&#39;comment-quote-353358&#39;,&#39;ruanjf&#39;);">引用</a>
+</p>
+</div>
+</div>
+    </div>
+</div>
+        
+    
+        
+        <div id="comment-353460" class="comment">
+    <div class="inner">
+        <div class="comment-header">
+            <div class="asset-meta">
+<p>
+                <span class="byline">
+                    
+
+                    <span class="vcard author"><a title="http://暂无" href="http://xn--rgvyn/" target="_blank" rel="nofollow">yager</a></span>
+
+ 说：
+                </span>
+</p>
+            </div>
+        </div>
+        <div class="comment-content" id="comment-quote-353460">
+            <p>阮老师，刚才开发中用到tag的两个命令：<br>
+删除本地tag:<br>
+git tag -d tagName<br>
+删除远程tag:<br>
+git push origin :refs/tags/tagName</p>
+
+<p>希望能做个补充。<br>
+</p>
+        </div>
+<div class="comment-footer">
+<div class="comment-footer-inner">
+<p>
+                   <abbr class="published" title="December 22, 2015  7:50 PM">2015年12月22日 19:50</abbr>
+ | <a href="http://www.ruanyifeng.com/blog/2015/12/git-cheat-sheet.html#comment-353460">#</a>
+ | <a href="http://www.ruanyifeng.com/blog/2015/12/git-cheat-sheet.html#comment-text" title="引用yager的这条留言" onclick="return CommentQuote(&#39;comment-quote-353460&#39;,&#39;yager&#39;);">引用</a>
+</p>
+</div>
+</div>
+    </div>
+</div>
+        
+    
+        
+        <div id="comment-353465" class="comment">
+    <div class="inner">
+        <div class="comment-header">
+            <div class="asset-meta">
+<p>
+                <span class="byline">
+                    
+
+                    <span class="vcard author">阮一峰</span>
+
+ 说：
+                </span>
+</p>
+            </div>
+        </div>
+        <div class="comment-content" id="comment-quote-353465">
+            <p>@yager：</p>
+
+<p>谢谢补充，已经添加。</p>
+
+<p>欢迎大家继续补充。</p>
+        </div>
+<div class="comment-footer">
+<div class="comment-footer-inner">
+<p>
+                   <abbr class="published" title="December 23, 2015  9:01 AM">2015年12月23日 09:01</abbr>
+ | <a href="http://www.ruanyifeng.com/blog/2015/12/git-cheat-sheet.html#comment-353465">#</a>
+ | <a href="http://www.ruanyifeng.com/blog/2015/12/git-cheat-sheet.html#comment-text" title="引用阮一峰的这条留言" onclick="return CommentQuote(&#39;comment-quote-353465&#39;,&#39;阮一峰&#39;);">引用</a>
+</p>
+</div>
+</div>
+    </div>
+</div>
+        
+    
+        
+        <div id="comment-353481" class="comment">
+    <div class="inner">
+        <div class="comment-header">
+            <div class="asset-meta">
+<p>
+                <span class="byline">
+                    
+
+                    <span class="vcard author">AnnabellChan</span>
+
+ 说：
+                </span>
+</p>
+            </div>
+        </div>
+        <div class="comment-content" id="comment-quote-353481">
+            <p>其实只要记住对应的英文就会方便很多<br>
+比如 git checkout -b，b其实是browse的abbr.<br>
+git branch -r, r -&gt; remote<br>
+git branch -a, a -&gt; all<br>
+git config -l, l -&gt; list<br>
+git commit -m, m -&gt; message</p>
+        </div>
+<div class="comment-footer">
+<div class="comment-footer-inner">
+<p>
+                   <abbr class="published" title="December 23, 2015  5:05 PM">2015年12月23日 17:05</abbr>
+ | <a href="http://www.ruanyifeng.com/blog/2015/12/git-cheat-sheet.html#comment-353481">#</a>
+ | <a href="http://www.ruanyifeng.com/blog/2015/12/git-cheat-sheet.html#comment-text" title="引用AnnabellChan的这条留言" onclick="return CommentQuote(&#39;comment-quote-353481&#39;,&#39;AnnabellChan&#39;);">引用</a>
+</p>
+</div>
+</div>
+    </div>
+</div>
+        
+    
+        
+        <div id="comment-353500" class="comment">
+    <div class="inner">
+        <div class="comment-header">
+            <div class="asset-meta">
+<p>
+                <span class="byline">
+                    
+
+                    <span class="vcard author">Yan Xiaoxue</span>
+
+ 说：
+                </span>
+</p>
+            </div>
+        </div>
+        <div class="comment-content" id="comment-quote-353500">
+            <p>您好，您博客的这个评论是怎么做的？<br>
+我刚开始用jekyll。</p>
+        </div>
+<div class="comment-footer">
+<div class="comment-footer-inner">
+<p>
+                   <abbr class="published" title="December 24, 2015  1:28 PM">2015年12月24日 13:28</abbr>
+ | <a href="http://www.ruanyifeng.com/blog/2015/12/git-cheat-sheet.html#comment-353500">#</a>
+ | <a href="http://www.ruanyifeng.com/blog/2015/12/git-cheat-sheet.html#comment-text" title="引用Yan Xiaoxue的这条留言" onclick="return CommentQuote(&#39;comment-quote-353500&#39;,&#39;Yan Xiaoxue&#39;);">引用</a>
+</p>
+</div>
+</div>
+    </div>
+</div>
+        
+    
+        
+        <div id="comment-353535" class="comment">
+    <div class="inner">
+        <div class="comment-header">
+            <div class="asset-meta">
+<p>
+                <span class="byline">
+                    
+
+                    <span class="vcard author">汪卫卫</span>
+
+ 说：
+                </span>
+</p>
+            </div>
+        </div>
+        <div class="comment-content" id="comment-quote-353535">
+            <p>阮老师，我可以转载在我的博客里吗？方便查用。</p>
+        </div>
+<div class="comment-footer">
+<div class="comment-footer-inner">
+<p>
+                   <abbr class="published" title="December 24, 2015  7:47 PM">2015年12月24日 19:47</abbr>
+ | <a href="http://www.ruanyifeng.com/blog/2015/12/git-cheat-sheet.html#comment-353535">#</a>
+ | <a href="http://www.ruanyifeng.com/blog/2015/12/git-cheat-sheet.html#comment-text" title="引用汪卫卫的这条留言" onclick="return CommentQuote(&#39;comment-quote-353535&#39;,&#39;汪卫卫&#39;);">引用</a>
+</p>
+</div>
+</div>
+    </div>
+</div>
+        
+    
+        
+        <div id="comment-353659" class="comment">
+    <div class="inner">
+        <div class="comment-header">
+            <div class="asset-meta">
+<p>
+                <span class="byline">
+                    
+
+                    <span class="vcard author"><a title="http://jozhi.github.io/" href="http://jozhi.github.io/" target="_blank" rel="nofollow">大大大，大志</a></span>
+
+ 说：
+                </span>
+</p>
+            </div>
+        </div>
+        <div class="comment-content" id="comment-quote-353659">
+            <blockquote>
+<pre>引用Emily的发言：</pre>
+
+<p>噗，不太会用命令行，一直用 sourceTree</p>
+
+</blockquote>
+
+<p>还是IDE集成的比较好，比如用webstrom中的git~ 然后结合前者中的terminal[终端面板]一起使用。</p>
+        </div>
+<div class="comment-footer">
+<div class="comment-footer-inner">
+<p>
+                   <abbr class="published" title="December 30, 2015  2:57 PM">2015年12月30日 14:57</abbr>
+ | <a href="http://www.ruanyifeng.com/blog/2015/12/git-cheat-sheet.html#comment-353659">#</a>
+ | <a href="http://www.ruanyifeng.com/blog/2015/12/git-cheat-sheet.html#comment-text" title="引用大大大，大志的这条留言" onclick="return CommentQuote(&#39;comment-quote-353659&#39;,&#39;大大大，大志&#39;);">引用</a>
+</p>
+</div>
+</div>
+    </div>
+</div>
+        
+    
+        
+        <div id="comment-353742" class="comment">
+    <div class="inner">
+        <div class="comment-header">
+            <div class="asset-meta">
+<p>
+                <span class="byline">
+                    
+
+                    <span class="vcard author"><a title="http://www.elmerlxy.com" href="http://www.elmerlxy.com/" target="_blank" rel="nofollow">李欣羿</a></span>
+
+ 说：
+                </span>
+</p>
+            </div>
+        </div>
+        <div class="comment-content" id="comment-quote-353742">
+            <p>看过您的很多技术网站，受益颇丰。感谢有你。。</p>
+        </div>
+<div class="comment-footer">
+<div class="comment-footer-inner">
+<p>
+                   <abbr class="published" title="January  4, 2016  4:59 PM">2016年1月 4日 16:59</abbr>
+ | <a href="http://www.ruanyifeng.com/blog/2015/12/git-cheat-sheet.html#comment-353742">#</a>
+ | <a href="http://www.ruanyifeng.com/blog/2015/12/git-cheat-sheet.html#comment-text" title="引用李欣羿的这条留言" onclick="return CommentQuote(&#39;comment-quote-353742&#39;,&#39;李欣羿&#39;);">引用</a>
+</p>
+</div>
+</div>
+    </div>
+</div>
+        
+    
+        
+        <div id="comment-353755" class="comment">
+    <div class="inner">
+        <div class="comment-header">
+            <div class="asset-meta">
+<p>
+                <span class="byline">
+                    
+
+                    <span class="vcard author"><a title="http://www.jeremylu.com" href="http://www.jeremylu.com/" target="_blank" rel="nofollow">Jeremy Lu</a></span>
+
+ 说：
+                </span>
+</p>
+            </div>
+        </div>
+        <div class="comment-content" id="comment-quote-353755">
+            <p>git stash 很有用，把改变过的篇码先搁置。何不加上呢？</p>
+        </div>
+<div class="comment-footer">
+<div class="comment-footer-inner">
+<p>
+                   <abbr class="published" title="January  5, 2016  1:30 AM">2016年1月 5日 01:30</abbr>
+ | <a href="http://www.ruanyifeng.com/blog/2015/12/git-cheat-sheet.html#comment-353755">#</a>
+ | <a href="http://www.ruanyifeng.com/blog/2015/12/git-cheat-sheet.html#comment-text" title="引用Jeremy Lu的这条留言" onclick="return CommentQuote(&#39;comment-quote-353755&#39;,&#39;Jeremy Lu&#39;);">引用</a>
+</p>
+</div>
+</div>
+    </div>
+</div>
+        
+    
+        
+        <div id="comment-353820" class="comment">
+    <div class="inner">
+        <div class="comment-header">
+            <div class="asset-meta">
+<p>
+                <span class="byline">
+                    
+
+                    <span class="vcard author"><a title="http://www.cnblogs.com/yaoel" href="http://www.cnblogs.com/yaoel" target="_blank" rel="nofollow">yaoelvon</a></span>
+
+ 说：
+                </span>
+</p>
+            </div>
+        </div>
+        <div class="comment-content" id="comment-quote-353820">
+            <p>写的不错</p>
+        </div>
+<div class="comment-footer">
+<div class="comment-footer-inner">
+<p>
+                   <abbr class="published" title="January  6, 2016 10:44 PM">2016年1月 6日 22:44</abbr>
+ | <a href="http://www.ruanyifeng.com/blog/2015/12/git-cheat-sheet.html#comment-353820">#</a>
+ | <a href="http://www.ruanyifeng.com/blog/2015/12/git-cheat-sheet.html#comment-text" title="引用yaoelvon的这条留言" onclick="return CommentQuote(&#39;comment-quote-353820&#39;,&#39;yaoelvon&#39;);">引用</a>
+</p>
+</div>
+</div>
+    </div>
+</div>
+        
+    
+        
+        <div id="comment-354253" class="comment">
+    <div class="inner">
+        <div class="comment-header">
+            <div class="asset-meta">
+<p>
+                <span class="byline">
+                    
+
+                    <span class="vcard author"><a title="http://aiddroid.com" href="http://aiddroid.com/" target="_blank" rel="nofollow">aiddroid</a></span>
+
+ 说：
+                </span>
+</p>
+            </div>
+        </div>
+        <div class="comment-content" id="comment-quote-354253">
+            <blockquote>
+<pre>引用Jeremy Lu的发言：</pre>
+
+<p>git stash 很有用，把改变过的篇码先搁置。何不加上呢？</p>
+
+</blockquote>
+
+<p>+1，stash 必须上</p>
+        </div>
+<div class="comment-footer">
+<div class="comment-footer-inner">
+<p>
+                   <abbr class="published" title="January 22, 2016  5:00 PM">2016年1月22日 17:00</abbr>
+ | <a href="http://www.ruanyifeng.com/blog/2015/12/git-cheat-sheet.html#comment-354253">#</a>
+ | <a href="http://www.ruanyifeng.com/blog/2015/12/git-cheat-sheet.html#comment-text" title="引用aiddroid的这条留言" onclick="return CommentQuote(&#39;comment-quote-354253&#39;,&#39;aiddroid&#39;);">引用</a>
+</p>
+</div>
+</div>
+    </div>
+</div>
+        
+    
+        
+        <div id="comment-354382" class="comment">
+    <div class="inner">
+        <div class="comment-header">
+            <div class="asset-meta">
+<p>
+                <span class="byline">
+                    
+
+                    <span class="vcard author"><a title="http://www.hardfist.me" href="http://www.hardfist.me/" target="_blank" rel="nofollow">杨健</a></span>
+
+ 说：
+                </span>
+</p>
+            </div>
+        </div>
+        <div class="comment-content" id="comment-quote-354382">
+            <p>$ git checkout [commit] [file] 是恢复指定文件到工作区和暂存区而不仅仅是工作区</p>
+        </div>
+<div class="comment-footer">
+<div class="comment-footer-inner">
+<p>
+                   <abbr class="published" title="January 29, 2016  2:36 PM">2016年1月29日 14:36</abbr>
+ | <a href="http://www.ruanyifeng.com/blog/2015/12/git-cheat-sheet.html#comment-354382">#</a>
+ | <a href="http://www.ruanyifeng.com/blog/2015/12/git-cheat-sheet.html#comment-text" title="引用杨健的这条留言" onclick="return CommentQuote(&#39;comment-quote-354382&#39;,&#39;杨健&#39;);">引用</a>
+</p>
+</div>
+</div>
+    </div>
+</div>
+        
+    
+        
+        <div id="comment-354383" class="comment">
+    <div class="inner">
+        <div class="comment-header">
+            <div class="asset-meta">
+<p>
+                <span class="byline">
+                    
+
+                    <span class="vcard author"><a title="http://www.hardfist.me" href="http://www.hardfist.me/" target="_blank" rel="nofollow">杨健</a></span>
+
+ 说：
+                </span>
+</p>
+            </div>
+        </div>
+        <div class="comment-content" id="comment-quote-354383">
+            <p>git checkout 内容会让暂存区和工作区同步更新到某个commit。<br>
+且<br>
+"""<br>
+# 恢复上一个commit的所有文件到工作区<br>
+$ git checkout .<br>
+"""<br>
+有误，git checkout .并不是恢复上一个commit的所有文件到工作区，而是使得当前工作区内容恢复到当前暂存区内容</p>
+        </div>
+<div class="comment-footer">
+<div class="comment-footer-inner">
+<p>
+                   <abbr class="published" title="January 29, 2016  2:43 PM">2016年1月29日 14:43</abbr>
+ | <a href="http://www.ruanyifeng.com/blog/2015/12/git-cheat-sheet.html#comment-354383">#</a>
+ | <a href="http://www.ruanyifeng.com/blog/2015/12/git-cheat-sheet.html#comment-text" title="引用杨健的这条留言" onclick="return CommentQuote(&#39;comment-quote-354383&#39;,&#39;杨健&#39;);">引用</a>
+</p>
+</div>
+</div>
+    </div>
+</div>
+        
+    
+        
+        <div id="comment-354387" class="comment">
+    <div class="inner">
+        <div class="comment-header">
+            <div class="asset-meta">
+<p>
+                <span class="byline">
+                    
+
+                    <span class="vcard author">阮一峰</span>
+
+ 说：
+                </span>
+</p>
+            </div>
+        </div>
+        <div class="comment-content" id="comment-quote-354387">
+            <p>@杨健：</p>
+
+<p>谢谢指出，已经更正。</p>
+        </div>
+<div class="comment-footer">
+<div class="comment-footer-inner">
+<p>
+                   <abbr class="published" title="January 30, 2016 12:05 AM">2016年1月30日 00:05</abbr>
+ | <a href="http://www.ruanyifeng.com/blog/2015/12/git-cheat-sheet.html#comment-354387">#</a>
+ | <a href="http://www.ruanyifeng.com/blog/2015/12/git-cheat-sheet.html#comment-text" title="引用阮一峰的这条留言" onclick="return CommentQuote(&#39;comment-quote-354387&#39;,&#39;阮一峰&#39;);">引用</a>
+</p>
+</div>
+</div>
+    </div>
+</div>
+        
+    
+        
+        <div id="comment-355365" class="comment">
+    <div class="inner">
+        <div class="comment-header">
+            <div class="asset-meta">
+<p>
+                <span class="byline">
+                    
+
+                    <span class="vcard author"><a title="http://www" href="http://www/" target="_blank" rel="nofollow">davidtutu</a></span>
+
+ 说：
+                </span>
+</p>
+            </div>
+        </div>
+        <div class="comment-content" id="comment-quote-355365">
+            写的很好很详细
+<p>虽然还不是很熟悉但有一种不明觉厉的感觉,谢谢老师了!</p>
+        </div>
+<div class="comment-footer">
+<div class="comment-footer-inner">
+<p>
+                   <abbr class="published" title="April  1, 2016 12:44 AM">2016年4月 1日 00:44</abbr>
+ | <a href="http://www.ruanyifeng.com/blog/2015/12/git-cheat-sheet.html#comment-355365">#</a>
+ | <a href="http://www.ruanyifeng.com/blog/2015/12/git-cheat-sheet.html#comment-text" title="引用davidtutu的这条留言" onclick="return CommentQuote(&#39;comment-quote-355365&#39;,&#39;davidtutu&#39;);">引用</a>
+</p>
+</div>
+</div>
+    </div>
+</div>
+        
+    
+        
+        <div id="comment-356123" class="comment">
+    <div class="inner">
+        <div class="comment-header">
+            <div class="asset-meta">
+<p>
+                <span class="byline">
+                    
+
+                    <span class="vcard author">小嶙地</span>
+
+ 说：
+                </span>
+</p>
+            </div>
+        </div>
+        <div class="comment-content" id="comment-quote-356123">
+            <p>git log -5 --pretty --oneline。在我这个版本上执行报错。git版本2.5.4.<br>
+git log --pretty --oneline -5这种方式正确。</p>
+        </div>
+<div class="comment-footer">
+<div class="comment-footer-inner">
+<p>
+                   <abbr class="published" title="May  8, 2016  9:06 PM">2016年5月 8日 21:06</abbr>
+ | <a href="http://www.ruanyifeng.com/blog/2015/12/git-cheat-sheet.html#comment-356123">#</a>
+ | <a href="http://www.ruanyifeng.com/blog/2015/12/git-cheat-sheet.html#comment-text" title="引用小嶙地的这条留言" onclick="return CommentQuote(&#39;comment-quote-356123&#39;,&#39;小嶙地&#39;);">引用</a>
+</p>
+</div>
+</div>
+    </div>
+</div>
+        
+    
+        
+        <div id="comment-358441" class="comment">
+    <div id="comment-last" class="inner">
+        <div class="comment-header">
+            <div class="asset-meta">
+<p>
+                <span class="byline">
+                    
+
+                    <span class="vcard author">シェしあたたかい</span>
+
+ 说：
+                </span>
+</p>
+            </div>
+        </div>
+        <div class="comment-content" id="comment-quote-358441">
+            <p>git branch -D 只能删除本地分支<br>
+而git branch -d -r 可以删除本地与远程的联系<br>
+但是不知道有没有什么命令可以同时删除这两个呢？</p>
+        </div>
+<div class="comment-footer">
+<div class="comment-footer-inner">
+<p>
+                   <abbr class="published" title="June 15, 2016  2:58 PM">2016年6月15日 14:58</abbr>
+ | <a href="http://www.ruanyifeng.com/blog/2015/12/git-cheat-sheet.html#comment-358441">#</a>
+ | <a href="http://www.ruanyifeng.com/blog/2015/12/git-cheat-sheet.html#comment-text" title="引用シェしあたたかい的这条留言" onclick="return CommentQuote(&#39;comment-quote-358441&#39;,&#39;シェしあたたかい&#39;);">引用</a>
+</p>
+</div>
+</div>
+    </div>
+</div>
+        
+    </div>
+        
+    
+
+
+    
+    
+    <div class="comments-open" id="comments-open">
+        <h2 class="comments-open-header">我要发表看法</h2>
+        <div class="comments-open-content">
+
+        
+            <div id="comment-greeting"></div>
+
+            <form method="post" action="http://www.ruanyifeng.com/cgi-bin/mtos/mt-comments.cgi" name="comments_form" id="comments-form" onsubmit="return pleaseWait();">
+                <input type="hidden" name="static" value="1">
+                <input type="hidden" name="entry_id" value="1861">
+                <input type="hidden" name="__lang" value="en">
+                <input type="hidden" name="parent_id" value="" id="comment-parent-id">
+                <input type="hidden" name="armor" value="1">
+                <input type="hidden" name="preview" value="">
+                <input type="hidden" name="sid" value="">
+                <div id="comments-open-data">
+            <div id="comments-open-text">
+                    <p><label for="comment-text">您的留言
+                    （HTML标签部分可用）</label></p>
+                    <p><textarea id="comment-text" name="text" rows="10" cols="50"></textarea></p>
+                </div>
+                    <div id="comment-form-name">
+                        <p><label for="comment-author">您的大名：</label></p>
+                        <p><input id="comment-author" name="author" size="30" value="">  <span class="hint"> «-必填</span></p>
+                    </div>
+                    <div id="comment-form-email">
+                        <p><label for="comment-email">电子邮件：</label></p>
+                        <p><input id="comment-email" name="email" size="30" value="">  <span class="hint"> «-必填，不公开</span></p>
+                    </div>
+                    <div id="comment-form-url">
+                        <p><label for="comment-url">个人网址：</label></p>
+                        <p><input id="comment-url" name="url" size="30" value="">  <span class="hint"> «-我信任你，不会填写广告链接</span></p>
+                    </div>
+                    <div id="comment-form-remember-me">
+                        <p>
+                        <label for="comment-bake-cookie">记住个人信息？</label><input type="checkbox" id="comment-bake-cookie" name="bakecookie" onclick="!this.checked?forgetMe(document.comments_form):rememberMe(document.comments_form)" value="1" accesskey="r"></p>
+                    </div>
+                </div>
+                    <div id="comment-form-reply" style="display:none">
+                    <input type="checkbox" id="comment-reply" name="comment_reply" value="" onclick="mtSetCommentParentID()">
+                    <label for="comment-reply" id="comment-reply-label"></label>
+                </div>
+                <div id="comments-open-captcha"></div>
+                <div id="comments-open-footer">
+<div id="wait" style="display:none;">
+<p><strong>正在发表您的评论，请稍候</strong></p>
+<p>
+<input type="text" name="percent" size="3" style="font-family:Arial; color:black;text-align:center; border-width:medium; border-style:none;">           
+<input type="text" name="chart" size="46" style="font-family:Arial;font-weight:bolder; color:black; padding:0px; border-style:none;">
+</p>
+</div>
+
+                    <p><input type="submit" accesskey="s" name="post" id="comment-submit" value="发表">  <span class="hint"> «- 点击按钮</span></p>
+                </div>
+            </form>
+
+
+        </div>
+    </div>
+
+    
+
+
+</div>
+
+
+
+
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        <script type="text/javascript" src="./常用 Git 命令清单 - 阮一峰的网络日志_files/prism.js"></script>
+
+            <div id="footer">
+    <div id="footer-inner">
+        <div id="footer-content">
+<p><a href="http://www.ruanyifeng.com/contact.html">联系方式</a> | ruanyifeng.com 2003 - 2016
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-46829782-1', 'ruanyifeng.com');
+  ga('send', 'pageview');
+
+</script>
+
+
+
+<!-- Site Meter -->
+<a href="http://sm3.sitemeter.com/stats.asp?site=sm3bomoocom" target="_top">
+<img src="http://sm3.sitemeter.com/meter.asp?site=sm3bomoocom" alt="Site Meter" border="0" style="display: none !important;"></a>
+
+<!-- Copyright (c)2009 Site Meter -->
+
+</p>
+
+        </div>
+    </div>
+</div>
+
+
+<div id="share_button_proto" style="display:none;">
+<a class="bshareDiv" href="http://www.bshare.cn/share" style="display: block; text-decoration: none; padding: 0px; margin: 0px; font-size: 12px; height: 21px; width: 51px;"><div class="bsPromo bsPromo1"></div><div class="buzzButton bsStyle10" style="height:21px;color:#333;;background:transparent url(http://static.bshare.cn/frame/images/button_custom10-zh-Orange.gif) no-repeat;text-align:center;width:51px;"></div><div style="clear:both;"></div></a>
+
+
+
+<script type="text/javascript" charset="utf-8" src="./常用 Git 命令清单 - 阮一峰的网络日志_files/buttonLite.js"></script>
+<script type="text/javascript" charset="utf-8">
+bShare.addEntry({
+    title: document.getElementById("page-title").innerHTML,
+url:window.location.href
+});
+</script>
+</div>
+
+<script>
+document.getElementById("share_button").innerHTML=document.getElementById("share_button_proto").innerHTML;
+</script>
+
+
+
+
+        </div>
+    </div>
+
+<audio controls="controls" style="display: none;"></audio><div id="bsBox" class="bsBox"><div class="bsClose">X</div><div class="bsTop"><div class="bsReturn">选择其他平台 &gt;&gt;</div><span style="margin-left:15px;">分享到</span><span class="bsPlatName"></span></div><div class="bsFrameDiv"><iframe class="bShareFrame" name="bsFrame598" frameborder="0" scrolling="no" allowtransparency="true" src="./常用 Git 命令清单 - 阮一峰的网络日志_files/saved_resource.html"></iframe></div><div id="bsMorePanel" style="display: none;"></div></div><div id="ads"></div><div id="bsPanelHolder"><div id="bsPanel" style="display:none;"><div class="bsTitle"><a style="float:left;height:20px;line-height:20px;font-weight:bold;" class="bsSiteLink" target="_blank" href="http://www.bshare.cn/intro">分享到...</a><a class="bsSiteLink" style="cursor:pointer;float:right;height:20px;line-height:20px;font-weight:bold;" onclick="document.getElementById(&#39;bsPanel&#39;).style.display=&#39;none&#39;;">X</a><div class="bsClear"></div></div><div class="bsClear"></div><div style="padding-left:8px;background:#fff;*height:192px;"><div style="height:47px;border-bottom:1px #ccc solid;padding:4px 0 4px 16px;margin-right:8px;_padding-left:12px;"><div class="bsRlogo" onmouseover="javascript:this.className=&#39;bsRlogoSel&#39;" onmouseout="javascript:this.className=&#39;bsRlogo&#39;"><a href="javascript:;" onclick="javascript:bShare.share(event,&#39;facebook&#39;);return false;" style="text-decoration:none;line-height:120%;"><div style="cursor:pointer;width:24px;height:24px;margin:0 18px 2px;background:url(http://static.bshare.cn/frame/images//logos/m2/facebook.gif) no-repeat;"></div><div style="cursor:pointer;text-align:center;width:60px;height:16px !important;overflow:hidden;color:inherit;white-space:nowrap;line-height:120% !important;">Facebook</div></a></div><div class="bsRlogo" onmouseover="javascript:this.className=&#39;bsRlogoSel&#39;" onmouseout="javascript:this.className=&#39;bsRlogo&#39;"><a href="javascript:;" onclick="javascript:bShare.share(event,&#39;twitter&#39;);return false;" style="text-decoration:none;line-height:120%;"><div style="cursor:pointer;width:24px;height:24px;margin:0 18px 2px;background:url(http://static.bshare.cn/frame/images//logos/m2/twitter.gif) no-repeat;"></div><div style="cursor:pointer;text-align:center;width:60px;height:16px !important;overflow:hidden;color:inherit;white-space:nowrap;line-height:120% !important;">Twitter</div></a></div><div class="bsRlogo" onmouseover="javascript:this.className=&#39;bsRlogoSel&#39;" onmouseout="javascript:this.className=&#39;bsRlogo&#39;"><a href="javascript:;" onclick="javascript:bShare.share(event,&#39;sinaminiblog&#39;);return false;" style="text-decoration:none;line-height:120%;"><div style="cursor:pointer;width:24px;height:24px;margin:0 18px 2px;background:url(http://static.bshare.cn/frame/images//logos/m2/sinaminiblog.gif) no-repeat;"></div><div style="cursor:pointer;text-align:center;width:60px;height:16px !important;overflow:hidden;color:inherit;white-space:nowrap;line-height:120% !important;">新浪微博</div></a></div></div><div class="bsLogoLink"><div class="bsLogo" onmouseover="javascript:this.className=&#39;bsLogoSel&#39;" onmouseout="javascript:this.className=&#39;bsLogo&#39;"><a href="javascript:;" title="微信" onclick="javascript:bShare.share(event,&#39;weixin&#39;);return false;" style="background:url(http://static.bshare.cn/frame/images//logos/s4/weixin.png) no-repeat;">微信</a></div><div class="bsLogo" onmouseover="javascript:this.className=&#39;bsLogoSel&#39;" onmouseout="javascript:this.className=&#39;bsLogo&#39;"><a href="javascript:;" title="腾讯微博" onclick="javascript:bShare.share(event,&#39;qqmb&#39;);return false;" style="background:url(http://static.bshare.cn/frame/images//slogos_sprite8.png) no-repeat 0 -1512px;">腾讯微博</a></div><div class="bsLogo" onmouseover="javascript:this.className=&#39;bsLogoSel&#39;" onmouseout="javascript:this.className=&#39;bsLogo&#39;"><a href="javascript:;" title="豆瓣网" onclick="javascript:bShare.share(event,&#39;douban&#39;);return false;" style="background:url(http://static.bshare.cn/frame/images//slogos_sprite8.png) no-repeat 0 -540px;">豆瓣网</a></div><div class="bsLogo" onmouseover="javascript:this.className=&#39;bsLogoSel&#39;" onmouseout="javascript:this.className=&#39;bsLogo&#39;"><a href="javascript:;" title="饭否" onclick="javascript:bShare.share(event,&#39;fanfou&#39;);return false;" style="background:url(http://static.bshare.cn/frame/images//slogos_sprite8.png) no-repeat 0 -666px;">饭否</a></div><div class="bsLogo" onmouseover="javascript:this.className=&#39;bsLogoSel&#39;" onmouseout="javascript:this.className=&#39;bsLogo&#39;"><a href="javascript:;" title="雪球" onclick="javascript:bShare.share(event,&#39;xueqiu&#39;);return false;" style="background:url(http://static.bshare.cn/frame/images//logos/s4/xueqiu.png) no-repeat;">雪球</a></div></div><div class="bsLogoLink"><div class="bsLogo" onmouseover="javascript:this.className=&#39;bsLogoSel&#39;" onmouseout="javascript:this.className=&#39;bsLogo&#39;"><a href="javascript:;" title="Google+" onclick="javascript:bShare.share(event,&#39;gplus&#39;);return false;" style="background:url(http://static.bshare.cn/frame/images//logos/s4/gplus.png) no-repeat;">Google+</a></div><div class="bsLogo" onmouseover="javascript:this.className=&#39;bsLogoSel&#39;" onmouseout="javascript:this.className=&#39;bsLogo&#39;"><a href="javascript:;" title="QQ空间" onclick="javascript:bShare.share(event,&#39;qzone&#39;);return false;" style="background:url(http://static.bshare.cn/frame/images//slogos_sprite8.png) no-repeat 0 -1566px;">QQ空间</a></div><div class="bsLogo" onmouseover="javascript:this.className=&#39;bsLogoSel&#39;" onmouseout="javascript:this.className=&#39;bsLogo&#39;"><a href="javascript:;" title="QQ好友" onclick="javascript:bShare.share(event,&#39;qqim&#39;);return false;" style="background:url(http://static.bshare.cn/frame/images//logos/s4/qqim.png) no-repeat;">QQ好友</a></div><div class="bsLogo" onmouseover="javascript:this.className=&#39;bsLogoSel&#39;" onmouseout="javascript:this.className=&#39;bsLogo&#39;"><a href="javascript:;" title="Instapaper" onclick="javascript:bShare.share(event,&#39;instapaper&#39;);return false;" style="background:url(http://static.bshare.cn/frame/images//slogos_sprite8.png) no-repeat 0 -954px;">Instapaper</a></div></div><div class="bsClear"></div></div><div style="height:20px;line-height:20px;padding:0 8px;border-top:1px solid #e8e8e8;color:#666;background:#f2f2f2;"><div class="buzzButton" style="float:left;">更多平台... <font style="font-weight:normal;">(133)</font></div><div id="bsPower" style="float:right;text-align:right;overflow:hidden;height:100%;"><a class="bsSiteLink" style="font-size:10px;vertical-align:text-bottom;line-height:24px;cursor:pointer;" href="http://www.bshare.cn/" target="_blank"><span style="font-size:10px;vertical-align:text-bottom;"><span style="color:#f60;">b</span>Share</span></a></div></div></div></div></body><style type="text/css">#yddContainer{display:block;font-family:Microsoft YaHei;position:relative;width:100%;height:100%;top:-4px;left:-4px;font-size:12px;border:1px solid}#yddTop{display:block;height:22px}#yddTopBorderlr{display:block;position:static;height:17px;padding:2px 28px;line-height:17px;font-size:12px;color:#5079bb;font-weight:bold;border-style:none solid;border-width:1px}#yddTopBorderlr .ydd-sp{position:absolute;top:2px;height:0;overflow:hidden}.ydd-icon{left:5px;width:17px;padding:0px 0px 0px 0px;padding-top:17px;background-position:-16px -44px}.ydd-close{right:5px;width:16px;padding-top:16px;background-position:left -44px}#yddKeyTitle{float:left;text-decoration:none}#yddMiddle{display:block;margin-bottom:10px}.ydd-tabs{display:block;margin:5px 0;padding:0 5px;height:18px;border-bottom:1px solid}.ydd-tab{display:block;float:left;height:18px;margin:0 5px -1px 0;padding:0 4px;line-height:18px;border:1px solid;border-bottom:none}.ydd-trans-container{display:block;line-height:160%}.ydd-trans-container a{text-decoration:none;}#yddBottom{position:absolute;bottom:0;left:0;width:100%;height:22px;line-height:22px;overflow:hidden;background-position:left -22px}.ydd-padding010{padding:0 10px}#yddWrapper{color:#252525;z-index:10001;background:url(chrome-extension://eopjamdnofihpioajgfdikhhbobonhbb/ab20.png);}#yddContainer{background:#fff;border-color:#4b7598}#yddTopBorderlr{border-color:#f0f8fc}#yddWrapper .ydd-sp{background-image:url(chrome-extension://eopjamdnofihpioajgfdikhhbobonhbb/ydd-sprite.png)}#yddWrapper a,#yddWrapper a:hover,#yddWrapper a:visited{color:#50799b}#yddWrapper .ydd-tabs{color:#959595}.ydd-tabs,.ydd-tab{background:#fff;border-color:#d5e7f3}#yddBottom{color:#363636}#yddWrapper{min-width:250px;max-width:400px;}</style><div></div></html>

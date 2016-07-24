@@ -32,14 +32,23 @@ tags:
 
 ### 1. Flatland（推荐）
 
-> "color_scheme": "Packages/Theme - Flatland/Flatland Monokai.tmTheme",
-> "theme": "Flatland Dark.sublime-theme",
+``` bash
+"color_scheme": "Packages/Theme - Flatland/Flatland Monokai.tmTheme",
+"theme": "Flatland Dark.sublime-theme",
+```
 
 ### 2. Material
 
-> "theme": "Material-Theme.sublime-theme",
-> "color_scheme": "Packages/Material Theme/schemes/Material-Theme.tmTheme",
+``` bash
+"theme": "Material-Theme.sublime-theme",
+"color_scheme": "Packages/Material Theme/schemes/Material-Theme.tmTheme",
+```
 
+### 3. Seti
+
+``` bash
+"theme": "Seti.sublime-theme"
+```
 
 ## 我的配置详情(最美纯净版)
 
