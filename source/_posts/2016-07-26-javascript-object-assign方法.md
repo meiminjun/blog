@@ -1,5 +1,5 @@
 title: 浅谈javacript 笔记系列--- object-assign方法
-date: 2016-07-26 09:57:13
+date: 2016-07-26 09:57:14
 categories:
   - javascript
 tags:
