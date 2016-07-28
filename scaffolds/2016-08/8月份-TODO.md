@@ -27,9 +27,21 @@ http://www.infoq.com/cn/articles/es6-in-depth-modules
 
 ## vim 学习
 
+
+
 http://coolshell.cn/articles/5426.html
 
 https://github.com/dofy/learn-vim
+
+## vue+webpack
+
+https://www.talkingcoder.com/article/live1
+
+vue中文文档
+
+http://router.vuejs.org/zh-cn/index.html
+
+本机项目地址：F:\vue\vue-vueRouter-webpack
 
 ## 进度详情：
 
