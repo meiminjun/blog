@@ -17,8 +17,6 @@ tags:
 
 3. ** [史上最强Sublime 笔记系列---我的常用配置](/2016/06/22/SublimeText-我的常用配置/)(持续更新中。。。)  **
 
-**各位小伙伴们，还有没有`高效率`的配置呢？有的请留言哦！谢谢。。O(∩_∩)O**
-
 <!-- more -->
 
 ***
@@ -115,4 +113,35 @@ translate_tabs_to_spaces :true，Tab转空格
 
 word_separators:true , 词的分符隔定义，加入中文符号
 
+vintage_start_in_command_mode, 启动时，开启vim命令模式
+
 ```
+
+## sulimeText 的vim模式
+
+sublime 默认是禁用vim模式的
+> "ignored_packages": ["Vintage"]
+
+开启vim模式要配置成：
+> "ignored_packages": [""]
+
+在用户配置中：
+
+> "vintage_start_in_command_mode": true //启动时，开启vim命令模式
+
+在用户快捷键中添加配置(进入vim模式)：
+
+```
+{
+    "keys": ["j", "j"],
+    "command": "exit_insert_mode",
+    "context":
+    [
+        { "key": "setting.command_mode", "operand": false },
+        { "key": "setting.is_widget", "operand": false }
+    ]
+}
+
+```
+
+具体参考：http://www.sublimetext.com/docs/3/vintage.html
