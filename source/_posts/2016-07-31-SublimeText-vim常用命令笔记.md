@@ -1,0 +1,121 @@
+title: 史上最强Sublime 笔记系列---vim常用命令笔记
+date: 2016-07-31 11:30:13
+categories:
+  - 工具
+tags:
+  - 工具
+  - sublime
+  - vim
+---
+
+![](http://ww2.sinaimg.cn/large/69a9ed59gw1f6cyydkhdjj20sd0hsabg.jpg)
+
+这篇文章主要讲的Sublime Text 3 的**vim**命令说明，勤加练习之后，方可解放你的双手
+
+<!-- more -->
+
+1. ** [史上最强Sublime 笔记系列---常用快捷键](/2016/06/24/SublimeText-常用快捷键/)(持续更新中。。。) **
+
+2. ** [史上最强Sublime 笔记系列---精选插件和UI主题](/2016/06/23/SublimeText-常用插件和主题/)(持续更新中。。。) **
+
+3. ** [史上最强Sublime 笔记系列---我的常用配置](/2016/06/22/SublimeText-我的常用配置/)(持续更新中。。。)  **
+
+## sulimeText 的vim模式
+
+sublime 默认是禁用vim模式的
+
+```
+"ignored_packages": ["Vintage"]
+```
+
+开启vim模式要配置成：
+
+```
+"ignored_packages": [""]
+```
+
+在用户配置中：
+
+```
+"vintage_start_in_command_mode": true //启动时，开启vim命令模式
+```
+
+在用户快捷键中添加配置(进入vim模式)：
+
+```
+{
+    "keys": ["j", "j"],
+    "command": "exit_insert_mode",
+    "context":
+    [
+        { "key": "setting.command_mode", "operand": false },
+        { "key": "setting.is_widget", "operand": false }
+    ]
+}
+
+```
+
+## vim-sublime命令（必记）
+
+```
+// 启动命令
+jj → 进入命令行模式(必须配置好上面的操作)
+i → Insert 模式
+
+// 简单的移动光标
+k 向上移动
+j 向下移动
+h 向左移动光标
+l 向右移动光标
+0 → 数字零，到行头
+$ → 到本行行尾
+gg → 到顶部
+G  → 到尾部
+w →到下一个单词开头
+e →到下一个单词结尾
+n空格(n代表数字) → 光标向右移动n个字符
+
+// 各种插入 
+i → 在光标前输入
+I → 在当前行首插入
+a → 在光标后插入
+A → 在当前行尾插入
+o → 在当前行后插入一个新行
+O → 在当前行前插入一个新行
+cw → 替换从光标所在位置后到一个单词结尾的字符
+
+// 删除
+x →删除当前光标所在的一个字符。
+X →删除前一个字符
+nx(n代表数字) → 向后删除n个字符
+dd → 删除当前行（还有剪切功能）
+D → 删除当前字符到后面的所有字符(如果后面没有字符，则向前删除)
+ndd(n代表数字) → 删除n行
+d1G → 删除光标所在行到第一行的所有数据
+
+// 拷贝、粘贴
+P → 粘贴(p/P都可以，p是表示在当前位置之后，P表示在当前位置之前)
+yy → 拷贝当前行当行于 ddP
+yG →复制光标所在行到最后一行的所有数据
+J →将光标所在行与下一行的数据结合成一行 
+3p → 粘贴文本3次
+. → 重复上一个命令—— 100 “desu “.
+3. → 重复 3 次 “desu” (注意：不是 300，你看，VIM多聪明啊).
+
+//匹配括号移动
+% → 匹配括号移动，包括 (, {, [. （陈皓注：你需要把光标先移到括号上）
+* 和 # → 匹配光标当前所在的单词，移动光标到下一个（或上一个）匹配单词（*是下一个，#是上一个）
+/word → 在光标之后查找word字符串  word的字符串（陈皓注：如果搜索出多个匹配，可按n键到下一个，按shift+n到上一个）
+?word → 在光标之前查找word字符串   
+
+// 回退
+u → 回退
+
+// 打开/保存/退出/改变文件
+:w → 存盘
+ZZ → 快速保存退出
+```
+
+更多请参考：
+http://coolshell.cn/articles/5426.html
+http://feliving.github.io/Sublime-Text-3-Documentation/vintage.html
