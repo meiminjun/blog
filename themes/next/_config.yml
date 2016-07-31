@@ -120,7 +120,7 @@ font:
 social:
   #LinkLabel: Link
   GitHub: https://github.com/meiminjun
-
+  知乎: https://www.zhihu.com/people/mei-min-jun
 # Social Links Icons
 # Icon Mapping:
 #   Map a menu item to a specific FontAwesome icon name.
@@ -379,6 +379,11 @@ vendors:
 css: css
 js: js
 images: images
+
+# 微搜索
+search:
+  path: search.xml
+  field: post
 
 # Theme version
 version: 5.0.1
