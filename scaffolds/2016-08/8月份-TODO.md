@@ -16,6 +16,8 @@ tags:
 
 ### ionic2
 
+http://www.cnblogs.com/greyzeng/p/5532323.html
+
 https://github.com/driftyco/ionic
 
 http://ionicframework.com/docs/v2/getting-started/tutorial/
