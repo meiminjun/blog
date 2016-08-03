@@ -16,7 +16,9 @@ tags:
 
 ### ionic2
 
-http://www.cnblogs.com/greyzeng/p/5532323.html
+http://www.cnblogs.com/greyzeng/p/5532323.html（1-5）
+
+http://www.cnblogs.com/greyzeng/p/5551535.html（6-10）
 
 https://github.com/driftyco/ionic
 
