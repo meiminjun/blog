@@ -24,7 +24,7 @@ SourceTree拥有一个精美简洁的界面，大大简化了开发者与代码�
 
 1. 下载hosts
 
-    [下载链接](http://pan.baidu.com/s/1jHVgwNs)  密码: 7v2q
+    [下载链接](https://pan.baidu.com/s/1nv6Ub7F)  密码: y2f2
 
 2. 替换hosts(mac)
 
