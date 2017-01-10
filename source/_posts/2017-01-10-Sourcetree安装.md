@@ -26,6 +26,8 @@ SourceTree拥有一个精美简洁的界面，大大简化了开发者与代码�
 
     [下载链接](https://pan.baidu.com/s/1nv6Ub7F)  密码: y2f2
 
+> 下载的时候chrome和杀毒软件可能会拦截，请保留就可以了
+
 2. 替换hosts(mac)
 
     hosts所在文件夹：
