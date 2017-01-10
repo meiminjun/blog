@@ -1,10 +1,10 @@
-title: Sourcetree的安装
+title: Sourcetree安装
 date: 2017-01-09 22:57:13
 tags:
   - Mac
 ---
 
-## Sourcetree
+![](http://ww3.sinaimg.cn/large/69a9ed59gw1fblgt1gz3bj20t70ha44y.jpg)
 
 SourceTree拥有一个精美简洁的界面，大大简化了开发者与代码库之间的Git操作方式，这对于开发者来说非常实用。
 
