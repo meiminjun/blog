@@ -11,11 +11,13 @@ tags:
 
 这篇文章主要讲的是Sublime Text 3一些`高效率的插件`和`漂亮的主题`。
 
-1. ** [史上最强Sublime 笔记系列---常用快捷键](/2016/06/24/SublimeText-常用快捷键/)(持续更新中。。。) **
+1. ** [史上最强Sublime 笔记系列---常用快捷键](/SublimeText-常用快捷键/)(持续更新中。。。) **
 
-2. ** [史上最强Sublime 笔记系列---精选插件和UI主题](/2016/06/23/SublimeText-常用插件和主题/)(持续更新中。。。) **
+2. ** [史上最强Sublime 笔记系列---精选插件和UI主题](/SublimeText-常用插件和主题/)(持续更新中。。。) **
 
-3. ** [史上最强Sublime 笔记系列---我的常用配置](/2016/06/22/SublimeText-我的常用配置/)(持续更新中。。。)  **
+3. ** [史上最强Sublime 笔记系列---我的常用配置](/SublimeText-我的常用配置/)(持续更新中。。。)  **
+
+4. ** [史上最强Sublime 笔记系列---vim常用命令](/SublimeText-vim常用命令笔记/)(持续更新中。。。)  **
 
 **各位小伙伴们，还有没有你心目中`酷炫时尚`的插件呢？有的请留言哦！谢谢。。O(∩_∩)O**
 
@@ -148,7 +150,7 @@ import urllib.request,os; pf = 'Package Control.sublime-package'; ipp = sublime.
 
 ## [sublimeLinter-elint](https://github.com/roadhump/SublimeLinter-eslint)
 
-让sublime-text 支持es6
+让sublime-text 支持es6和react
 
 详细说明：http://cheng.logdown.com/posts/2015/09/15/linting-react-jsx-and-es6-javascript-with-eslint
 
