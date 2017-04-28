@@ -4,19 +4,20 @@
 
 # Site
 title: Mr.Jason'Blog
-subtitle: 热爱游戏、生活、学习的文艺屌丝青年
-description: 江西科技学院09级,现就职于平安口袋银行。擅长各项前端技能，目前深入研究移动端html5跨平台开发。
+subtitle: 热爱游戏、生活、学习的知识青年
+description: 现就职于平安银行、致力于全栈开发方向。
 author: Mr.Jason
 language: zh-Hans
 timezone:
 email: 251222845@qq.com
-keywords: "前端,js,jquery,javascript,html5,cordova,phonegap,react,reactNative,reactjs,ionic,angular,开发者,程序猿,极客,编程,代码,开源,IT网站,Developer,Programmer,Coder,Geek,html,css,css3,用户体验,github,meiminjun,meiminjun.github.io"
+keywords: "vue,webpack,nodejs,node,js,javascript,html5,react,ionic,angular,html,css,github,NBA,lol,人民的名义"
 
 # URL
 ## If your site is put in a subdirectory, set url as 'http://yoursite.com/child' and root as '/child/'
 url: http://meiminjun.github.io/
 root: /
-permalink: :year/:month/:day/:title/
+# permalink: :year/:month/:day/:title/
+permalink: :title/
 permalink_defaults:
 
 # Directory
@@ -76,3 +77,10 @@ deploy:
   name: meiminjun
   email: 251222845@qq.com
   message: 更新
+  
+# hexo sitemap网站地图
+sitemap:
+  path: sitemap.xml
+baidusitemap:
+  path: baidusitemap.xml
+
