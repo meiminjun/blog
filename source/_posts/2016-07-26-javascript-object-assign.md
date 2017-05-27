@@ -1,4 +1,4 @@
-title: 浅谈javacript 笔记系列--- object-assign方法
+title: javascript深入浅出系列-Object 之 assign
 date: 2016-07-26 09:57:14
 categories:
   - javascript

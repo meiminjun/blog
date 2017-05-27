@@ -1,16 +1,18 @@
-title: javascript之常用DOM操作
+title: javascript深入浅出系列-常用DOM操作
 date: 2016-01-05 15:57:13
-categories:
-  - 前端
 tags:
 	- javascript
 ---
 
-这里主要讲一下开发中经常用到的一些javascript 原生操作dom的方法
+这里主要讲一下开发中经常用到的一些javascript原生操作dom的方法
 
 <!-- more -->
 
-``` bash
+## document.getElementById()  
+
+根据Id获取元素节点
+
+``` html
 <html>
 <head>
     <title></title>
@@ -31,9 +33,11 @@ tags:
 
 ```
 
-##  document.getElementsByName()    根据name获取元素节点
+##  document.getElementsByName()   
 
-``` bash
+ 根据name获取元素节点
+
+``` html
 <html>
 <head>
     <title></title>
@@ -59,9 +63,11 @@ tags:
 ```
 
 
-##  document.getElementsByTagName()    根据HTML标签名获取元素节点，注意getElements***的选择器返回的是一个NodeList对象，能根据索引号选择其中1个，可以遍历输出。
+##  document.getElementsByTagName()  
 
-``` bash
+根据HTML标签名获取元素节点，注意getElements***的选择器返回的是一个NodeList对象，能根据索引号选择其中1个，可以遍历输出。
+
+``` html
 <html>
 <head>
     <title></title>
@@ -93,9 +99,11 @@ tags:
 
 ```
 
-##  document.getElementsByClassName()    根据class获取元素节点
+##  document.getElementsByClassName()    
 
-``` bash
+根据class获取元素节点
+
+``` html
 <html>
 <head>
     <title></title>
@@ -119,7 +127,7 @@ tags:
 ```
 
 ## javascript中的CSS选择器
-``` bash
+``` html
     document.querySelector()    //根据CSS选择器的规则，返回第一个匹配到的元素
     document.querySelectorAll()    //根据CSS选择器的规则，返回所有匹配到的元素
 
@@ -165,9 +173,9 @@ tags:
 8. nodeVlue    Text节点或Comment节点的文本内容
 9. nodeName    元素的标签名(如P,SPAN,#text(文本节点),DIV)，以大写形式表示
 
-> **注意，以上6个方法连元素节点也算一个节点。**
+> **注意，以上6个方法连元素节点也算一个节点**
 
-``` bash
+``` html
 <html>
 <head>
     <title></title>
@@ -226,7 +234,7 @@ tags:
 
 > **注意，此5个方法文本节点不算进去**
 
-``` bash
+``` html
 <html>
 <head>
     <title></title>
@@ -258,9 +266,9 @@ tags:
 
 ## javascript操作HTML属性
 
-### 属性的读取，此处要注意的是，某些HTML属性名称在javascript之中是保留字，因此会有些许不同，如class,lable中的for在javascript中变为htmlFor,className。
+属性的读取，此处要注意的是，某些HTML属性名称在javascript之中是保留字，因此会有些许不同，如class,lable中的for在javascript中变为htmlFor,className
 
-``` bash
+``` html
 <html>
 <head>
     <title></title>
@@ -288,7 +296,7 @@ tags:
 
 ### 属性的设置，此处同样要注意的是保留字
 
-``` bash
+``` html
 <html>
 <head>
     <title></title>
@@ -308,10 +316,11 @@ tags:
 ```
 
 ### 非标准HTML属性
-getAttribute();    // 注意这两个方法是不必理会javascript保留字的，HTML属性是什么就怎么写。
+
+getAttribute()    // 注意这两个方法是不必理会javascript保留字的，HTML属性是什么就怎么写。
 setAttribute();
 
-``` bash
+``` html
 <html>
 <head>
     <title></title>
@@ -333,11 +342,12 @@ setAttribute();
 
 
 ### Attr节点的属性
+
 attributes属性  非Element对象返回null，Element一半返回Attr对象。Attr对象是一个特殊的Node,通过name与value获取属性名称与值。
 如:document.getElementById("img1")[0];
    document.getElementById("img1").src;
 
-``` bash
+``` html
 <html>
 <head>
     <title></title>
@@ -364,7 +374,7 @@ attributes属性  非Element对象返回null，Element一半返回Attr对象。A
 innerText与textContent的区别，当文本为空时，innerText是""，而textContent是undefined
 ### innerHTML
 
-``` bash
+``` html
 <html>
 <head>
     <title></title>
@@ -390,9 +400,11 @@ innerText与textContent的区别，当文本为空时，innerText是""，而text
 
 ## 创建，插入，删除节点
 
-### document.createTextNode()    创建一个文本节点
+### document.createTextNode()    
 
-``` bash
+创建一个文本节点
+
+``` html
 <html>
 <head>
     <title></title>
@@ -421,9 +433,11 @@ innerText与textContent的区别，当文本为空时，innerText是""，而text
 
 ```
 
-### document.createElement()    创建一个元素节点
+### document.createElement()  
 
-``` bash
+创建一个元素节点
+
+``` html
 <html>
 <head>
     <title></title>
@@ -454,10 +468,11 @@ innerText与textContent的区别，当文本为空时，innerText是""，而text
 ```
 
 ### 插入节点
+
  appendChild()    //将一个节点插入到调用节点的最后面
  insertBefore()    //接受两个参数，第一个为待插入的节点，第二个指明在哪个节点前面，如果不传入第二个参数，则跟appendChild一样，放在最后。
 
- ``` bash
+ ``` html
  <html>
  <head>
      <title></title>
@@ -488,11 +503,13 @@ innerText与textContent的区别，当文本为空时，innerText是""，而text
    -->
  ```
 
-## 删除和替换节点。
+## 删除和替换节点
 
+### removeChild()
 
-### removeChild();    由父元素调用，删除一个子节点。注意是直接父元素调用，删除直接子元素才有效，删除孙子元素就没有效果了。
-``` bash
+由父元素调用，删除一个子节点。注意是直接父元素调用，删除直接子元素才有效，删除孙子元素就没有效果了
+
+``` html
 <html>
 <head>
     <title></title>
@@ -520,9 +537,11 @@ innerText与textContent的区别，当文本为空时，innerText是""，而text
 
 ```
 
-### replaceChild()    //删除一个子节点，并用一个新节点代替它，第一个参数为新建的节点，第二个节点为被替换的节点
+### replaceChild()   
 
-``` bash
+删除一个子节点，并用一个新节点代替它，第一个参数为新建的节点，第二个节点为被替换的节点
+
+``` html
 <html>
 <head>
     <title></title>
@@ -552,8 +571,10 @@ innerText与textContent的区别，当文本为空时，innerText是""，而text
 ```
 
 ## javascript操作元素CSS
+
 通过元素的style属性可以随意读取和设置元素的CSS样式，例子：
-``` bash
+
+``` html
 <html>
 <head>
     <title></title>

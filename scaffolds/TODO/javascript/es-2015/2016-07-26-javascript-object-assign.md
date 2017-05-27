@@ -1,5 +1,5 @@
-title: 浅谈javacript 笔记系列--- object-assign方法
-date: 2016-07-26 09:57:13
+title: javascript深入浅出系列-Object 之 assign
+date: 2016-07-26 09:57:14
 categories:
   - javascript
 tags:
@@ -34,6 +34,8 @@ String类型和 Symbol 类型的属性都会被拷贝。
 注意，在属性拷贝过程中可能会产生异常，比如目标对象的某个只读属性和源对象的某个属性同名，这时该方法会抛出一个 TypeError 异常，拷贝过程中断，已经拷贝成功的属性不会受到影响，还未拷贝的属性将不会再被拷贝。
 
 > 注意， Object.assign 会跳过那些值为 null 或 undefined 的源对象。
+
+<!-- more -->
 
 ### 示例
 

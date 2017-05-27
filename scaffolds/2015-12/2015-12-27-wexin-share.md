@@ -1,9 +1,7 @@
 title: 微信开发-朋友、朋友圈分享
 date: 2015-12-27 10:44:22
-categories:
-  - 技术
 tags:
-	- 微信开发
+  - 微信开发
 ---
 
 先看个效果图：
@@ -18,14 +16,14 @@ tags:
 ``` bash
 // 在你的html中的title
 <html>
-	<head>
-		<!-- ** 此处就是你的标题 ** -->
-		<title>微信标题测试</title>
-	</head>
-	<body>
-		<!-- ** 此处就是你的图标，但是图片大小一定要大于等于300*300 才会有显示 ** -->
-		<img src="http://sandbox.runjs.cn/uploads/rs/438/v2eacmoa/2.png">
-	</body>
+    <head>
+        <!-- ** 此处就是你的标题 ** -->
+        <title>微信标题测试</title>
+    </head>
+    <body>
+        <!-- ** 此处就是你的图标，但是图片大小一定要大于等于300*300 才会有显示 ** -->
+        <img src="http://sandbox.runjs.cn/uploads/rs/438/v2eacmoa/2.png">
+    </body>
 </html>
 ```
 几点注意的地方:
@@ -84,21 +82,21 @@ wx.config({
 返回json格式：
 ``` javascript
 {
-	"errcode":0,
-	"errmsg":"ok",
-	"ticket":"sM4AOVdWfPE4DxkXGEs8VMCPGGVi4C3VM0P37wVUCFvkVAy_90u5h9nbSlYy3-Sl-HhTdfl2fzFy1AOcHKP7qg",
-	"expires_in":7200
+    "errcode":0,
+    "errmsg":"ok",
+    "ticket":"sM4AOVdWfPE4DxkXGEs8VMCPGGVi4C3VM0P37wVUCFvkVAy_90u5h9nbSlYy3-Sl-HhTdfl2fzFy1AOcHKP7qg",
+    "expires_in":7200
 }
 ```
 1. 通过前两步的到的jsapi_ticket获取签名signature
-* noncestr=Wm3WZYTPz0wzccnW		// 可以自定义
+* noncestr=Wm3WZYTPz0wzccnW     // 可以自定义
 * jsapi_ticket=sM4AOVdWfPE4DxkXGEs8VMCPGGVi4C3VM0P37wVUCFvkVAy_90u5h9nbSlYy3-Sl-HhTdfl2fzFy1AOcHKP7qg
-* timestamp=1414587457 	// 时间戳
+* timestamp=1414587457  // 时间戳
 * url=http://mp.weixin.qq.com?params=value
-	+ 对所有待签名参数按照字段名的ASCII 码从小到大排序（字典序）后，使用URL键值对的格式（即key1=value1&key2=value2…）拼接成字符串string1：
+    + 对所有待签名参数按照字段名的ASCII 码从小到大排序（字典序）后，使用URL键值对的格式（即key1=value1&key2=value2…）拼接成字符串string1：
 　　string1=jsapi_ticket=sM4AOVdWfPE4DxkXGEs8VMCPGGVi4C3VM0P37wVUCFvkVAy_90u5h9nbSlYy3-Sl-HhTdfl2fzFy1AOcHKP7qg&noncestr=Wm3WZYTPz0wzccnW&timestamp=1414587457&url=http://mp.weixin.qq.com?params=value
-	+ 对string1进行sha1签名，得到signature：
-	signature=sha1(string1);
+    + 对string1进行sha1签名，得到signature：
+    signature=sha1(string1);
 　　经过上述算法得出 signature=0f9de62fce790f9a083d5c99e95740ceb90c27ed
 
 注意事项：

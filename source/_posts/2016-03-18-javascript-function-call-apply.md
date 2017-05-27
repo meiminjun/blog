@@ -1,10 +1,7 @@
-title: javascript之call、apply的使用
+title: javascript深入浅出系列-Function 之 call、apply
 date: 2016-03-18 16:10:00
-type: "categories"
-categories:
-  - 前端
 tags:
-    - javascript
+  - javascript
 ---
 
 ## call与apply的区别

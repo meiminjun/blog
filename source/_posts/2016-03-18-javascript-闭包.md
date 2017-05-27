@@ -1,7 +1,5 @@
-title: javascript之闭包
+title: javascript深入浅出系列-闭包
 date: 2016-01-05 15:57:13
-categories:
-  - 前端
 tags:
   - javascript
 ---

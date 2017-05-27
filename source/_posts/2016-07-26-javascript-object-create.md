@@ -1,4 +1,4 @@
-title: 浅谈javacript 笔记系列--- object-create方法
+title: javascript深入浅出系列-Object 之 create
 date: 2016-07-26 08:57:13
 categories:
   - javascript

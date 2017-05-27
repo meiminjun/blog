@@ -1,7 +1,5 @@
-title: 浅谈javacript 笔记系列---静态属性和原型方法
+title: javascript深入浅出系列-Function 之 静态属性和原型方法
 date: 2016-06-23 21:57:13
-categories:
-  - javascript
 tags:
   - javascript
 ---

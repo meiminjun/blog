@@ -1,3 +1,9 @@
+title: javascript深入浅出系列-call、apply的使用
+date: 2016-03-18 16:10:00
+tags:
+    - javascript
+---
+
 # javascript 继承
 
 ``` bash

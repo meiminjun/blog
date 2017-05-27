@@ -1,7 +1,5 @@
-title: 浅谈javacript 笔记系列--- String 之slice
+title: javascript深入浅出系列-String 之 slice
 date: 2016-06-23 21:57:13
-categories:
-  - javascript
 tags:
   - javascript
 ---
