@@ -65,6 +65,15 @@
 9. 2016-07-26 [javascript深入浅出系列-Object-create](http://meiminjun.github.io/javascript-object-create)
 10. 2017-05-26 [javascript深入浅出系列-常用-数值判断](http://meiminjun.github.io/javascript-常用-数值判断)
 
+
+参考：
+
+* https://github.com/getify/You-Dont-Know-JS/tree/1ed-zh-CN
+* https://github.com/dreamapplehappy/effective-javascript/blob/master/README.md
+* https://juejin.im/post/59278e312f301e006c2e1510
+* http://blog.freeedit.cn/tag/
+* http://www.jianshu.com/u/10ae59f49b13
+
 # 未来
 
 ## 2017
