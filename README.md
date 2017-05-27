@@ -48,7 +48,7 @@
 * 2017-04-11 [vue-vuex](http://meiminjun.github.io/vue-vuex)
 * 2017-04-12 [vue-router](http://meiminjun.github.io/vue-router)
 * 2017-04-20 [standard代码规范](http://meiminjun.github.io/standard代码规范)
-* 2017-05-26 [javascript深入浅出系列-常用-数值判断](http://meiminjun.github.io/standard代码规范)
+* 2017-05-26 [javascript深入浅出系列-常用-数值判断](http://meiminjun.github.io/javascript-常用-数值判断)
 
 # 技术教程（原创）
 
@@ -63,7 +63,7 @@
 7. 2016-07-11 [javascript深入浅出系列-设计模式-单例模式](http://meiminjun.github.io/javascript-设计模式-单例模式)
 8. 2016-07-26 [javascript深入浅出系列-Object-assign](http://meiminjun.github.io/javascript-object-assign)
 9. 2016-07-26 [javascript深入浅出系列-Object-create](http://meiminjun.github.io/javascript-object-create)
-10. 2017-05-26 [javascript深入浅出系列-常用-数值判断](http://meiminjun.github.io/standard代码规范)
+10. 2017-05-26 [javascript深入浅出系列-常用-数值判断](http://meiminjun.github.io/javascript-常用-数值判断)
 
 # 未来
 
