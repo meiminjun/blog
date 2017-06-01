@@ -99,10 +99,42 @@ const res = arr
   }), {})
 ```
 
-reduce()迭代过程  | previousValue |currentValue |index |array | return value
----             | ---            | ---         | ---  | ---  | ---
-第1次调用        | 1               | 2           | 1    | [1,2, undefined, 4,5,6]| 12
-第2次调用        | 12               | 4          |3           | [1,2, undefined, 4,5,6]| 124
-第3次调用        | 124              | 5          | 4          | [1,2, undefined, 4,5,6]| 1245
-第4次调用        | 1245               | 6           | 5           | [1,2, undefined, 4,5,6]| 12456
+好吧，我承认这是一个非常极端的例子，如果你不经常使用函数式编程的情况下，他看起来会非常的复杂，也许我们可以这样简化一下：
+
+```
+const enrichElementWithCalculatedValue =
+  elem => ({ name: elem.name, calculatedValue: elem.value * 10 })
+const filterElementsByValue = value =>
+  elem => elem.calculatedValue > value
+const aggregateElementInObject = (acc, elem) => ({
+  [elem.name]: calculatedValue,
+  ...acc
+})
+const res = arr
+  .map(enrichElementWithCalculatedValue)
+  .filter(filterElementsByValue(100))
+  .reduce(aggregateElementInObject, {})
+```
+
+这里我们定义了三个函数基本上就是它们的名字
+
+第二:创建局部函数(即使是在现有函数中)，无需注释就可以记录代码。
+
+注意，三个局部函数不修改它们执行的上下文。没有外部变量被修改,没有被其他方法被调用，
+他们称为纯函数在函数式编程中。他们有一些巨大的优势:
+
+* 它们是易测试的，因为从给定的参数来说，只有一个可能的结果，即使我们把函数多调用几次;
+* 无论应用程序的实际状态如何，它们都可以提供相同的结果;
+* 在函数调用之前和之后，应用程序状态保持不变。
+
+所以我的第三条建议是:多使用纯函数!
+
+# 最后还有一些其他的建议
+
+* 经常使用异步代码，多使用promise，查看带有[RxJS](http://reactivex.io/rxjs/)的观察效果([有一个关于函数编程的很好的教程，可以测试你的函数式编程](http://reactivex.io/learnrx/))
+* 编写测试代码!应该是显而易见的，但是我知道很多项目都有未经测试的代码，尽管测试JavaScript(前端或后端)并不像看起来那么困难。
+* 使用语言的新特性：例如停止使用`arr.indexOf(elem) !== -1` 赞成使用`arr.includes(elem)`
+* 多阅读技术文章：[JavaScript subreddit](https://www.reddit.com/r/javascript/)是了解生态系统中最酷的实践的一个很好的来源
+* 哦，最后，我能给你最好的建议是：总是重构你的代码！改进你一年前写的模块？借此机会使用`const`代替`var`，使用`箭头函数`或者`async/await`来简化代码...总之用最好的代码进行工作!😉
+
 

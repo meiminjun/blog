@@ -260,6 +260,8 @@ baidu_analytics: 16d7734da3c8cefabf2b051e78a76266
 # See: https://www.google.com/webmasters/
 google_site_verification: -fPEQPXOpLTn9NFFXRi5a9fA7N3OTh67Gj1gF56ElvE
 
+# https://zhanzhang.baidu.com/site/siteverify?id=8687100
+baidu_site_verification: vFXuFMzOT2
 
 # Google Analytics
 #google_analytics:
