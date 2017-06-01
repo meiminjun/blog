@@ -238,7 +238,7 @@ mathjax:
 baidu_analytics: 16d7734da3c8cefabf2b051e78a76266
 
 # Duoshuo ShortName
-duoshuo_shortname: meiminjun
+# duoshuo_shortname: meiminjun
 
 # Disqus
 #disqus_shortname:
@@ -258,7 +258,7 @@ duoshuo_shortname: meiminjun
 
 # Google Webmaster tools verification setting
 # See: https://www.google.com/webmasters/
-#google_site_verification:
+google_site_verification: -fPEQPXOpLTn9NFFXRi5a9fA7N3OTh67Gj1gF56ElvE
 
 
 # Google Analytics
@@ -271,10 +271,10 @@ duoshuo_shortname: meiminjun
 # Make duoshuo show UA
 # user_id must NOT be null when admin_enable is true!
 # you can visit http://dev.duoshuo.com get duoshuo user id.
-duoshuo_info:
-  ua_enable: false
-  admin_enable: false
-  user_id: 0
+# duoshuo_info:
+#  ua_enable: false
+#  admin_enable: false
+#  user_id: 0
   #admin_nickname: Author
 
 

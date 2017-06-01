@@ -3,8 +3,7 @@ User-agent: *
 Allow: /
 Allow: /archives/
 Allow: /categories/
-
-Disallow: /vendors/
+Allow: /tags/ 
 Disallow: /js/
 Disallow: /css/
 Disallow: /fonts/
@@ -13,3 +12,5 @@ Disallow: /fancybox/
 
 Sitemap: http://meiminjun.github.io/sitemap.xml
 Sitemap: http://meiminjun.github.io/baidusitemap.xml
+Sitemap: https://meiminjun.github.io/sitemap.xml
+Sitemap: https://meiminjun.github.io/baidusitemap.xml
