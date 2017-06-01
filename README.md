@@ -49,6 +49,7 @@
 * 2017-04-12 [vue-router](http://meiminjun.github.io/vue-router)
 * 2017-04-20 [standard代码规范](http://meiminjun.github.io/standard代码规范)
 * 2017-05-26 [javascript深入浅出系列-常用-数值判断](http://meiminjun.github.io/javascript-常用-数值判断)
+* 2017-06-01 [javascript深入浅出系列-Array-reduce](http://meiminjun.github.io/javascript-array-reduce)
 
 # 技术教程（原创）
 
@@ -64,12 +65,13 @@
 8. 2016-07-26 [javascript深入浅出系列-Object-assign](http://meiminjun.github.io/javascript-object-assign)
 9. 2016-07-26 [javascript深入浅出系列-Object-create](http://meiminjun.github.io/javascript-object-create)
 10. 2017-05-26 [javascript深入浅出系列-常用-数值判断](http://meiminjun.github.io/javascript-常用-数值判断)
+11. 2017-06-01 [javascript深入浅出系列-Array-reduce](http://meiminjun.github.io/javascript-array-reduce)
 
 
 参考：
 
 * https://github.com/getify/You-Dont-Know-JS/tree/1ed-zh-CN
-* https://github.com/dreamapplehappy/effective-javascript/blob/master/README.md
+* https://github.com/dreamapplehappy/effective-javascript
 * https://juejin.im/post/59278e312f301e006c2e1510
 * http://blog.freeedit.cn/tag/
 * http://www.jianshu.com/u/10ae59f49b13
