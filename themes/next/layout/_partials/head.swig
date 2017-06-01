@@ -22,6 +22,9 @@
   <meta name="360-site-verification" content="{{ theme.qihu_site_verification }}" />
 {% endif %}
 
+<link rel="alternate" href="https://meiminjun.github.com/" hreflang="x-default" />
+<link rel="alternate" href="https://meiminjun.github.com/" hreflang="en" />
+<link rel="alternate" href="https://meiminjun.github.com/" hreflang="zh-Hans" />
 
 {% if theme.fancybox %}
   {% set fancybox_css_uri = url_for(theme.vendors._internal + '/fancybox/source/jquery.fancybox.css?v=2.1.5') %}
