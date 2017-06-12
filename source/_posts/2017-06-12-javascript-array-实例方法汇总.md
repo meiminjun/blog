@@ -15,11 +15,104 @@ arr.valueOf();  // (3) ["1", "2", "3"]
 
 # toString()
 
-**toString()**返回数组的字符串形式
+**toString()**返回数组的字符串形式,**注意，该方法不改变原数组**
 
 ```
 var arr = ["1","2","3"]
 arr.toString(); // 1,2,3
+```
+
+# join()
+
+join方法以参数作为分隔符，将所有数组成员组成一个字符串返回。如果不提供参数，默认用逗号分隔,注意，该方法不改变原数组
+
+```
+var a = [1, 2, 3, 4];
+
+a.join(' ') // '1 2 3 4'
+a.join(' | ') // "1 | 2 | 3 | 4"
+a.join() // "1,2,3,4"
+```
+
+与之对应的字符串转换成数组的方法是`split`
+
+```
+"1|2|3|4".split("|") // [1,2,3,4]
+```
+
+如果数组成员是undefined或null或空位，会被转成空字符串
+
+```
+[undefined, null].join('#')
+// '#'
+
+['a',, 'b'].join('-')
+// 'a--b'
+```
+
+通过call方法，这个方法也可以用于字符串
+
+```
+Array.prototype.join.call('hello', '-')
+// "h-e-l-l-o"
+```
+
+join方法也可以用于类似数组的对象
+
+```
+var obj = { 0: 'a', 1: 'b', length: 2 };
+Array.prototype.join.call(obj, '-')
+// 'a-b'
+```
+
+# concat()
+
+concat方法用于多个数组的合并。它将新数组的成员，添加到原数组的尾部，然后返回一个新数组，原数组不变
+
+```
+['hello'].concat(['world'])
+// ["hello", "world"]
+
+['hello'].concat(['world'], ['!'])
+// ["hello", "world", "!"]
+```
+
+除了接受数组作为参数，concat也可以接受其他类型的值作为参数。它们会作为新的元素，添加数组尾部
+
+```
+[1, 2, 3].concat(4, 5, 6)
+// [1, 2, 3, 4, 5, 6]
+
+// 等同于
+[1, 2, 3].concat(4, [5, 6])
+[1, 2, 3].concat([4], [5, 6])
+```
+
+如果不提供参数，concat方法返回当前数组的一个浅拷贝。所谓“浅拷贝”，指的是如果数组成员包括复合类型的值（比如对象），则新数组拷贝的是该值的引用
+
+```
+var obj = { a:1 };
+var oldArray = [obj];
+
+var newArray = oldArray.concat();
+
+obj.a = 2;
+newArray[0].a // 2
+```
+
+上面代码中，原数组包含一个对象，concat方法生成的新数组包含这个对象的引用。所以，改变原对象以后，新数组跟着改变。事实上，只要原数组的成员中包含对象，concat方法不管有没有参数，总是返回该对象的引用
+
+concat方法也可以用于将对象合并为数组，但是必须借助call方法
+
+```
+[].concat.call({a: 1}, {b: 2})
+// [{ a: 1 }, { b: 2 }]
+
+[].concat.call({a: 1}, [2])
+// [{a: 1}, 2]
+
+[2].concat({a: 1})
+// [2, {a: 1}]
 ```
 
 # push()
@@ -198,7 +291,7 @@ Array.prototype.slice.call(arguments); // 将方法参数转换成数组
 
 # splice()
 
-**splice**方法用于删除原数组的一部分成员，并可以在被删除的位置添加入新的数组成员，返回值是被删除的元素。注意，该方法会改变原数组
+**splice**方法对原数组进行增删改操作，用于删除原数组的一部分成员，并可以在被删除的位置添加入新的数组成员，返回值是被删除的元素。注意，该方法会改变原数组
 
 **splice**的第一个参数是删除的起始位置(包含此删除位置)，第二个参数是被删除的元素个数。如果后面还有更多的参数，则表示这些就是要被插入数组的新元素
 
@@ -218,7 +311,7 @@ a // ["a", "b", "c", "d", 1, 2]
 
 上面代码除了删除成员，还插入了两个新成员
 
-起始位置如果是负数，就表示从倒数位置开始删除
+起始位置如果是负数(负几就是倒数第几)，就表示从倒数位置开始删除
 
 ```
 var a = ['a', 'b', 'c', 'd', 'e', 'f'];
@@ -231,14 +324,25 @@ a // ['a','b','e','f']
 
 如果只是单纯地插入元素，splice方法的第二个参数可以设为0
 
+>第一个参数就是要插入的索引位置
+
 ```
 var a = [1, 1, 1];
 
 a.splice(1, 0, 2) // []
 a // [1, 2, 1, 1] // 插入到索引1的位置
+
+
+var a = ['a', 'b', 'c']
+
+a.splice(a.length,0,2,3,4,5) // []
+a // ["a", "b", "c", 2, 3, 4, 5]
+
+相当于
+a.push(2,3,4,5)
+a // ["a", "b", "c", 2, 3, 4, 5]
 ```
 
-第一个参数就是要插入的索引位置
 
 如果只提供第一个参数，等同于将原数组在指定位置拆分成两个数组
 
@@ -658,3 +762,101 @@ function substract(prev, cur) {
 [3, 2, 1].reduceRight(substract) // -4
 ```
 
+上面代码中，reduce方法相当于3减去2再减去1，reduceRight方法相当于1减去2再减去3
+
+由于reduce方法依次处理每个元素，所以实际上还可以用它来搜索某个元素。比如，下面代码是找出长度最长的数组元素
+
+```
+function findLongest(entries) {
+  return entries.reduce(function (longest, entry) {
+    return entry.length > longest.length ? entry : longest;
+  }, '');
+}
+
+findLongest(['aaa', 'bb', 'c']) // "aaa"
+```
+
+# indexOf(),lastIndexOf()
+
+indexOf 方法返回给定元素在数组中第一次出现的位置索引，如果没有返回则返回-1,**注意，包含索引位置**
+
+```
+var a = [1,2,3,12,5,32,12]
+a.indexOf(32) // 5
+a.indexOf(11) // -1
+```
+
+indexOf 方法可以接受第二个参数，表示开始搜索的位置（**返回的值还是相对于原来数组的索引位置,不是从开始搜索位置的索引**）
+
+```
+var a = [1,2,3,12,5,32,12]
+a.indexOf(2,2) // -1
+a.indexOf(32,2) // 5
+```
+
+上面代码从1号位置开始搜索字符a，结果为-1，表示没有搜索到
+
+lastIndexOf方法返回给定元素在数组中最后一次出现的位置，如果没有出现则返回-1
+
+```
+var a = [1,2,3,2,4,56,3,1,4]
+a.lastIndexOf(3) // 6
+a.lastIndexOf(33) // -1
+```
+
+注意，如果数组中包含NaN，这两个方法不适用，即无法确定数组成员是否包含NaN
+
+```
+[NaN].indexOf(NaN) // -1
+[NaN].lastIndexOf(NaN) // -1
+```
+
+这是因为这两个方法内部，使用严格相等运算符（===）进行比较，而NaN是唯一一个不等于自身的值
+
+# 链式调用
+
+上面这些数组方法之中，有不少返回的还是数组，所以可以链式使用
+
+```
+var users = [
+  {name: 'tom', email: 'tom@example.com'},
+  {name: 'peter', email: 'peter@example.com'}
+];
+
+users
+.map(function (user) {
+  return user.email;
+})
+.filter(function (email) {
+  return /^t/.test(email);
+})
+.forEach(alert);
+// 弹出tom@example.com
+```
+
+# 注意点
+
+改变的原数组的几个方法，除此之外都不是：
+
+* push()
+* pop()
+* shift()
+* unshift()
+* reverse()
+* splice()
+* sort()
+
+不改变原数组：
+* join()
+* toString()
+* concat()
+* slice()
+* map()
+* forEach()
+* filter()
+* some()
+* every()
+* reduce()
+* reduceRight()
+* indexOf()
+* lastIndexOf()

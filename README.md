@@ -57,6 +57,7 @@ curl -H 'Content-Type:text/plain' --data-binary @urls.txt "http://data.zz.baidu.
 * 2017-05-26 [javascript深入浅出系列-常用-数值判断](http://meiminjun.github.io/javascript-常用-数值判断)
 * 2017-06-01 [javascript深入浅出系列-Array-reduce](http://meiminjun.github.io/javascript-array-reduce)
 * 2017-06-01 [javascript深入浅出系列-编写现代Javascript代码](http://meiminjun.github.io/javascript-编写现代Javascript代码)
+* 2017-06-12 [javascript深入浅出系列-Array-实例方法汇总](http://meiminjun.github.io/javascript-array-实例方法汇总)
 
 # 技术教程（原创）
 
@@ -74,6 +75,7 @@ curl -H 'Content-Type:text/plain' --data-binary @urls.txt "http://data.zz.baidu.
 10. 2017-05-26 [javascript深入浅出系列-常用-数值判断](http://meiminjun.github.io/javascript-常用-数值判断)
 11. 2017-06-01 [javascript深入浅出系列-Array-reduce](http://meiminjun.github.io/javascript-array-reduce)
 12. 2017-06-01 [javascript深入浅出系列-编写现代Javascript代码](http://meiminjun.github.io/javascript-编写现代Javascript代码)
+13. 2017-06-12 [javascript深入浅出系列-Array-实例方法汇总](http://meiminjun.github.io/javascript-array-实例方法汇总)
 
 
 参考：
