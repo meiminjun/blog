@@ -813,6 +813,60 @@ a.lastIndexOf(33) // -1
 
 这是因为这两个方法内部，使用严格相等运算符（===）进行比较，而NaN是唯一一个不等于自身的值
 
+# from()
+
+Array.from() 方法从一个类似数组或可迭代的对象中重新创建一个新的数组实例，**注意：返回一个新数组，原数组不变**
+
+```
+const bar = ["a", "b", "c"];
+var i = Array.from(bar); // ["a", "b", "c"]
+bar === i // false
+
+Array.from('foo');
+// ["f", "o", "o"]
+```
+
+将NodeList 转化成 Array
+
+```
+var divs = Array.from(document.querySelectorAll('div'));
+
+// Array[232] (every DIV on the page)
+```
+
+将 arguments 转化成 Array
+
+```
+function something() {
+  var args = Array.from(arguments);
+
+  // Array['yes', 1, {}]
+}
+something('yes', 1, {});
+```
+
+将 String 转化成 Array
+
+```
+Array.from('JavaScript'); // 很像'JavaScript'.split('')
+
+// ["J", "a", "v", "a", "S", "c", "r", "i", "p", "t"]
+```
+
+与箭头函数搭配使用
+
+```
+Array.from([1, 2, 3], x => x + x);      
+// [2, 4, 6]
+
+Array.from({length: 5}, (v, i) => i);
+// [0, 1, 2, 3, 4]
+```
+
+from 方法的第二个参数为可选参数，如果指定了该参数，则最后生成的数组会经过该函数的加工处理后再返回
+
+如果传入第三个参数，执行第二个参数时，改变this 的指向
+
 # 链式调用
 
 上面这些数组方法之中，有不少返回的还是数组，所以可以链式使用
@@ -860,3 +914,4 @@ users
 * reduceRight()
 * indexOf()
 * lastIndexOf()
+* from()
