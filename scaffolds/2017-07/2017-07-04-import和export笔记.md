@@ -8,8 +8,6 @@ tags:
   - export
 ---
 
-# 彻底搞清楚javascript中的require和export
-
 ![](https://ww2.sinaimg.cn/large/006tKfTcgy1fh7u9d2ixbj308c08bdfs.jpg)
 
 ## 为什么有模块概念
