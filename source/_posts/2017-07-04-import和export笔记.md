@@ -18,6 +18,8 @@ tags:
 
 但是，Javascript不是一种模块化编程语言，在es6以前，它是不支持"类"（class），所以也就没有"模块"（module）了。
 
+<!-- more -->
+
 ## require时代
 
 Javascript社区做了很多努力，在现有的运行环境中，实现"模块"的效果。
