@@ -10,19 +10,19 @@ before_install:
 # - npm install -g gulp
 script:
 - hexo clean
-- hexo g
-after_script:
-- cd ./public
-- git init
-- git config user.name "meiminjun"
-- git config user.email "251222845@qq.com"
-- git add .
-- git commit -m "Update docs"
-- git push --force --quiet "https://${GitHub_TOKEN_BLOG}@${GH_REF}" master:master
-# E: Build LifeCycle
-branches:
-only:
-- master
-env:
-global:
-- GH_REF: github.com/meiminjun/meiminjun.github.io
+- hexo g -d
+# after_script:
+# - cd ./public
+# - git init
+# - git config user.name "meiminjun"
+# - git config user.email "251222845@qq.com"
+# - git add .
+# - git commit -m "Update docs"
+# - git push --force --quiet "https://${GitHub_TOKEN_BLOG}@${GH_REF}" master:master
+# # E: Build LifeCycle
+# branches:
+# only:
+# - master
+# env:
+# global:
+# - GH_REF: github.com/meiminjun/meiminjun.github.io
